@@ -1,0 +1,40 @@
+name: Buscador de Arriendos
+
+on:
+  schedule:
+    # Corre cada 4 horas automaticamente
+    - cron: '0 */4 * * *'
+  # Tambien puedes correrlo manualmente desde GitHub
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Correr el buscador
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python main.py
+
+      - name: Guardar resultados en GitHub
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Buscador Bot"
+          git add index.html data/seen.json
+          git diff --staged --quiet || git commit -m "Actualizar propiedades - $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
