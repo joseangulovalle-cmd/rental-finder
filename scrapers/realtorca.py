@@ -64,6 +64,18 @@ def scrape():
                         image_url = photo[0].get("HighResPath", "") if photo else ""
                         listing_url = f"https://www.realtor.ca{prop.get('RelativeDetailsURL', '')}"
 
+                        # Coordenadas GPS directamente de la API
+                        prop_lat = prop.get("Property", {}).get("Address", {}).get("Latitude") or \
+                                   prop.get("Building", {}).get("StoriesTotal") and None or \
+                                   None
+                        # Intentar extraer lat/lon del objeto
+                        try:
+                            prop_lat = float(prop["Property"]["Address"].get("Latitude", 0)) or None
+                            prop_lon = float(prop["Property"]["Address"].get("Longitude", 0)) or None
+                        except Exception:
+                            prop_lat = None
+                            prop_lon = None
+
                         uid = hashlib.md5(f"realtorca-{mls}".encode()).hexdigest()
                         listings.append({
                             "id": uid,
@@ -76,6 +88,8 @@ def scrape():
                             "source": "Realtor.ca",
                             "bedrooms": str(beds),
                             "bathrooms": str(baths),
+                            "lat": prop_lat,
+                            "lon": prop_lon,
                         })
                     except Exception:
                         continue

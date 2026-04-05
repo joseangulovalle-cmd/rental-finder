@@ -70,6 +70,13 @@ def geocode_address(address):
     return None, None
 
 
+def looks_like_address(text):
+    """Verifica si el texto parece una direccion real (tiene numero y calle)."""
+    import re
+    # Una direccion real tiene numeros seguidos de nombre de calle
+    return bool(re.search(r'\d+\s+\w+', text)) and len(text) > 10
+
+
 def enrich_listing(listing):
     """
     Agrega distancias al colegio y al subway a un anuncio.
@@ -80,8 +87,17 @@ def enrich_listing(listing):
 
     # Si no tiene coordenadas, intentar geocodificar
     if not lat or not lon:
+        # Preferir el titulo de Realtor.ca (siempre es una direccion real)
+        # Para Kijiji/Craigslist solo intentar si parece una direccion
+        source = listing.get("source", "")
         address = listing.get("location", "") or listing.get("title", "")
-        if address and address != "Toronto, ON":
+
+        should_geocode = (
+            source == "Realtor.ca" or
+            (address and address != "Toronto, ON" and looks_like_address(address))
+        )
+
+        if should_geocode:
             lat, lon = geocode_address(address)
             time.sleep(1)  # Respetar limite de OpenStreetMap (1 req/seg)
 
