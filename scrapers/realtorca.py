@@ -1,12 +1,12 @@
 """
 Scraper para Realtor.ca usando Playwright
-Solo arriendos, 2 cuartos, 2 baños, zona Waldorf Academy
+Usa vista de lista en lugar de mapa
 """
 
 import hashlib
 from playwright.sync_api import sync_playwright
 
-# URL con los filtros exactos de la busqueda manual
+# Vista de lista en lugar de mapa — mas facil de leer
 URL = (
     "https://www.realtor.ca/map#ZoomLevel=16"
     "&Center=43.677156%2C-79.407009"
@@ -16,13 +16,13 @@ URL = (
     "&PropertySearchTypeId=0&BedRange=2-2&BathRange=2-2&Currency=CAD"
 )
 
-
 def scrape():
     listings = []
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page(
+                viewport={"width": 1280, "height": 900},
                 user_agent=(
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                     "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -32,34 +32,42 @@ def scrape():
             page.goto(URL, wait_until="domcontentloaded", timeout=40000)
             page.wait_for_timeout(5000)
 
+            # Intentar hacer clic en "List" para cambiar de mapa a lista
+            try:
+                list_btn = page.query_selector("button:has-text('List'), [data-label='List'], a:has-text('List')")
+                if list_btn:
+                    list_btn.click()
+                    page.wait_for_timeout(3000)
+                    print("[Realtor.ca] Cambiado a vista lista")
+            except Exception:
+                pass
+
+            # Realtor.ca usa divs con clase cardCon para cada propiedad
             items = page.query_selector_all(
-                "div.cardCon, div[class*='listing'], div[class*='card'], article"
+                "div.cardCon, div[class*='cardCon'], "
+                "div[class*='listing-card'], div[class*='propertyCard']"
             )
+            print(f"[Realtor.ca] Elementos encontrados en pagina: {len(items)}")
 
             for item in items:
                 try:
-                    title_el = item.query_selector(
-                        "[class*='title'], [class*='address'], h2, h3"
-                    )
-                    title = title_el.inner_text().strip() if title_el else "Sin titulo"
-
-                    price_el = item.query_selector(
-                        "[class*='price'], [class*='Price']"
-                    )
-                    price = price_el.inner_text().strip() if price_el else "Precio no indicado"
-
-                    link_el = item.query_selector("a[href]")
+                    # Link y titulo
+                    link_el = item.query_selector("a[href*='/real-estate/'], a[href*='realtor.ca']")
                     listing_url = ""
                     if link_el:
                         href = link_el.get_attribute("href") or ""
                         listing_url = f"https://www.realtor.ca{href}" if href.startswith("/") else href
 
-                    img_el = item.query_selector("img")
-                    image_url = ""
-                    if img_el:
-                        image_url = img_el.get_attribute("src") or img_el.get_attribute("data-src") or ""
+                    title_el = item.query_selector("[class*='address'], [class*='title'], span[title]")
+                    title = title_el.inner_text().strip() if title_el else "Propiedad en Toronto"
 
-                    if not listing_url or not title or title == "Sin titulo":
+                    price_el = item.query_selector("[class*='price'], [class*='Price']")
+                    price = price_el.inner_text().strip() if price_el else "Precio no indicado"
+
+                    img_el = item.query_selector("img")
+                    image_url = img_el.get_attribute("src") or "" if img_el else ""
+
+                    if not listing_url:
                         continue
 
                     uid = hashlib.md5(f"realtorca-{listing_url}".encode()).hexdigest()

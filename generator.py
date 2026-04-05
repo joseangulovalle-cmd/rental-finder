@@ -183,7 +183,7 @@ def generate(listings):
 
 <div class="stats">
     <span><strong>{total}</strong> propiedades encontradas</span>
-    <span>Fuentes: Kijiji · Craigslist · Rentals.ca · Realtor.ca</span>
+    <span>Fuentes: Kijiji · Craigslist · Realtor.ca</span>
     <span>Actualizado: {updated_at}</span>
 </div>
 
