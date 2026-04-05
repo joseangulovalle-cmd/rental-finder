@@ -29,6 +29,9 @@ jobs:
           playwright install-deps chromium || true
           sudo apt-get install -y libasound2t64 || true
 
+      - name: Diagnostico de sitios
+        run: python debug.py
+
       - name: Correr el buscador
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
