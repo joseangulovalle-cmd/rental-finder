@@ -19,13 +19,10 @@ HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-# URL de Kijiji: apartamentos en renta, 2 cuartos, radio 1km de Madison Ave
+# URL de Kijiji: apartamentos en renta, 2 cuartos, Toronto
 KIJIJI_URL = (
-    "https://www.kijiji.ca/b-for-rent/toronto/k0c37l1700273"
-    "?numBedrooms=3"          # numBedrooms=3 en Kijiji = 2 habitaciones
-    "&address=250+Madison+Ave%2C+Toronto+ON"
-    "&ll=43.6802%2C-79.3959"
-    "&radius=1.0"
+    "https://www.kijiji.ca/b-apartments-condos/toronto/"
+    "2-bedroom/__2-bedrooms/k0c37l1700273a29276001"
 )
 
 
@@ -47,7 +44,7 @@ def scrape():
         soup = BeautifulSoup(response.text, "html.parser")
 
         # Kijiji envuelve cada anuncio en un <li> con data-listing-id
-        items = soup.select("li[data-listing-id]")
+        items = soup.select("li[data-listing-id], div[data-listing-id]")
 
         for item in items:
             try:
