@@ -13,6 +13,7 @@ import os
 from datetime import datetime
 
 from scrapers import kijiji, craigslist, realtorca
+from geocoder import enrich_listing
 from notifier import send_notification
 from generator import generate
 from config import SEEN_FILE
@@ -43,6 +44,12 @@ def main():
     all_listings += kijiji.scrape()
     all_listings += craigslist.scrape()
     all_listings += realtorca.scrape()
+
+    # Calcular distancias al colegio y al subway
+    print("\n Calculando distancias...")
+    for i, listing in enumerate(all_listings):
+        all_listings[i] = enrich_listing(listing)
+    print(f" Distancias calculadas para {len(all_listings)} propiedades")
 
     print(f"\n Total recolectados: {len(all_listings)} anuncios")
 

@@ -24,7 +24,19 @@ def generate(listings):
     else:
         cards_html = ""
         for lst in listings:
-            distance_text = f"🚶 {lst['distance_km']} km del colegio" if lst.get("distance_km") else "📍 Zona cercana"
+            # Distancia al colegio
+            if lst.get("walk_minutes_school"):
+                distance_text = f"🏫 {lst['walk_minutes_school']} min caminando al colegio ({lst['distance_km']} km)"
+            elif lst.get("distance_km"):
+                distance_text = f"🏫 {lst['distance_km']} km del colegio"
+            else:
+                distance_text = "📍 Zona cercana al colegio"
+
+            # Distancia al subway
+            if lst.get("walk_minutes_subway"):
+                subway_text = f"🚇 {lst['walk_minutes_subway']} min a Dupont Station ({lst['distance_subway_km']} km)"
+            else:
+                subway_text = ""
             image_html = (
                 f'<img src="{lst["image_url"]}" alt="Foto propiedad" '
                 f'onerror="this.style.display=\'none\'" />'
@@ -53,6 +65,7 @@ def generate(listings):
                     </div>
                     <div class="location">📍 {lst['location']}</div>
                     <div class="distance">{distance_text}</div>
+                    {f'<div class="subway">{subway_text}</div>' if subway_text else ""}
                     <a href="{lst['listing_url']}" target="_blank" class="btn">
                         Ver anuncio →
                     </a>
@@ -145,7 +158,8 @@ def generate(listings):
         .title {{ font-size: 0.95rem; color: #2d3748; margin-bottom: 10px; line-height: 1.4; }}
         .meta {{ display: flex; gap: 12px; font-size: 0.85rem; color: #718096; margin-bottom: 8px; }}
         .location {{ font-size: 0.85rem; color: #718096; margin-bottom: 4px; }}
-        .distance {{ font-size: 0.85rem; color: #2563eb; font-weight: 500; margin-bottom: 14px; }}
+        .distance {{ font-size: 0.85rem; color: #2563eb; font-weight: 500; margin-bottom: 4px; }}
+        .subway   {{ font-size: 0.85rem; color: #7c3aed; font-weight: 500; margin-bottom: 14px; }}
 
         .btn {{
             display: block;
