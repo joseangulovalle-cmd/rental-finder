@@ -1,12 +1,13 @@
 """
 Scraper para Realtor.ca usando Playwright
-Usa vista de lista en lugar de mapa
+Intercepta la API de datos directamente
 """
 
 import hashlib
+import json
 from playwright.sync_api import sync_playwright
 
-# Vista de lista en lugar de mapa — mas facil de leer
+# URL de busqueda en vista lista
 URL = (
     "https://www.realtor.ca/map#ZoomLevel=16"
     "&Center=43.677156%2C-79.407009"
@@ -18,6 +19,8 @@ URL = (
 
 def scrape():
     listings = []
+    captured_data = []
+
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
@@ -29,63 +32,85 @@ def scrape():
                     "Chrome/124.0.0.0 Safari/537.36"
                 )
             )
+
+            # Interceptar respuestas de la API de Realtor.ca
+            def handle_response(response):
+                if "propertySearch" in response.url or "Search" in response.url:
+                    try:
+                        data = response.json()
+                        if isinstance(data, dict) and "Results" in data:
+                            captured_data.extend(data["Results"])
+                    except Exception:
+                        pass
+
+            page.on("response", handle_response)
+
             page.goto(URL, wait_until="domcontentloaded", timeout=40000)
-            page.wait_for_timeout(5000)
+            page.wait_for_timeout(6000)
 
-            # Intentar hacer clic en "List" para cambiar de mapa a lista
-            try:
-                list_btn = page.query_selector("button:has-text('List'), [data-label='List'], a:has-text('List')")
-                if list_btn:
-                    list_btn.click()
-                    page.wait_for_timeout(3000)
-                    print("[Realtor.ca] Cambiado a vista lista")
-            except Exception:
-                pass
+            print(f"[Realtor.ca] Datos de API capturados: {len(captured_data)} propiedades")
 
-            # Realtor.ca usa divs con clase cardCon para cada propiedad
-            items = page.query_selector_all(
-                "div.cardCon, div[class*='cardCon'], "
-                "div[class*='listing-card'], div[class*='propertyCard']"
-            )
-            print(f"[Realtor.ca] Elementos encontrados en pagina: {len(items)}")
+            # Si la API funcionó, usar esos datos
+            if captured_data:
+                for prop in captured_data:
+                    try:
+                        mls = prop.get("MlsNumber", "")
+                        address = prop.get("Property", {}).get("Address", {})
+                        full_address = address.get("AddressText", "Toronto, ON")
+                        price_raw = prop.get("Property", {}).get("Price", "Precio no indicado")
+                        beds = prop.get("Building", {}).get("Bedrooms", "2")
+                        baths = prop.get("Building", {}).get("BathroomTotal", "2")
+                        photo = prop.get("Property", {}).get("Photo", [{}])
+                        image_url = photo[0].get("HighResPath", "") if photo else ""
+                        listing_url = f"https://www.realtor.ca{prop.get('RelativeDetailsURL', '')}"
 
-            for item in items:
-                try:
-                    # Link y titulo
-                    link_el = item.query_selector("a[href*='/real-estate/'], a[href*='realtor.ca']")
-                    listing_url = ""
-                    if link_el:
-                        href = link_el.get_attribute("href") or ""
-                        listing_url = f"https://www.realtor.ca{href}" if href.startswith("/") else href
-
-                    title_el = item.query_selector("[class*='address'], [class*='title'], span[title]")
-                    title = title_el.inner_text().strip() if title_el else "Propiedad en Toronto"
-
-                    price_el = item.query_selector("[class*='price'], [class*='Price']")
-                    price = price_el.inner_text().strip() if price_el else "Precio no indicado"
-
-                    img_el = item.query_selector("img")
-                    image_url = img_el.get_attribute("src") or "" if img_el else ""
-
-                    if not listing_url:
+                        uid = hashlib.md5(f"realtorca-{mls}".encode()).hexdigest()
+                        listings.append({
+                            "id": uid,
+                            "title": full_address,
+                            "price": price_raw,
+                            "location": full_address,
+                            "distance_km": None,
+                            "image_url": image_url,
+                            "listing_url": listing_url,
+                            "source": "Realtor.ca",
+                            "bedrooms": str(beds),
+                            "bathrooms": str(baths),
+                        })
+                    except Exception:
                         continue
-
-                    uid = hashlib.md5(f"realtorca-{listing_url}".encode()).hexdigest()
-
+            else:
+                # Fallback: buscar links en la pagina
+                results = page.evaluate("""
+                    () => {
+                        const links = document.querySelectorAll('a[href*="/real-estate/"]');
+                        const seen = new Set();
+                        const out = [];
+                        links.forEach(link => {
+                            if (seen.has(link.href)) return;
+                            seen.add(link.href);
+                            const title = link.innerText.trim();
+                            if (title.length < 5) return;
+                            out.push({ href: link.href, title });
+                        });
+                        return out;
+                    }
+                """)
+                print(f"[Realtor.ca] Links encontrados como fallback: {len(results)}")
+                for r in results:
+                    uid = hashlib.md5(f"realtorca-{r['href']}".encode()).hexdigest()
                     listings.append({
                         "id": uid,
-                        "title": title,
-                        "price": price,
+                        "title": r["title"],
+                        "price": "Ver en Realtor.ca",
                         "location": "Toronto, ON",
                         "distance_km": None,
-                        "image_url": image_url,
-                        "listing_url": listing_url,
+                        "image_url": "",
+                        "listing_url": r["href"],
                         "source": "Realtor.ca",
                         "bedrooms": "2",
                         "bathrooms": "2",
                     })
-                except Exception:
-                    continue
 
             browser.close()
 

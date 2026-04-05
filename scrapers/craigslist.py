@@ -1,5 +1,6 @@
 """
 Scraper para Craigslist Toronto usando Playwright
+Busca por patron de URL
 """
 
 import hashlib
@@ -27,49 +28,62 @@ def scrape():
                 )
             )
             page.goto(URL, wait_until="domcontentloaded", timeout=30000)
-            page.wait_for_timeout(3000)
+            page.wait_for_timeout(4000)
 
-            # Craigslist nuevo diseno usa li.cl-search-result
-            items = page.query_selector_all("li.cl-search-result, li.result-row")
-            print(f"[Craigslist] Elementos encontrados en pagina: {len(items)}")
+            results = page.evaluate("""
+                () => {
+                    const listings = [];
+                    const seen = new Set();
 
-            for item in items:
-                try:
-                    # Titulo y link
-                    title_el = item.query_selector("a.posting-title, a[class*='title'], .title a")
-                    title = ""
-                    listing_url = ""
-                    if title_el:
-                        title = title_el.inner_text().strip()
-                        listing_url = title_el.get_attribute("href") or ""
+                    // Craigslist: links de anuncios terminan en numeros .html
+                    const links = document.querySelectorAll('a.posting-title, a[href*="/apa/d/"]');
 
-                    if not title or not listing_url:
-                        continue
+                    links.forEach(link => {
+                        const href = link.href;
+                        if (!href || seen.has(href)) return;
+                        seen.add(href);
 
-                    # Precio
-                    price_el = item.query_selector(".priceinfo, .price, [class*='price']")
-                    price = price_el.inner_text().strip() if price_el else "Precio no indicado"
+                        const title = link.innerText.trim() ||
+                                      link.querySelector('.label, .titlestring')?.innerText.trim() || '';
+                        if (!title || title.length < 5) return;
 
-                    # Imagen
-                    img_el = item.query_selector("img")
-                    image_url = img_el.get_attribute("src") or "" if img_el else ""
+                        let container = link.closest('li') || link.parentElement;
 
-                    uid = hashlib.md5(f"craigslist-{listing_url}".encode()).hexdigest()
+                        let price = 'Precio no indicado';
+                        if (container) {
+                            const priceEl = container.querySelector('.priceinfo, .price, [class*="price"]');
+                            if (priceEl) price = priceEl.innerText.trim();
+                        }
 
-                    listings.append({
-                        "id": uid,
-                        "title": title,
-                        "price": price,
-                        "location": "Toronto, ON",
-                        "distance_km": None,
-                        "image_url": image_url,
-                        "listing_url": listing_url,
-                        "source": "Craigslist",
-                        "bedrooms": "2",
-                        "bathrooms": "2",
-                    })
-                except Exception:
-                    continue
+                        let image_url = '';
+                        if (container) {
+                            const img = container.querySelector('img');
+                            if (img) image_url = img.src || '';
+                        }
+
+                        listings.push({ href, title, price, image_url });
+                    });
+
+                    return listings;
+                }
+            """)
+
+            print(f"[Craigslist] Elementos encontrados en pagina: {len(results)}")
+
+            for r in results:
+                uid = hashlib.md5(f"craigslist-{r['href']}".encode()).hexdigest()
+                listings.append({
+                    "id": uid,
+                    "title": r["title"],
+                    "price": r["price"],
+                    "location": "Toronto, ON",
+                    "distance_km": None,
+                    "image_url": r["image_url"],
+                    "listing_url": r["href"],
+                    "source": "Craigslist",
+                    "bedrooms": "2",
+                    "bathrooms": "2",
+                })
 
             browser.close()
 

@@ -1,11 +1,10 @@
 """
 Scraper para Kijiji.ca usando Playwright
+Busca por patron de URL en lugar de clases CSS
 """
 
 import hashlib
 from playwright.sync_api import sync_playwright
-from config import SCHOOL_LAT, SCHOOL_LON, MAX_DISTANCE_KM
-from math import radians, cos, sin, asin, sqrt
 
 URL = (
     "https://www.kijiji.ca/b-apartments-condos/city-of-toronto/"
@@ -14,14 +13,6 @@ URL = (
     "&ll=43.67720569999999%2C-79.40699769999999"
     "&radius=2.0&view=list"
 )
-
-def haversine(lat1, lon1, lat2, lon2):
-    R = 6371
-    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
-    dlat = lat2 - lat1
-    dlon = lon2 - lon1
-    a = sin(dlat/2)**2 + cos(lat1)*cos(lat2)*sin(dlon/2)**2
-    return R * 2 * asin(sqrt(a))
 
 def scrape():
     listings = []
@@ -37,63 +28,67 @@ def scrape():
                 )
             )
             page.goto(URL, wait_until="domcontentloaded", timeout=30000)
-            page.wait_for_timeout(4000)
+            page.wait_for_timeout(5000)
 
-            # Kijiji lista los anuncios en elementos <li> con atributo data-listing-id
-            # o en divs con clase que contiene "regular-ad"
-            items = page.query_selector_all(
-                "li[data-listing-id], "
-                "div[data-listing-id], "
-                "[class*='regular-ad'], "
-                "[class*='search-item']"
-            )
+            # Extraer datos via JavaScript directamente en la pagina
+            results = page.evaluate("""
+                () => {
+                    const listings = [];
+                    // Buscar todos los links que sean anuncios de Kijiji (/v- es el patron de listings)
+                    const links = document.querySelectorAll('a[href*="/v-"]');
+                    const seen = new Set();
 
-            print(f"[Kijiji] Elementos encontrados en pagina: {len(items)}")
+                    links.forEach(link => {
+                        const href = link.href;
+                        // Filtrar solo links de anuncios reales (tienen numeros al final)
+                        if (!href.match(/\\/v-[\\w-]+\\/\\d+/) ) return;
+                        if (seen.has(href)) return;
+                        seen.add(href);
 
-            for item in items:
-                try:
-                    listing_id = (
-                        item.get_attribute("data-listing-id") or
-                        item.get_attribute("id") or ""
-                    )
+                        // Subir en el DOM para encontrar el contenedor del anuncio
+                        let container = link.closest('li') || link.closest('article') || link.parentElement;
 
-                    # Titulo y link — Kijiji usa <a> con el titulo dentro
-                    title_el = item.query_selector("a[class*='title'], h3 a, [data-testid*='title'] a, a[href*='/v-']")
-                    title = title_el.inner_text().strip() if title_el else ""
-                    listing_url = ""
-                    if title_el:
-                        href = title_el.get_attribute("href") or ""
-                        listing_url = f"https://www.kijiji.ca{href}" if href.startswith("/") else href
+                        // Titulo
+                        const title = link.innerText.trim() || link.title || '';
+                        if (!title || title.length < 5) return;
 
-                    if not title or not listing_url:
-                        continue
+                        // Precio — buscar en el contenedor
+                        let price = 'Precio no indicado';
+                        if (container) {
+                            const priceEl = container.querySelector('[class*="price"], [data-testid*="price"]');
+                            if (priceEl) price = priceEl.innerText.trim();
+                        }
 
-                    # Precio
-                    price_el = item.query_selector("[class*='price'], [data-testid*='price']")
-                    price = price_el.inner_text().strip() if price_el else "Precio no indicado"
+                        // Imagen
+                        let image_url = '';
+                        if (container) {
+                            const img = container.querySelector('img');
+                            if (img) image_url = img.src || img.dataset.src || '';
+                        }
 
-                    # Imagen
-                    img_el = item.query_selector("img")
-                    image_url = ""
-                    if img_el:
-                        image_url = img_el.get_attribute("src") or img_el.get_attribute("data-src") or ""
+                        listings.push({ href, title, price, image_url });
+                    });
 
-                    uid = hashlib.md5(f"kijiji-{listing_id or listing_url}".encode()).hexdigest()
+                    return listings;
+                }
+            """)
 
-                    listings.append({
-                        "id": uid,
-                        "title": title,
-                        "price": price,
-                        "location": "Toronto, ON",
-                        "distance_km": None,
-                        "image_url": image_url,
-                        "listing_url": listing_url,
-                        "source": "Kijiji",
-                        "bedrooms": "2",
-                        "bathrooms": "2",
-                    })
-                except Exception:
-                    continue
+            print(f"[Kijiji] Elementos encontrados en pagina: {len(results)}")
+
+            for r in results:
+                uid = hashlib.md5(f"kijiji-{r['href']}".encode()).hexdigest()
+                listings.append({
+                    "id": uid,
+                    "title": r["title"],
+                    "price": r["price"],
+                    "location": "Toronto, ON",
+                    "distance_km": None,
+                    "image_url": r["image_url"],
+                    "listing_url": r["href"],
+                    "source": "Kijiji",
+                    "bedrooms": "2",
+                    "bathrooms": "2",
+                })
 
             browser.close()
 
