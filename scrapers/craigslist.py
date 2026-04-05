@@ -27,32 +27,45 @@ def scrape():
                     "Chrome/124.0.0.0 Safari/537.36"
                 )
             )
-            page.goto(URL, wait_until="domcontentloaded", timeout=30000)
+            page.goto(URL, wait_until="networkidle", timeout=40000)
             page.wait_for_timeout(4000)
+
+            # Cambiar a vista de lista si está en galería
+            try:
+                list_btn = page.query_selector('button[title="list"], [aria-label="list view"], .cl-list-view')
+                if list_btn:
+                    list_btn.click()
+                    page.wait_for_timeout(2000)
+            except Exception:
+                pass
 
             results = page.evaluate("""
                 () => {
                     const listings = [];
                     const seen = new Set();
 
-                    // Craigslist: links de anuncios terminan en numeros .html
-                    const links = document.querySelectorAll('a.posting-title, a[href*="/apa/d/"]');
+                    // Craigslist: todos los links de anuncios tienen /apa/d/ en la URL
+                    const allLinks = Array.from(document.querySelectorAll('a[href]'));
 
-                    links.forEach(link => {
-                        const href = link.href;
-                        if (!href || seen.has(href)) return;
+                    allLinks.forEach(link => {
+                        const href = link.href || '';
+                        if (!href.includes('craigslist.org') ) return;
+                        if (!href.includes('/apa/d/') && !href.match(/\\.html$/)) return;
+                        if (seen.has(href)) return;
                         seen.add(href);
 
-                        const title = link.innerText.trim() ||
-                                      link.querySelector('.label, .titlestring')?.innerText.trim() || '';
+                        const title = link.innerText.trim();
                         if (!title || title.length < 5) return;
 
-                        let container = link.closest('li') || link.parentElement;
+                        let container = link.closest('li') ||
+                                       link.closest('article') ||
+                                       link.parentElement?.parentElement;
 
                         let price = 'Precio no indicado';
                         if (container) {
-                            const priceEl = container.querySelector('.priceinfo, .price, [class*="price"]');
-                            if (priceEl) price = priceEl.innerText.trim();
+                            const allText = container.innerText || '';
+                            const priceMatch = allText.match(/\\$[\\d,]+/);
+                            if (priceMatch) price = priceMatch[0];
                         }
 
                         let image_url = '';

@@ -27,36 +27,48 @@ def scrape():
                     "Chrome/124.0.0.0 Safari/537.36"
                 )
             )
-            page.goto(URL, wait_until="domcontentloaded", timeout=30000)
-            page.wait_for_timeout(5000)
+            page.goto(URL, wait_until="networkidle", timeout=40000)
+            page.wait_for_timeout(6000)
+
+            # Esperar a que carguen los anuncios
+            try:
+                page.wait_for_selector('a[href*="/v-"]', timeout=10000)
+            except Exception:
+                pass
 
             # Extraer datos via JavaScript directamente en la pagina
             results = page.evaluate("""
                 () => {
                     const listings = [];
-                    // Buscar todos los links que sean anuncios de Kijiji (/v- es el patron de listings)
-                    const links = document.querySelectorAll('a[href*="/v-"]');
                     const seen = new Set();
 
-                    links.forEach(link => {
-                        const href = link.href;
-                        // Filtrar solo links de anuncios reales (tienen numeros al final)
-                        if (!href.match(/\\/v-[\\w-]+\\/\\d+/) ) return;
+                    // Kijiji: todos los links de anuncios contienen /v- y terminan en numeros
+                    const allLinks = Array.from(document.querySelectorAll('a[href]'));
+
+                    allLinks.forEach(link => {
+                        const href = link.href || '';
+                        // Patron: kijiji.ca/v-algo/ciudad/titulo/NUMERO
+                        if (!href.includes('kijiji.ca/v-')) return;
+                        if (!href.match(/\\/\\d{10,}/)) return; // ID numerico largo al final
                         if (seen.has(href)) return;
                         seen.add(href);
 
-                        // Subir en el DOM para encontrar el contenedor del anuncio
-                        let container = link.closest('li') || link.closest('article') || link.parentElement;
-
-                        // Titulo
-                        const title = link.innerText.trim() || link.title || '';
+                        const title = link.innerText.trim();
                         if (!title || title.length < 5) return;
 
-                        // Precio — buscar en el contenedor
+                        // Contenedor del anuncio
+                        let container = link.closest('li') ||
+                                       link.closest('article') ||
+                                       link.closest('[data-listing-id]') ||
+                                       link.parentElement?.parentElement;
+
+                        // Precio
                         let price = 'Precio no indicado';
                         if (container) {
-                            const priceEl = container.querySelector('[class*="price"], [data-testid*="price"]');
-                            if (priceEl) price = priceEl.innerText.trim();
+                            // Buscar texto con $ en el contenedor
+                            const allText = container.innerText || '';
+                            const priceMatch = allText.match(/\\$[\\d,]+(\\.\\d{2})?/);
+                            if (priceMatch) price = priceMatch[0];
                         }
 
                         // Imagen
