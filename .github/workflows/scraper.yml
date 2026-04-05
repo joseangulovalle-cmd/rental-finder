@@ -32,6 +32,12 @@ jobs:
       - name: Diagnostico de sitios
         run: python debug.py
 
+      - name: Subir fotos de diagnostico
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/
+
       - name: Correr el buscador
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
