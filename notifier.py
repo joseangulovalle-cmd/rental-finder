@@ -47,6 +47,8 @@ def send_notification(new_listings):
         </div>
         """
 
+    web_url = "https://joseangulovalle-cmd.github.io/rental-finder"
+
     body_html = f"""
     <html><body style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;">
         <h2 style="color:#1e3a5f;">🏠 Nuevas propiedades encontradas</h2>
@@ -54,6 +56,13 @@ def send_notification(new_listings):
             Encontramos <strong>{len(new_listings)} propiedad(es) nueva(s)</strong>
             cerca de <strong>{SCHOOL_NAME}</strong>.
         </p>
+        <div style="text-align:center;margin:20px 0;">
+            <a href="{web_url}"
+               style="background:#2563eb;color:white;padding:14px 32px;border-radius:8px;
+                      text-decoration:none;font-size:16px;font-weight:bold;display:inline-block;">
+                Ver todas las propiedades →
+            </a>
+        </div>
         {cards_html}
         <hr style="margin-top:30px;" />
         <p style="color:#aaa;font-size:12px;">
