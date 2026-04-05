@@ -1,123 +1,176 @@
 """
 Generador de pagina web HTML
-Crea index.html con todas las propiedades encontradas
+Crea index.html con mapa interactivo, filtros y todas las propiedades
 """
 
 from datetime import datetime
 from config import SCHOOL_NAME, OUTPUT_HTML
 
+SCHOOL_LAT  = 43.6802
+SCHOOL_LON  = -79.3959
+DUPONT_LAT  = 43.6747
+DUPONT_LON  = -79.4064
+
 
 def generate(listings):
-    """Genera la pagina web con todas las propiedades."""
-
     updated_at = datetime.utcnow().strftime("%B %d, %Y – %H:%M UTC")
     total = len(listings)
 
-    if not listings:
-        cards_html = """
-        <div style="text-align:center;padding:60px 20px;color:#888;">
-            <div style="font-size:60px;">🔍</div>
-            <h3>Aun no hay propiedades</h3>
-            <p>El buscador revisara los sitios pronto y actualizara esta pagina.</p>
-        </div>
-        """
-    else:
-        cards_html = ""
-        for lst in listings:
-            # Distancia al colegio
-            if lst.get("walk_minutes_school"):
-                distance_text = f"🏫 {lst['walk_minutes_school']} min caminando al colegio ({lst['distance_km']} km)"
-            elif lst.get("distance_km"):
-                distance_text = f"🏫 {lst['distance_km']} km del colegio"
-            else:
-                distance_text = "📍 Zona cercana al colegio"
+    # Preparar datos JSON para el mapa y filtros
+    import json
+    listings_json = json.dumps([{
+        "id":            lst["id"],
+        "title":         lst["title"],
+        "price":         lst["price"],
+        "location":      lst["location"],
+        "source":        lst["source"],
+        "bedrooms":      lst.get("bedrooms", "2"),
+        "bathrooms":     lst.get("bathrooms", "2"),
+        "image_url":     lst.get("image_url", ""),
+        "listing_url":   lst["listing_url"],
+        "distance_km":   lst.get("distance_km"),
+        "walk_school":   lst.get("walk_minutes_school"),
+        "distance_sub":  lst.get("distance_subway_km"),
+        "walk_subway":   lst.get("walk_minutes_subway"),
+        "lat":           lst.get("lat"),
+        "lon":           lst.get("lon"),
+    } for lst in listings], ensure_ascii=False)
 
-            # Distancia al subway
-            if lst.get("walk_minutes_subway"):
-                subway_text = f"🚇 {lst['walk_minutes_subway']} min a Dupont Station ({lst['distance_subway_km']} km)"
-            else:
-                subway_text = ""
-            image_html = (
-                f'<img src="{lst["image_url"]}" alt="Foto propiedad" '
-                f'onerror="this.style.display=\'none\'" />'
-                if lst.get("image_url") else
-                '<div class="no-image">📷 Sin foto</div>'
-            )
-            source_color = {
-                "Kijiji": "#e05b29",
-                "Craigslist": "#6c3483",
-                "Rentals.ca": "#0e7c5b",
-                "Realtor.ca": "#d4171e",
-            }.get(lst["source"], "#2563eb")
-
-            cards_html += f"""
-            <div class="card">
-                <div class="card-image">
-                    {image_html}
-                    <span class="badge" style="background:{source_color};">{lst['source']}</span>
-                </div>
-                <div class="card-body">
-                    <div class="price">{lst['price']}</div>
-                    <h3 class="title">{lst['title']}</h3>
-                    <div class="meta">
-                        <span>🛏 {lst.get('bedrooms','2')} cuartos</span>
-                        <span>🚿 {lst.get('bathrooms','—')} baños</span>
-                    </div>
-                    <div class="location">📍 {lst['location']}</div>
-                    <div class="distance">{distance_text}</div>
-                    {f'<div class="subway">{subway_text}</div>' if subway_text else ""}
-                    <a href="{lst['listing_url']}" target="_blank" class="btn">
-                        Ver anuncio →
-                    </a>
-                </div>
-            </div>
-            """
+    source_colors = {
+        "Kijiji":     "#e05b29",
+        "Craigslist": "#6c3483",
+        "Realtor.ca": "#d4171e",
+    }
 
     html = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Arriendos cerca de Waldorf Academy — Toronto</title>
+
+    <!-- Leaflet (mapa gratis con OpenStreetMap) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <style>
         * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #f0f4f8;
             color: #1a202c;
         }}
 
+        /* HEADER */
         header {{
             background: linear-gradient(135deg, #1e3a5f, #2563eb);
             color: white;
-            padding: 24px 20px;
+            padding: 20px;
             text-align: center;
         }}
-        header h1 {{ font-size: 1.6rem; margin-bottom: 6px; }}
-        header p  {{ opacity: 0.85; font-size: 0.95rem; }}
+        header h1 {{ font-size: 1.5rem; margin-bottom: 4px; }}
+        header p  {{ opacity: 0.85; font-size: 0.9rem; }}
 
+        /* STATS BAR */
         .stats {{
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
-            padding: 16px 20px;
+            padding: 12px 20px;
             background: white;
             border-bottom: 1px solid #e2e8f0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #555;
             flex-wrap: wrap;
         }}
         .stats strong {{ color: #2563eb; font-size: 1.1rem; }}
 
-        .grid {{
+        /* FILTROS */
+        .filters {{
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 14px 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }}
+        .filter-group {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #555;
+        }}
+        .filter-group label {{ font-weight: 600; white-space: nowrap; }}
+        .filter-group input,
+        .filter-group select {{
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 5px 8px;
+            font-size: 0.85rem;
+            outline: none;
+            width: 100px;
+        }}
+        .filter-group input:focus,
+        .filter-group select:focus {{
+            border-color: #2563eb;
+        }}
+        .btn-reset {{
+            background: #f0f4f8;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 5px 14px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: #555;
+        }}
+        .btn-reset:hover {{ background: #e2e8f0; }}
+
+        /* VISTA TOGGLE */
+        .view-toggle {{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: #f0f4f8;
+        }}
+        .view-btn {{
+            padding: 8px 20px;
+            border-radius: 8px;
+            border: 2px solid #2563eb;
+            background: white;
+            color: #2563eb;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }}
+        .view-btn.active {{
+            background: #2563eb;
+            color: white;
+        }}
+
+        /* MAPA */
+        #map {{
+            width: 100%;
+            height: 500px;
+            display: none;
+        }}
+        #map.visible {{ display: block; }}
+
+        /* GRID DE TARJETAS */
+        #grid {{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             max-width: 1200px;
-            margin: 24px auto;
+            margin: 20px auto;
             padding: 0 16px;
         }}
+        #grid.hidden {{ display: none; }}
 
         .card {{
             background: white;
@@ -125,14 +178,23 @@ def generate(listings):
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
         }}
         .card:hover {{
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }}
-
-        .card-image {{ position: relative; height: 200px; background: #e2e8f0; overflow: hidden; }}
-        .card-image img {{ width: 100%; height: 100%; object-fit: cover; }}
+        .card-image {{
+            position: relative;
+            height: 190px;
+            background: #e2e8f0;
+            overflow: hidden;
+        }}
+        .card-image img {{
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }}
         .no-image {{
             height: 100%;
             display: flex;
@@ -141,39 +203,56 @@ def generate(listings):
             font-size: 2rem;
             color: #a0aec0;
         }}
-
         .badge {{
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 10px; left: 10px;
             color: white;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 11px;
+            font-weight: 700;
         }}
-
-        .card-body {{ padding: 16px; }}
-        .price {{ font-size: 1.5rem; font-weight: 700; color: #16a34a; margin-bottom: 6px; }}
-        .title {{ font-size: 0.95rem; color: #2d3748; margin-bottom: 10px; line-height: 1.4; }}
-        .meta {{ display: flex; gap: 12px; font-size: 0.85rem; color: #718096; margin-bottom: 8px; }}
-        .location {{ font-size: 0.85rem; color: #718096; margin-bottom: 4px; }}
-        .distance {{ font-size: 0.85rem; color: #2563eb; font-weight: 500; margin-bottom: 4px; }}
-        .subway   {{ font-size: 0.85rem; color: #7c3aed; font-weight: 500; margin-bottom: 14px; }}
-
-        .btn {{
+        .card-body {{
+            padding: 14px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }}
+        .price {{ font-size: 1.4rem; font-weight: 700; color: #16a34a; margin-bottom: 4px; }}
+        .title {{ font-size: 0.88rem; color: #2d3748; margin-bottom: 8px; line-height: 1.4; flex: 1; }}
+        .meta  {{ display: flex; gap: 10px; font-size: 0.8rem; color: #718096; margin-bottom: 6px; }}
+        .dist  {{ font-size: 0.82rem; color: #2563eb; font-weight: 600; margin-bottom: 2px; }}
+        .sub   {{ font-size: 0.82rem; color: #7c3aed; font-weight: 600; margin-bottom: 10px; }}
+        .loc   {{ font-size: 0.8rem; color: #718096; margin-bottom: 10px; }}
+        .btn-card {{
             display: block;
             text-align: center;
             background: #2563eb;
             color: white;
-            padding: 10px;
+            padding: 9px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
-            transition: background 0.2s;
         }}
-        .btn:hover {{ background: #1d4ed8; }}
+        .btn-card:hover {{ background: #1d4ed8; }}
+
+        /* CONTADOR RESULTADOS */
+        .result-count {{
+            text-align: center;
+            padding: 8px;
+            font-size: 0.85rem;
+            color: #888;
+        }}
+
+        /* SIN RESULTADOS */
+        .empty {{
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
+            grid-column: 1/-1;
+        }}
+        .empty div {{ font-size: 3rem; margin-bottom: 10px; }}
 
         footer {{
             text-align: center;
@@ -183,8 +262,23 @@ def generate(listings):
         }}
 
         @media (max-width: 640px) {{
-            header h1 {{ font-size: 1.2rem; }}
-            .grid {{ grid-template-columns: 1fr; }}
+            header h1 {{ font-size: 1.1rem; }}
+            #grid {{ grid-template-columns: 1fr; }}
+            .filters {{ gap: 8px; }}
+        }}
+
+        /* POPUP DEL MAPA */
+        .map-popup {{ font-family: Arial, sans-serif; min-width: 200px; }}
+        .map-popup .mp-price {{ font-size: 1.1rem; font-weight: 700; color: #16a34a; }}
+        .map-popup .mp-title {{ font-size: 0.85rem; color: #333; margin: 4px 0; }}
+        .map-popup .mp-dist  {{ font-size: 0.8rem; color: #2563eb; }}
+        .map-popup .mp-sub   {{ font-size: 0.8rem; color: #7c3aed; }}
+        .map-popup .mp-btn   {{
+            display: block; margin-top: 8px;
+            background: #2563eb; color: white;
+            padding: 6px 12px; border-radius: 6px;
+            text-decoration: none; font-size: 0.82rem;
+            text-align: center;
         }}
     </style>
 </head>
@@ -192,22 +286,289 @@ def generate(listings):
 
 <header>
     <h1>🏠 Arriendos cerca de Waldorf Academy</h1>
-    <p>250 Madison Ave, Toronto · 2 cuartos · Radio 1.2 km (~15 min a pie)</p>
+    <p>250 Madison Ave, Toronto · 2 cuartos · Radio ~2 km</p>
 </header>
 
 <div class="stats">
-    <span><strong>{total}</strong> propiedades encontradas</span>
+    <span><strong id="count">{total}</strong> propiedades encontradas</span>
     <span>Fuentes: Kijiji · Craigslist · Realtor.ca</span>
     <span>Actualizado: {updated_at}</span>
 </div>
 
-<div class="grid">
-    {cards_html}
+<!-- FILTROS -->
+<div class="filters">
+    <div class="filter-group">
+        <label>💰 Precio:</label>
+        <input type="number" id="minPrice" placeholder="Min $" oninput="applyFilters()"/>
+        <span>—</span>
+        <input type="number" id="maxPrice" placeholder="Max $" oninput="applyFilters()"/>
+    </div>
+    <div class="filter-group">
+        <label>📋 Fuente:</label>
+        <select id="source" onchange="applyFilters()">
+            <option value="">Todas</option>
+            <option value="Kijiji">Kijiji</option>
+            <option value="Craigslist">Craigslist</option>
+            <option value="Realtor.ca">Realtor.ca</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>🏫 Dist. colegio:</label>
+        <select id="distSchool" onchange="applyFilters()">
+            <option value="">Cualquiera</option>
+            <option value="10">≤ 10 min</option>
+            <option value="15">≤ 15 min</option>
+            <option value="20">≤ 20 min</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>🚇 Dist. subway:</label>
+        <select id="distSubway" onchange="applyFilters()">
+            <option value="">Cualquiera</option>
+            <option value="5">≤ 5 min</option>
+            <option value="10">≤ 10 min</option>
+            <option value="15">≤ 15 min</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>↕ Ordenar:</label>
+        <select id="sortBy" onchange="applyFilters()">
+            <option value="">Más reciente</option>
+            <option value="price_asc">Precio: menor a mayor</option>
+            <option value="price_desc">Precio: mayor a menor</option>
+            <option value="dist_asc">Más cercano al colegio</option>
+            <option value="dist_sub">Más cercano al subway</option>
+        </select>
+    </div>
+    <button class="btn-reset" onclick="resetFilters()">↺ Limpiar</button>
 </div>
+
+<!-- TOGGLE VISTA -->
+<div class="view-toggle">
+    <button class="view-btn active" id="btnList" onclick="showView('list')">📋 Lista</button>
+    <button class="view-btn" id="btnMap" onclick="showView('map')">🗺 Mapa</button>
+</div>
+
+<div class="result-count" id="resultCount"></div>
+
+<!-- MAPA -->
+<div id="map"></div>
+
+<!-- GRID -->
+<div id="grid"></div>
 
 <footer>
     Buscador privado para la familia Angulo · Haz click en cualquier propiedad para ver el anuncio original
 </footer>
+
+<script>
+// ---- DATOS ----
+const ALL_LISTINGS = {listings_json};
+
+const SOURCE_COLORS = {json.dumps(source_colors)};
+
+// ---- ESTADO ----
+let currentView = 'list';
+let map = null;
+let markers = [];
+
+// ---- INICIALIZAR MAPA ----
+function initMap() {{
+    if (map) return;
+    map = L.map('map').setView([{SCHOOL_LAT}, {SCHOOL_LON}], 15);
+    L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+        attribution: '© OpenStreetMap contributors'
+    }}).addTo(map);
+
+    // Pin del colegio
+    const schoolIcon = L.divIcon({{
+        html: '<div style="background:#1e3a5f;color:white;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:bold;white-space:nowrap;">🏫 Waldorf Academy</div>',
+        className: '', iconAnchor: [60, 10]
+    }});
+    L.marker([{SCHOOL_LAT}, {SCHOOL_LON}], {{icon: schoolIcon}}).addTo(map);
+
+    // Pin del subway
+    const subwayIcon = L.divIcon({{
+        html: '<div style="background:#7c3aed;color:white;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:bold;white-space:nowrap;">🚇 Dupont Station</div>',
+        className: '', iconAnchor: [60, 10]
+    }});
+    L.marker([{DUPONT_LAT}, {DUPONT_LON}], {{icon: subwayIcon}}).addTo(map);
+}}
+
+// ---- FILTRAR Y ORDENAR ----
+function getFilteredListings() {{
+    let result = [...ALL_LISTINGS];
+
+    const minPrice   = parseFloat(document.getElementById('minPrice').value) || 0;
+    const maxPrice   = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+    const source     = document.getElementById('source').value;
+    const distSchool = parseInt(document.getElementById('distSchool').value) || 0;
+    const distSubway = parseInt(document.getElementById('distSubway').value) || 0;
+    const sortBy     = document.getElementById('sortBy').value;
+
+    result = result.filter(lst => {{
+        // Precio
+        const priceNum = parseFloat((lst.price || '').replace(/[^0-9.]/g, '')) || 0;
+        if (priceNum && priceNum < minPrice) return false;
+        if (priceNum && priceNum > maxPrice) return false;
+
+        // Fuente
+        if (source && lst.source !== source) return false;
+
+        // Distancia al colegio
+        if (distSchool && lst.walk_school && lst.walk_school > distSchool) return false;
+
+        // Distancia al subway
+        if (distSubway && lst.walk_subway && lst.walk_subway > distSubway) return false;
+
+        return true;
+    }});
+
+    // Ordenar
+    if (sortBy === 'price_asc') {{
+        result.sort((a, b) => {{
+            const pa = parseFloat((a.price||'').replace(/[^0-9.]/g,'')) || 999999;
+            const pb = parseFloat((b.price||'').replace(/[^0-9.]/g,'')) || 999999;
+            return pa - pb;
+        }});
+    }} else if (sortBy === 'price_desc') {{
+        result.sort((a, b) => {{
+            const pa = parseFloat((a.price||'').replace(/[^0-9.]/g,'')) || 0;
+            const pb = parseFloat((b.price||'').replace(/[^0-9.]/g,'')) || 0;
+            return pb - pa;
+        }});
+    }} else if (sortBy === 'dist_asc') {{
+        result.sort((a, b) => (a.distance_km || 999) - (b.distance_km || 999));
+    }} else if (sortBy === 'dist_sub') {{
+        result.sort((a, b) => (a.distance_sub || 999) - (b.distance_sub || 999));
+    }}
+
+    return result;
+}}
+
+// ---- RENDERIZAR TARJETAS ----
+function renderCards(listings) {{
+    const grid = document.getElementById('grid');
+
+    if (listings.length === 0) {{
+        grid.innerHTML = '<div class="empty"><div>🔍</div><h3>Sin resultados</h3><p>Prueba cambiando los filtros</p></div>';
+        return;
+    }}
+
+    grid.innerHTML = listings.map(lst => {{
+        const color = SOURCE_COLORS[lst.source] || '#2563eb';
+        const img = lst.image_url
+            ? `<img src="${{lst.image_url}}" alt="foto" onerror="this.parentElement.innerHTML='<div class=no-image>📷</div>'">`
+            : '<div class="no-image">📷</div>';
+        const distSchool = lst.walk_school
+            ? `<div class="dist">🏫 ${{lst.walk_school}} min al colegio (${{lst.distance_km}} km)</div>`
+            : '';
+        const distSubway = lst.walk_subway
+            ? `<div class="sub">🚇 ${{lst.walk_subway}} min a Dupont Station (${{lst.distance_sub}} km)</div>`
+            : '';
+
+        return `
+        <div class="card">
+            <div class="card-image">
+                ${{img}}
+                <span class="badge" style="background:${{color}}">${{lst.source}}</span>
+            </div>
+            <div class="card-body">
+                <div class="price">${{lst.price}}</div>
+                <div class="title">${{lst.title}}</div>
+                <div class="meta">
+                    <span>🛏 ${{lst.bedrooms}} cuartos</span>
+                    <span>🚿 ${{lst.bathrooms}} baños</span>
+                </div>
+                ${{distSchool}}
+                ${{distSubway}}
+                <div class="loc">📍 ${{lst.location}}</div>
+                <a href="${{lst.listing_url}}" target="_blank" class="btn-card">Ver anuncio →</a>
+            </div>
+        </div>`;
+    }}).join('');
+}}
+
+// ---- RENDERIZAR MAPA ----
+function renderMap(listings) {{
+    initMap();
+
+    // Limpiar markers anteriores
+    markers.forEach(m => map.removeLayer(m));
+    markers = [];
+
+    listings.forEach(lst => {{
+        if (!lst.lat || !lst.lon) return;
+
+        const color = SOURCE_COLORS[lst.source] || '#2563eb';
+        const icon = L.divIcon({{
+            html: `<div style="background:${{color}};color:white;padding:3px 7px;border-radius:4px;font-size:11px;font-weight:bold;white-space:nowrap;box-shadow:0 2px 4px rgba(0,0,0,0.3)">${{lst.price}}</div>`,
+            className: '',
+            iconAnchor: [20, 10]
+        }});
+
+        const distSchool = lst.walk_school ? `<div class="mp-dist">🏫 ${{lst.walk_school}} min al colegio</div>` : '';
+        const distSubway = lst.walk_subway ? `<div class="mp-sub">🚇 ${{lst.walk_subway}} min al subway</div>` : '';
+
+        const popup = `
+            <div class="map-popup">
+                <span style="background:${{color}};color:white;padding:2px 8px;border-radius:10px;font-size:10px">${{lst.source}}</span>
+                <div class="mp-price">${{lst.price}}</div>
+                <div class="mp-title">${{lst.title}}</div>
+                ${{distSchool}}
+                ${{distSubway}}
+                <a href="${{lst.listing_url}}" target="_blank" class="mp-btn">Ver anuncio →</a>
+            </div>`;
+
+        const marker = L.marker([lst.lat, lst.lon], {{icon}})
+            .bindPopup(popup)
+            .addTo(map);
+        markers.push(marker);
+    }});
+
+    setTimeout(() => map.invalidateSize(), 100);
+}}
+
+// ---- APLICAR FILTROS ----
+function applyFilters() {{
+    const filtered = getFilteredListings();
+    document.getElementById('count').textContent = filtered.length;
+    document.getElementById('resultCount').textContent =
+        filtered.length < ALL_LISTINGS.length
+            ? `Mostrando ${{filtered.length}} de ${{ALL_LISTINGS.length}} propiedades`
+            : '';
+
+    if (currentView === 'list') {{
+        renderCards(filtered);
+    }} else {{
+        renderMap(filtered);
+    }}
+}}
+
+// ---- CAMBIAR VISTA ----
+function showView(view) {{
+    currentView = view;
+    document.getElementById('btnList').classList.toggle('active', view === 'list');
+    document.getElementById('btnMap').classList.toggle('active', view === 'map');
+    document.getElementById('grid').classList.toggle('hidden', view === 'map');
+    document.getElementById('map').classList.toggle('visible', view === 'map');
+    applyFilters();
+}}
+
+// ---- RESET FILTROS ----
+function resetFilters() {{
+    document.getElementById('minPrice').value = '';
+    document.getElementById('maxPrice').value = '';
+    document.getElementById('source').value = '';
+    document.getElementById('distSchool').value = '';
+    document.getElementById('distSubway').value = '';
+    document.getElementById('sortBy').value = '';
+    applyFilters();
+}}
+
+// ---- INICIAR ----
+applyFilters();
+</script>
 
 </body>
 </html>
