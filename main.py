@@ -12,7 +12,7 @@ import json
 import os
 from datetime import datetime
 
-from scrapers import kijiji, craigslist
+from scrapers import kijiji, craigslist, rentalsca
 from notifier import send_notification
 from generator import generate
 from config import SEEN_FILE
@@ -42,6 +42,7 @@ def main():
     all_listings = []
     all_listings += kijiji.scrape()
     all_listings += craigslist.scrape()
+    all_listings += rentalsca.scrape()
 
     print(f"\n Total recolectados: {len(all_listings)} anuncios")
 

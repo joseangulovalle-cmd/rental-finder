@@ -34,6 +34,7 @@ def generate(listings):
             source_color = {
                 "Kijiji": "#e05b29",
                 "Craigslist": "#6c3483",
+                "Rentals.ca": "#0e7c5b",
             }.get(lst["source"], "#2563eb")
 
             cards_html += f"""
@@ -181,7 +182,7 @@ def generate(listings):
 
 <div class="stats">
     <span><strong>{total}</strong> propiedades encontradas</span>
-    <span>Fuentes: Kijiji · Craigslist</span>
+    <span>Fuentes: Kijiji · Craigslist · Rentals.ca</span>
     <span>Actualizado: {updated_at}</span>
 </div>
 

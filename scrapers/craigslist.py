@@ -1,29 +1,23 @@
 """
-Scraper para Craigslist Toronto
-Busca arriendos de 2 cuartos cerca de 250 Madison Ave, Toronto
+Scraper para Craigslist Toronto usando RSS feed
 """
 
 import requests
-from bs4 import BeautifulSoup
 import hashlib
+import xml.etree.ElementTree as ET
 from math import radians, cos, sin, asin, sqrt
 from config import SCHOOL_LAT, SCHOOL_LON, MAX_DISTANCE_KM
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "en-CA,en;q=0.9",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept": "application/rss+xml, application/xml, text/xml, */*",
 }
 
-# URL de Craigslist: apartamentos, 2 cuartos, radio 0.75 millas (~1.2 km) de Madison Ave
-CRAIGSLIST_URL = (
-    "https://toronto.craigslist.org/search/apa"
-    "?min_bedrooms=2&max_bedrooms=2"
+# RSS de Craigslist: apartamentos, 2 cuartos, Toronto
+RSS_URL = (
+    "https://toronto.craigslist.org/search/apa?format=rss"
+    "&min_bedrooms=2&max_bedrooms=2"
     "&lat=43.6802&lon=-79.3959&search_distance=0.75"
-    "&availabilityMode=0&sale_date=all+dates"
 )
 
 
@@ -39,46 +33,30 @@ def haversine(lat1, lon1, lat2, lon2):
 def scrape():
     listings = []
     try:
-        response = requests.get(CRAIGSLIST_URL, headers=HEADERS, timeout=15)
+        response = requests.get(RSS_URL, headers=HEADERS, timeout=15)
         response.raise_for_status()
-        soup = BeautifulSoup(response.text, "html.parser")
 
-        # Craigslist usa <li class="cl-search-result"> o <li class="result-row">
-        items = soup.select("li.cl-search-result, li.result-row")
+        # Craigslist RSS usa namespaces propios
+        content = response.content.replace(b'xmlns="', b'xmlns:unused="')
+        root = ET.fromstring(content)
+        items = root.findall(".//item")
 
         for item in items:
             try:
-                # ID unico del anuncio
-                listing_id = item.get("data-pid", "") or item.get("id", "")
+                title = item.findtext("title", "Sin titulo").strip()
+                listing_url = item.findtext("link", "").strip()
 
-                # Titulo y link
-                title_el = item.select_one("a.posting-title, a.result-title")
-                title = "Sin titulo"
-                listing_url = ""
-                if title_el:
-                    title = title_el.get_text(strip=True)
-                    listing_url = title_el.get("href", "")
-                    if listing_url and not listing_url.startswith("http"):
-                        listing_url = f"https://toronto.craigslist.org{listing_url}"
+                # Precio desde el titulo
+                price = "Precio no indicado"
+                if "$" in title:
+                    import re
+                    match = re.search(r'\$[\d,]+', title)
+                    if match:
+                        price = match.group(0)
 
-                # Precio
-                price_el = item.select_one(".priceinfo, .result-price")
-                price = price_el.get_text(strip=True) if price_el else "Precio no indicado"
-
-                # Ubicacion
-                loc_el = item.select_one(".meta, .result-hood, .maptag")
-                location = loc_el.get_text(strip=True) if loc_el else "Toronto, ON"
-                location = location.strip("() ")
-
-                # Imagen (Craigslist usa swipe gallery)
-                img_el = item.select_one("img")
-                image_url = ""
-                if img_el:
-                    image_url = img_el.get("src") or ""
-
-                # Coordenadas
-                lat = item.get("data-latitude")
-                lon = item.get("data-longitude")
+                # Coordenadas desde geo
+                lat = item.findtext("{http://www.w3.org/2003/01/geo/wgs84_pos#}lat")
+                lon = item.findtext("{http://www.w3.org/2003/01/geo/wgs84_pos#}long")
 
                 distance_km = None
                 if lat and lon:
@@ -89,15 +67,15 @@ def scrape():
                     except Exception:
                         pass
 
-                uid = hashlib.md5(f"craigslist-{listing_id or listing_url}".encode()).hexdigest()
+                uid = hashlib.md5(f"craigslist-{listing_url}".encode()).hexdigest()
 
                 listings.append({
                     "id": uid,
                     "title": title,
                     "price": price,
-                    "location": location if location else "Toronto, ON",
+                    "location": "Toronto, ON",
                     "distance_km": distance_km,
-                    "image_url": image_url,
+                    "image_url": "",
                     "listing_url": listing_url,
                     "source": "Craigslist",
                     "bedrooms": "2",
@@ -107,7 +85,7 @@ def scrape():
                 continue
 
     except Exception as e:
-        print(f"[Craigslist] Error al scrapear: {e}")
+        print(f"[Craigslist] Error: {e}")
 
     print(f"[Craigslist] {len(listings)} anuncios encontrados")
     return listings

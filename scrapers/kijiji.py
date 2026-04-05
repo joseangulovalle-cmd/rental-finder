@@ -1,33 +1,27 @@
 """
-Scraper para Kijiji.ca
-Busca arriendos de 2 cuartos cerca de 250 Madison Ave, Toronto
+Scraper para Kijiji.ca usando RSS feed
+Mucho mas estable que leer el HTML de la pagina
 """
 
 import requests
-from bs4 import BeautifulSoup
 import hashlib
+import xml.etree.ElementTree as ET
 from math import radians, cos, sin, asin, sqrt
 from config import SCHOOL_LAT, SCHOOL_LON, MAX_DISTANCE_KM
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "en-CA,en;q=0.9",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept": "application/rss+xml, application/xml, text/xml, */*",
 }
 
-# URL de Kijiji: apartamentos en renta, 2 cuartos, Toronto
-KIJIJI_URL = (
-    "https://www.kijiji.ca/b-apartments-condos/toronto/"
+# RSS de Kijiji: apartamentos en renta, 2 cuartos, Toronto
+RSS_URL = (
+    "https://www.kijiji.ca/rss-srp-apartments-condos/toronto/"
     "2-bedroom/__2-bedrooms/k0c37l1700273a29276001"
 )
 
 
 def haversine(lat1, lon1, lat2, lon2):
-    """Calcula distancia en km entre dos puntos GPS."""
     R = 6371
     lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
     dlat = lat2 - lat1
@@ -39,62 +33,55 @@ def haversine(lat1, lon1, lat2, lon2):
 def scrape():
     listings = []
     try:
-        response = requests.get(KIJIJI_URL, headers=HEADERS, timeout=15)
+        response = requests.get(RSS_URL, headers=HEADERS, timeout=15)
         response.raise_for_status()
-        soup = BeautifulSoup(response.text, "html.parser")
 
-        # Kijiji envuelve cada anuncio en un <li> con data-listing-id
-        items = soup.select("li[data-listing-id], div[data-listing-id]")
+        root = ET.fromstring(response.content)
+        ns = {"media": "http://search.yahoo.com/mrss/"}
+        items = root.findall(".//item")
 
         for item in items:
             try:
-                listing_id = item.get("data-listing-id", "")
+                title = item.findtext("title", "Sin titulo").strip()
+                listing_url = item.findtext("link", "").strip()
+                description = item.findtext("description", "")
 
-                # Titulo
-                title_el = item.select_one("[class*='title']")
-                title = title_el.get_text(strip=True) if title_el else "Sin titulo"
-
-                # Precio
-                price_el = item.select_one("[class*='price']")
-                price = price_el.get_text(strip=True) if price_el else "Precio no indicado"
+                # Precio — suele estar en el titulo o descripcion
+                price = "Precio no indicado"
+                if "$" in title:
+                    parts = title.split("$")
+                    if len(parts) > 1:
+                        price = "$" + parts[1].split()[0].replace(",", "").strip()
+                        price = f"${price.replace('$','')}"
 
                 # Ubicacion
-                loc_el = item.select_one("[class*='location']")
-                location = loc_el.get_text(strip=True) if loc_el else "Toronto, ON"
+                location_el = item.find(".//{http://www.w3.org/2003/01/geo/wgs84_pos#}Point")
+                lat = item.findtext("{http://www.w3.org/2003/01/geo/wgs84_pos#}lat")
+                lon = item.findtext("{http://www.w3.org/2003/01/geo/wgs84_pos#}long")
 
                 # Imagen
-                img_el = item.select_one("img")
+                img_el = item.find("media:content", ns)
                 image_url = ""
-                if img_el:
-                    image_url = img_el.get("data-src") or img_el.get("src") or ""
+                if img_el is not None:
+                    image_url = img_el.get("url", "")
 
-                # Link al anuncio original
-                link_el = item.select_one("a[href*='/v-']")
-                listing_url = ""
-                if link_el:
-                    href = link_el.get("href", "")
-                    listing_url = f"https://www.kijiji.ca{href}" if href.startswith("/") else href
-
-                # Coordenadas del anuncio (si Kijiji las incluye)
-                lat = item.get("data-latitude")
-                lon = item.get("data-longitude")
-
+                # Calcular distancia
                 distance_km = None
                 if lat and lon:
                     try:
                         distance_km = round(haversine(float(lat), float(lon), SCHOOL_LAT, SCHOOL_LON), 2)
                         if distance_km > MAX_DISTANCE_KM:
-                            continue  # Demasiado lejos, saltamos
+                            continue
                     except Exception:
                         pass
 
-                uid = hashlib.md5(f"kijiji-{listing_id or listing_url}".encode()).hexdigest()
+                uid = hashlib.md5(f"kijiji-{listing_url}".encode()).hexdigest()
 
                 listings.append({
                     "id": uid,
                     "title": title,
                     "price": price,
-                    "location": location,
+                    "location": "Toronto, ON",
                     "distance_km": distance_km,
                     "image_url": image_url,
                     "listing_url": listing_url,
@@ -106,7 +93,7 @@ def scrape():
                 continue
 
     except Exception as e:
-        print(f"[Kijiji] Error al scrapear: {e}")
+        print(f"[Kijiji] Error: {e}")
 
     print(f"[Kijiji] {len(listings)} anuncios encontrados")
     return listings
