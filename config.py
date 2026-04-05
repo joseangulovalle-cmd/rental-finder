@@ -15,10 +15,12 @@ MIN_BEDROOMS = 2
 MIN_BATHROOMS = 2
 PROPERTY_TYPE = "rental"  # Solo arriendos
 
-# Emails para notificaciones
+# Emails para notificaciones (se leen de secrets, no estan escritos aqui)
+import os
 NOTIFY_EMAILS = [
-    "jose.angulo.valle@gmail.com",
-    "kiyomi.olivares@gmail.com",
+    e.strip()
+    for e in os.environ.get("NOTIFY_EMAILS", "").split(",")
+    if e.strip()
 ]
 
 # Archivo donde guardamos los anuncios ya vistos (para no repetir notificaciones)
