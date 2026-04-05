@@ -9,9 +9,11 @@ from playwright.sync_api import sync_playwright
 from config import SCHOOL_LAT, SCHOOL_LON, MAX_DISTANCE_KM
 
 URL = (
-    "https://toronto.craigslist.org/search/apa"
-    "?min_bedrooms=2&max_bedrooms=2"
-    "&lat=43.6802&lon=-79.3959&search_distance=0.75"
+    "https://toronto.craigslist.org/search/toronto-on/apa"
+    "?lat=43.6769&lon=-79.4064"
+    "&min_bathrooms=2&max_bathrooms=2"
+    "&min_bedrooms=2&max_bedrooms=2"
+    "&search_distance=0.8"
 )
 
 

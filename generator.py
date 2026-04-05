@@ -35,6 +35,7 @@ def generate(listings):
                 "Kijiji": "#e05b29",
                 "Craigslist": "#6c3483",
                 "Rentals.ca": "#0e7c5b",
+                "Realtor.ca": "#d4171e",
             }.get(lst["source"], "#2563eb")
 
             cards_html += f"""
@@ -182,7 +183,7 @@ def generate(listings):
 
 <div class="stats">
     <span><strong>{total}</strong> propiedades encontradas</span>
-    <span>Fuentes: Kijiji · Craigslist · Rentals.ca</span>
+    <span>Fuentes: Kijiji · Craigslist · Rentals.ca · Realtor.ca</span>
     <span>Actualizado: {updated_at}</span>
 </div>
 
