@@ -9,8 +9,8 @@ import time
 from math import radians, cos, sin, asin, sqrt
 
 # Coordenadas fijas
-SCHOOL_LAT  = 43.6802
-SCHOOL_LON  = -79.3959
+SCHOOL_LAT  = 43.6772
+SCHOOL_LON  = -79.4071
 SCHOOL_NAME = "Waldorf Academy"
 
 DUPONT_STATION_LAT = 43.6747

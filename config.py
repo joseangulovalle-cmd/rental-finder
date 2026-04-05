@@ -3,8 +3,8 @@
 # ============================================================
 
 # Coordenadas del colegio (250 Madison Ave, Toronto)
-SCHOOL_LAT  = 43.6802
-SCHOOL_LON  = -79.3959
+SCHOOL_LAT  = 43.6772
+SCHOOL_LON  = -79.4071
 SCHOOL_NAME = "Waldorf Academy (250 Madison Ave)"
 
 # Radio de busqueda: ~1.2 km = aprox 15 min caminando (margen amplio)

@@ -6,8 +6,8 @@ Crea index.html con mapa interactivo, filtros y todas las propiedades
 from datetime import datetime
 from config import SCHOOL_NAME, OUTPUT_HTML
 
-SCHOOL_LAT  = 43.6802
-SCHOOL_LON  = -79.3959
+SCHOOL_LAT  = 43.6772
+SCHOOL_LON  = -79.4071
 DUPONT_LAT  = 43.6747
 DUPONT_LON  = -79.4064
 
@@ -502,7 +502,7 @@ function renderMap(listings) {{
 
         const color = SOURCE_COLORS[lst.source] || '#2563eb';
         const icon = L.divIcon({{
-            html: `<div style="background:${{color}};color:white;padding:3px 7px;border-radius:4px;font-size:11px;font-weight:bold;white-space:nowrap;box-shadow:0 2px 4px rgba(0,0,0,0.3)">${{lst.price}}</div>`,
+            html: `<div style="background:white;color:#1a202c;border:2px solid ${{color}};padding:3px 7px;border-radius:4px;font-size:11px;font-weight:bold;white-space:nowrap;box-shadow:0 2px 4px rgba(0,0,0,0.3)">${{lst.price}}</div>`,
             className: '',
             iconAnchor: [20, 10]
         }});
