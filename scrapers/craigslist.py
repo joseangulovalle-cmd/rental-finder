@@ -1,22 +1,16 @@
 """
-Scraper para Craigslist Toronto usando RSS feed
+Scraper para Craigslist Toronto usando Playwright
 """
 
-import requests
 import hashlib
-import xml.etree.ElementTree as ET
+import re
 from math import radians, cos, sin, asin, sqrt
+from playwright.sync_api import sync_playwright
 from config import SCHOOL_LAT, SCHOOL_LON, MAX_DISTANCE_KM
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-    "Accept": "application/rss+xml, application/xml, text/xml, */*",
-}
-
-# RSS de Craigslist: apartamentos, 2 cuartos, Toronto
-RSS_URL = (
-    "https://toronto.craigslist.org/search/apa?format=rss"
-    "&min_bedrooms=2&max_bedrooms=2"
+URL = (
+    "https://toronto.craigslist.org/search/apa"
+    "?min_bedrooms=2&max_bedrooms=2"
     "&lat=43.6802&lon=-79.3959&search_distance=0.75"
 )
 
@@ -33,56 +27,63 @@ def haversine(lat1, lon1, lat2, lon2):
 def scrape():
     listings = []
     try:
-        response = requests.get(RSS_URL, headers=HEADERS, timeout=15)
-        response.raise_for_status()
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page(
+                user_agent=(
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/124.0.0.0 Safari/537.36"
+                )
+            )
+            page.goto(URL, wait_until="domcontentloaded", timeout=30000)
+            page.wait_for_timeout(2000)
 
-        # Craigslist RSS usa namespaces propios
-        content = response.content.replace(b'xmlns="', b'xmlns:unused="')
-        root = ET.fromstring(content)
-        items = root.findall(".//item")
+            items = page.query_selector_all("li.cl-search-result, li.result-row")
 
-        for item in items:
-            try:
-                title = item.findtext("title", "Sin titulo").strip()
-                listing_url = item.findtext("link", "").strip()
+            for item in items:
+                try:
+                    listing_id = item.get_attribute("data-pid") or item.get_attribute("id") or ""
 
-                # Precio desde el titulo
-                price = "Precio no indicado"
-                if "$" in title:
-                    import re
-                    match = re.search(r'\$[\d,]+', title)
-                    if match:
-                        price = match.group(0)
+                    title_el = item.query_selector("a.posting-title, a.result-title")
+                    title = "Sin titulo"
+                    listing_url = ""
+                    if title_el:
+                        title = title_el.inner_text().strip()
+                        listing_url = title_el.get_attribute("href") or ""
 
-                # Coordenadas desde geo
-                lat = item.findtext("{http://www.w3.org/2003/01/geo/wgs84_pos#}lat")
-                lon = item.findtext("{http://www.w3.org/2003/01/geo/wgs84_pos#}long")
+                    price_el = item.query_selector(".priceinfo, .result-price")
+                    price = price_el.inner_text().strip() if price_el else "Precio no indicado"
 
-                distance_km = None
-                if lat and lon:
-                    try:
-                        distance_km = round(haversine(float(lat), float(lon), SCHOOL_LAT, SCHOOL_LON), 2)
-                        if distance_km > MAX_DISTANCE_KM:
-                            continue
-                    except Exception:
-                        pass
+                    lat = item.get_attribute("data-latitude")
+                    lon = item.get_attribute("data-longitude")
+                    distance_km = None
+                    if lat and lon:
+                        try:
+                            distance_km = round(haversine(float(lat), float(lon), SCHOOL_LAT, SCHOOL_LON), 2)
+                            if distance_km > MAX_DISTANCE_KM:
+                                continue
+                        except Exception:
+                            pass
 
-                uid = hashlib.md5(f"craigslist-{listing_url}".encode()).hexdigest()
+                    uid = hashlib.md5(f"craigslist-{listing_id or listing_url}".encode()).hexdigest()
 
-                listings.append({
-                    "id": uid,
-                    "title": title,
-                    "price": price,
-                    "location": "Toronto, ON",
-                    "distance_km": distance_km,
-                    "image_url": "",
-                    "listing_url": listing_url,
-                    "source": "Craigslist",
-                    "bedrooms": "2",
-                    "bathrooms": "—",
-                })
-            except Exception:
-                continue
+                    listings.append({
+                        "id": uid,
+                        "title": title,
+                        "price": price,
+                        "location": "Toronto, ON",
+                        "distance_km": distance_km,
+                        "image_url": "",
+                        "listing_url": listing_url,
+                        "source": "Craigslist",
+                        "bedrooms": "2",
+                        "bathrooms": "—",
+                    })
+                except Exception:
+                    continue
+
+            browser.close()
 
     except Exception as e:
         print(f"[Craigslist] Error: {e}")

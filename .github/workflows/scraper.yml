@@ -2,9 +2,7 @@ name: Buscador de Arriendos
 
 on:
   schedule:
-    # Corre cada 4 horas automaticamente
     - cron: '0 */4 * * *'
-  # Tambien puedes correrlo manualmente desde GitHub
   workflow_dispatch:
 
 jobs:
@@ -24,6 +22,9 @@ jobs:
 
       - name: Instalar dependencias
         run: pip install -r requirements.txt
+
+      - name: Instalar navegador Playwright
+        run: playwright install chromium --with-deps
 
       - name: Correr el buscador
         env:
