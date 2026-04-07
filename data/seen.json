@@ -619,7 +619,8 @@
   "241c3c45239d308e5d34b48b786e5982": {
     "first_seen": "2026-04-05T07:42:17.048999",
     "title": "1+1 Bed | 2 Baths | Live in Midtown! Yonge and Eglinton",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "dfed708d189b74a22e58835921f85434": {
     "first_seen": "2026-04-05T07:42:17.049000",
@@ -726,6 +727,17 @@
   "f14c522c7ae84a7a1f6ac607030cd0c8": {
     "first_seen": "2026-04-07T01:50:20.094945",
     "title": "2+1 Bed & 2 Bath - SHORT TERM Market Wharf CONDOS",
+    "active": false,
+    "expired": true
+  },
+  "1f87ec996300c3946d28cf89e5d2e492": {
+    "first_seen": "2026-04-07T06:07:27.041555",
+    "title": "Central Downtown 2 Beds 2 Baths Unit",
+    "active": true
+  },
+  "6a454b22efd153e8dea79eb5c74b70eb": {
+    "first_seen": "2026-04-07T06:07:27.041573",
+    "title": "THE JUNCTION BRAND NEW MAIN LEVEL 2 BEDS 2 BATHS",
     "active": true
   }
 }
