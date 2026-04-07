@@ -1,530 +1,731 @@
 {
   "e2cada7fd4c45b1fc4c5bf5769b0adfe": {
     "first_seen": "2026-04-05T04:36:30.396812",
-    "title": "no image"
+    "title": "no image",
+    "active": true
   },
   "81d6efc9808940cf1096e9850fc065a1": {
     "first_seen": "2026-04-05T04:36:30.396821",
-    "title": "no image"
+    "title": "no image",
+    "active": true
   },
   "7baf0d9329d8914c90e1ef88a4fe98b7": {
     "first_seen": "2026-04-05T04:36:30.396823",
-    "title": "1608 - 181 BEDFORD AVENUE N|Toronto (Annex), Ontario M5R0C2"
+    "title": "1608 - 181 BEDFORD AVENUE N|Toronto (Annex), Ontario M5R0C2",
+    "active": true
   },
   "2d5ba38cfd974e241c860b15bc1561ac": {
     "first_seen": "2026-04-05T04:36:30.396825",
-    "title": "304 - 322 DUPONT STREET|Toronto (Annex), Ontario M9R1V9"
+    "title": "304 - 322 DUPONT STREET|Toronto (Annex), Ontario M9R1V9",
+    "active": true
   },
   "09357b55f767b67cbb01760788a4b92c": {
     "first_seen": "2026-04-05T04:36:30.396827",
-    "title": "715 - 500 DUPONT STREET|Toronto (Annex), Ontario N6G0B8"
+    "title": "715 - 500 DUPONT STREET|Toronto (Annex), Ontario N6G0B8",
+    "active": true
   },
   "aab8c83f6b5285fd12f67d36bfcb163d": {
     "first_seen": "2026-04-05T04:36:30.396828",
-    "title": "175 MADISON AVENUE|Toronto (Annex), Ontario M5R2S6"
+    "title": "175 MADISON AVENUE|Toronto (Annex), Ontario M5R2S6",
+    "active": true
   },
   "8868fb346afbfb22866b62a541f3e5c7": {
     "first_seen": "2026-04-05T04:36:30.396830",
-    "title": "3 - 125 KENDAL AVE AVENUE|Toronto (Annex), Ontario M5R1L8"
+    "title": "3 - 125 KENDAL AVE AVENUE|Toronto (Annex), Ontario M5R1L8",
+    "active": true
   },
   "8a0d9e10b76a5dc0ccb1451aea1a6dec": {
     "first_seen": "2026-04-05T04:36:30.396833",
-    "title": "808 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R1J8"
+    "title": "808 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R1J8",
+    "active": true
   },
   "8465de4516eb314cbf83662584fd03cb": {
     "first_seen": "2026-04-05T04:36:30.396835",
-    "title": "1010 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2"
+    "title": "1010 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2",
+    "active": true
   },
   "3625f8150d6fa8d422970259556c3059": {
     "first_seen": "2026-04-05T04:36:30.396837",
-    "title": "513 - 500 DUPONT STREET|Toronto (Annex), Ontario M6G1Y7"
+    "title": "513 - 500 DUPONT STREET|Toronto (Annex), Ontario M6G1Y7",
+    "active": true
   },
   "7394dbf11188c28ee9adb2443a4f5488": {
     "first_seen": "2026-04-05T04:36:30.396838",
-    "title": "506 - 500 DUPONT STREET|Toronto (Annex), Ontario M6G0B8"
+    "title": "506 - 500 DUPONT STREET|Toronto (Annex), Ontario M6G0B8",
+    "expired": true,
+    "active": false
   },
   "1ea8623f242350298245d327d3c4b069": {
     "first_seen": "2026-04-05T04:36:30.396840",
-    "title": "LOWER - 607 HURON STREET|Toronto (Annex), Ontario M5R2R8"
+    "title": "LOWER - 607 HURON STREET|Toronto (Annex), Ontario M5R2R8",
+    "active": true
   },
   "12dfd5f45df1a48632648457c8ae0668": {
     "first_seen": "2026-04-05T04:36:30.396841",
-    "title": "403 - 159 RUSSELL HILL ROAD|Toronto (Casa Loma), Ontario M4V2S9"
+    "title": "403 - 159 RUSSELL HILL ROAD|Toronto (Casa Loma), Ontario M4V2S9",
+    "active": true
   },
   "a635bb3297b0f6e05625753d55a738b5": {
     "first_seen": "2026-04-05T04:36:30.396842",
-    "title": "5 - 125 KENDAL AVE AVENUE|Toronto (Annex), Ontario M5R1L8"
+    "title": "5 - 125 KENDAL AVE AVENUE|Toronto (Annex), Ontario M5R1L8",
+    "active": true
   },
   "e5c57cc7645d8841dbd3db4cd49751d6": {
     "first_seen": "2026-04-05T04:45:42.466230",
-    "title": "1702 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontari"
+    "title": "1702 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontari",
+    "active": true
   },
   "0548d57208e83a5a2a6150a5e815ba9b": {
     "first_seen": "2026-04-05T04:45:42.466240",
-    "title": "2201 - 8 PARK ROAD Toronto (Rosedale-Moore Park), Ontario"
+    "title": "2201 - 8 PARK ROAD Toronto (Rosedale-Moore Park), Ontario",
+    "active": true
   },
   "b8f804dd5a359f97bc15d5754dc32173": {
     "first_seen": "2026-04-05T04:45:42.466242",
-    "title": "3204 - 18 YORKVILLE AVENUE Toronto (Annex), Ontario"
+    "title": "3204 - 18 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
   },
   "96d3c74235fba11266837f256cd03a53": {
     "first_seen": "2026-04-05T04:45:42.466244",
-    "title": "2ND FLOOR - 25 COULSON AVENUE Toronto (Forest Hill South), Ontar"
+    "title": "2ND FLOOR - 25 COULSON AVENUE Toronto (Forest Hill South), Ontar",
+    "active": true
   },
   "4e54de66ecf015cedf14cadbfb683c9b": {
     "first_seen": "2026-04-05T04:45:42.466246",
-    "title": "Commonwealth Towers | 2 Bedroom | 40/60 Pleasant Blvd Toronto"
+    "title": "Commonwealth Towers | 2 Bedroom | 40/60 Pleasant Blvd Toronto",
+    "active": true
   },
   "960f335cf429af0ac5001a28cd8861df": {
     "first_seen": "2026-04-05T04:45:42.466247",
-    "title": "1001 - 609 AVENUE ROAD Toronto (Yonge-St. Clair), Ontario"
+    "title": "1001 - 609 AVENUE ROAD Toronto (Yonge-St. Clair), Ontario",
+    "active": true
   },
   "3fc6083f938a34c0be653f42cb11d4e2": {
     "first_seen": "2026-04-05T04:45:42.466248",
-    "title": "304 - 322 DUPONT STREET Toronto (Annex), Ontario"
+    "title": "304 - 322 DUPONT STREET Toronto (Annex), Ontario",
+    "active": true
   },
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-05T04:45:42.466252",
-    "title": "1702 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario"
+    "title": "1702 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
+    "active": true
   },
   "c894e588315202ae93303d79d22ae5e7": {
     "first_seen": "2026-04-05T04:45:42.466254",
-    "title": "2806 - 200 BLOOR STREET W Toronto (Annex), Ontario"
+    "title": "2806 - 200 BLOOR STREET W Toronto (Annex), Ontario",
+    "active": true
   },
   "e028ccd70949086f65fa1bc0f0f99f58": {
     "first_seen": "2026-04-05T04:45:42.466256",
-    "title": "PH02 - 11 YORKVILLE AVENUE Toronto (Annex), Ontario"
+    "title": "PH02 - 11 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
   },
   "69ac287f1cde32ab96c4f209cf6a210a": {
     "first_seen": "2026-04-05T04:45:42.466257",
-    "title": "1602 - 8 CUMBERLAND STREET Toronto (Annex), Ontario"
+    "title": "1602 - 8 CUMBERLAND STREET Toronto (Annex), Ontario",
+    "active": true
   },
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-05T04:45:42.466259",
-    "title": "Yonge Bloor! Two bedroom suite *Special Offer Available"
+    "title": "Yonge Bloor! Two bedroom suite *Special Offer Available",
+    "active": true
   },
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-05T04:45:42.466260",
-    "title": "*Special Offer Available* Rental Close to U of T!"
+    "title": "*Special Offer Available* Rental Close to U of T!",
+    "active": true
   },
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-05T04:45:42.466261",
-    "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE"
+    "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE",
+    "active": true
   },
   "c38b0a6671d9d04f35d3eec5ca6bd6d8": {
     "first_seen": "2026-04-05T04:45:42.466262",
-    "title": "1203 - 8 CUMBERLAND STREET Toronto (Annex), Ontario"
+    "title": "1203 - 8 CUMBERLAND STREET Toronto (Annex), Ontario",
+    "active": true
   },
   "2aa24dd8aa6f561414756516b7681bda": {
     "first_seen": "2026-04-05T04:45:42.466264",
-    "title": "2 Bedroom 2 Bathroom For Rent ~ Downtown Toronto"
+    "title": "2 Bedroom 2 Bathroom For Rent ~ Downtown Toronto",
+    "active": true
   },
   "b29c9ee003c3bd370bc45a26d8d56ef6": {
     "first_seen": "2026-04-05T04:45:42.466265",
-    "title": "2510 - 666 SPADINA AVENUE Toronto (University), Ontario"
+    "title": "2510 - 666 SPADINA AVENUE Toronto (University), Ontario",
+    "active": true
   },
   "e60133f23bcf07cd3871465c0d6f4954": {
     "first_seen": "2026-04-05T04:45:42.466266",
-    "title": "305 - 2 FOREST HILL ROAD Toronto (Casa Loma), Ontario"
+    "title": "305 - 2 FOREST HILL ROAD Toronto (Casa Loma), Ontario",
+    "active": true
   },
   "6901525c071fa6f1738ceffbbfd39747": {
     "first_seen": "2026-04-05T04:45:42.466267",
-    "title": "306 - 2 FOREST HILL RD. ROAD Toronto (Casa Loma), Ontario"
+    "title": "306 - 2 FOREST HILL RD. ROAD Toronto (Casa Loma), Ontario",
+    "active": true
   },
   "588d458addf5220d4966e98bfe1249ff": {
     "first_seen": "2026-04-05T04:45:42.466268",
-    "title": "1708 - 771 YONGE STREET Toronto (Annex), Ontario"
+    "title": "1708 - 771 YONGE STREET Toronto (Annex), Ontario",
+    "active": true
   },
   "e184d7f71d3d11c3f18a1d79251721cd": {
     "first_seen": "2026-04-05T04:45:42.466269",
-    "title": "Prince Arthur - 2 Bedroom Apartment for Rent"
+    "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
+    "active": true
   },
   "ee282a6cda18057ce191986bd86bc917": {
     "first_seen": "2026-04-05T04:45:42.466270",
-    "title": "2105 - 32 DAVENPORT ROAD Toronto (Annex), Ontario"
+    "title": "2105 - 32 DAVENPORT ROAD Toronto (Annex), Ontario",
+    "active": true
   },
   "936725b03b95cbb1d4b8be123a8e14cb": {
     "first_seen": "2026-04-05T04:45:42.466271",
-    "title": "317 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontario"
+    "title": "317 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontario",
+    "active": true
   },
   "f616c1298a155a6c4998838ffdf5c607": {
     "first_seen": "2026-04-05T04:45:42.466272",
-    "title": "5609 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario"
+    "title": "5609 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
+    "active": true
   },
   "befe65fe8e7d6fc319be358ac84a0492": {
     "first_seen": "2026-04-05T04:45:42.466274",
-    "title": "Bright 2 Bedroom Basement Apartment Quiet house Yonge St Clair"
+    "title": "Bright 2 Bedroom Basement Apartment Quiet house Yonge St Clair",
+    "active": true
   },
   "5b840997e1baaa45c84b14a42900475d": {
     "first_seen": "2026-04-05T04:45:42.466275",
-    "title": "807 - 55 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario"
+    "title": "807 - 55 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
+    "active": true
   },
   "2e3ba59859bbd6e6a20e020d14304248": {
     "first_seen": "2026-04-05T04:45:42.466276",
-    "title": "316 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc"
+    "title": "316 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
+    "active": true
   },
   "a16636629357f913d717f5690ba03031": {
     "first_seen": "2026-04-05T04:45:42.466277",
-    "title": "306 - 609 AVENUE ROAD Toronto (Yonge-St. Clair), Ontario"
+    "title": "306 - 609 AVENUE ROAD Toronto (Yonge-St. Clair), Ontario",
+    "active": true
   },
   "5f2fdf2c65f9f5f5ffdb16661fbe361a": {
     "first_seen": "2026-04-05T04:45:42.466278",
-    "title": "1401 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario"
+    "title": "1401 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
+    "active": true
   },
   "b807695daaa98772bf0bd7fb4433fa59": {
     "first_seen": "2026-04-05T04:45:42.466280",
-    "title": "PH24 - 400 WALMER ROAD Toronto (Forest Hill South), Ontario"
+    "title": "PH24 - 400 WALMER ROAD Toronto (Forest Hill South), Ontario",
+    "active": true
   },
   "e5ed82cc053eea153de6ff3a1433eaf3": {
     "first_seen": "2026-04-05T04:45:42.466281",
-    "title": "2902 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario"
+    "title": "2902 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
+    "active": true
   },
   "22022230edc33b9cc8e1532a04fc15b7": {
     "first_seen": "2026-04-05T04:45:42.466283",
-    "title": "227 - 783 BATHURST STREET Toronto (University), Ontario"
+    "title": "227 - 783 BATHURST STREET Toronto (University), Ontario",
+    "active": true
   },
   "8aa4a489f3e6e5c97179bb3818c900dd": {
     "first_seen": "2026-04-05T04:45:42.466284",
-    "title": "2008 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario"
+    "title": "2008 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
   },
   "cfa0fcac49c247b1cbc4a233131bc252": {
     "first_seen": "2026-04-05T04:45:42.466285",
-    "title": "2607 - 65 ST. MARY STREET Toronto (Bay Street Corridor), Ontario"
+    "title": "2607 - 65 ST. MARY STREET Toronto (Bay Street Corridor), Ontario",
+    "active": true
   },
   "e928aff4cb39fc499c794ab8fb0bc715": {
     "first_seen": "2026-04-05T04:45:42.466286",
-    "title": "4010 - 1080 BAY STREET Toronto (Bay Street Corridor), Ontario"
+    "title": "4010 - 1080 BAY STREET Toronto (Bay Street Corridor), Ontario",
+    "expired": true,
+    "active": false
   },
   "e6ad7770aeb7779bbf114e65db30353a": {
     "first_seen": "2026-04-05T04:45:42.466287",
-    "title": "2606 - 11 YORKVILLE AVENUE Toronto (Annex), Ontario"
+    "title": "2606 - 11 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "expired": true,
+    "active": false
   },
   "c5ba9010fa87dd326f5e0de18c94fdc4": {
     "first_seen": "2026-04-05T04:45:42.466288",
-    "title": "601 - 1315 BAY STREET Toronto (Annex), Ontario"
+    "title": "601 - 1315 BAY STREET Toronto (Annex), Ontario",
+    "expired": true,
+    "active": false
   },
   "9753c8d54707144324f8454bfc272b91": {
     "first_seen": "2026-04-05T04:45:42.466289",
-    "title": "223 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc"
+    "title": "223 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
+    "expired": true,
+    "active": false
   },
   "c037b3c60f8cd5a5f65cb0bf6414d5a0": {
     "first_seen": "2026-04-05T04:45:42.466291",
-    "title": "2308 - 155 YORKVILLE AVENUE Toronto (Annex), Ontario"
+    "title": "2308 - 155 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "expired": true,
+    "active": false
   },
   "4f27260d47091b04c8567c61011e06a1": {
     "first_seen": "2026-04-05T04:45:42.466292",
-    "title": "PH2903 - 7 JACKES AVENUE Toronto (Rosedale-Moore Park), Ontario"
+    "title": "PH2903 - 7 JACKES AVENUE Toronto (Rosedale-Moore Park), Ontario",
+    "expired": true,
+    "active": false
   },
   "35b1c4fbfc09e481cac51eac2a5507ad": {
     "first_seen": "2026-04-05T04:45:42.466293",
-    "title": "2+1 Bedroom, 2 Bathroom - Pears on The Avenue Townhome"
+    "title": "2+1 Bedroom, 2 Bathroom - Pears on The Avenue Townhome",
+    "active": true
   },
   "20e30d5f020463e4a9e0f6633b5f0460": {
     "first_seen": "2026-04-05T04:45:42.466295",
-    "title": "Furnished 2 Bedroom, 2 Bathroom - 99 Avenue Road Private Residences"
+    "title": "Furnished 2 Bedroom, 2 Bathroom - 99 Avenue Road Private Residences",
+    "active": true
   },
   "7b32e9b02d5091e8f951a2099951b162": {
     "first_seen": "2026-04-05T04:45:42.466296",
-    "title": "Spacious 2 Bedroom Stacked Townhouse On The Top Floor, 2 Parking Spots"
+    "title": "Spacious 2 Bedroom Stacked Townhouse On The Top Floor, 2 Parking Spots",
+    "active": true
   },
   "36f5be6123cb3cac3c87f662de62ed65": {
     "first_seen": "2026-04-05T04:45:42.466298",
-    "title": "2 Bedroom for rent available in Forest Hill"
+    "title": "2 Bedroom for rent available in Forest Hill",
+    "active": true
   },
   "147e5d2dd74613707f53c96fefc0fbb3": {
     "first_seen": "2026-04-05T04:45:42.466299",
-    "title": "2 Bedroom, 2 Bathroom - Spadina Towers"
+    "title": "2 Bedroom, 2 Bathroom - Spadina Towers",
+    "expired": true,
+    "active": false
   },
   "32d8d5ef7b546809122a7ad4d186f052": {
     "first_seen": "2026-04-05T04:45:42.466300",
-    "title": "For Rent Large 2 bdrm condo at Bay/College - \"The Gallery\" Condos"
+    "title": "For Rent Large 2 bdrm condo at Bay/College - \"The Gallery\" Condos",
+    "active": true
   },
   "db0ef1d69bfc96f3e588fb896ec15965": {
     "first_seen": "2026-04-05T04:45:42.466302",
-    "title": "Spacious 2+1 Suite for rent  at Yonge & College"
+    "title": "Spacious 2+1 Suite for rent  at Yonge & College",
+    "active": true
   },
   "8e5c5c123e572e62bda59feb20bb23bb": {
     "first_seen": "2026-04-05T04:45:42.466303",
-    "title": "🏡 2BR 2 Bath FURNISHED Downtown Toronto Condo near Sick Kids Hospital"
+    "title": "🏡 2BR 2 Bath FURNISHED Downtown Toronto Condo near Sick Kids Hospital",
+    "active": true
   },
   "e7943ec148d79bfed6e7bebec7e9ae64": {
     "first_seen": "2026-04-05T04:45:42.466304",
-    "title": "🏡 2BR 2 Bath FURNISHED Downtown Toronto Condo near Sick Kids Hospital"
+    "title": "🏡 2BR 2 Bath FURNISHED Downtown Toronto Condo near Sick Kids Hospital",
+    "active": true
   },
   "db2fc22513d4054a7e00b213cebde76b": {
     "first_seen": "2026-04-05T04:45:42.466305",
-    "title": "🏡 2BR 2 Bath FURNISHED Downtown Toronto Condo near Sick Kids Hospital"
+    "title": "🏡 2BR 2 Bath FURNISHED Downtown Toronto Condo near Sick Kids Hospital",
+    "active": true
   },
   "2af0550ed0aa8943052827b76ec2e783": {
     "first_seen": "2026-04-05T04:45:42.466307",
-    "title": "Family Size Luxury Furnished 2BR/2BA Condo Downtown Toronto – Move-In"
+    "title": "Family Size Luxury Furnished 2BR/2BA Condo Downtown Toronto – Move-In",
+    "active": true
   },
   "82810d20c2de1a516b65f1a493a47c17": {
     "first_seen": "2026-04-05T04:45:42.466312",
-    "title": "Bay St 2Bed 2Bath TORONTO’S EASIEST FURNISHED RENTALS – NO COMMITMENT"
+    "title": "Bay St 2Bed 2Bath TORONTO’S EASIEST FURNISHED RENTALS – NO COMMITMENT",
+    "active": true
   },
   "0e19c3a640e76ea0cf6cb68002872f91": {
     "first_seen": "2026-04-05T04:45:42.466314",
-    "title": "Bay St 2Bed 2Bath near Princess Margaret and Toronto General Hospital"
+    "title": "Bay St 2Bed 2Bath near Princess Margaret and Toronto General Hospital",
+    "active": true
   },
   "5cf459798728fe03b0729ee68ed8f6ee": {
     "first_seen": "2026-04-05T04:45:42.466315",
-    "title": "BAY & COLLEGE-FURNISHED 2 Bedroom/2 Baths Corner Condo For Rent w/PRKG"
+    "title": "BAY & COLLEGE-FURNISHED 2 Bedroom/2 Baths Corner Condo For Rent w/PRKG",
+    "active": true
   },
   "f1ee15c6948f39f49185aeec7f0422f6": {
     "first_seen": "2026-04-05T04:45:42.466316",
-    "title": "2 Bed+2 Bath Downtown TO– PERFECT FOR MED STUDENTS/RESIDENTS /NURSES"
+    "title": "2 Bed+2 Bath Downtown TO– PERFECT FOR MED STUDENTS/RESIDENTS /NURSES",
+    "active": true
   },
   "0155b338f7d03b9a047a6f36cd20259e": {
     "first_seen": "2026-04-05T04:45:42.466317",
-    "title": "2nd floor 2bedrooms +2 Bathroom APT @  kensington Market May 1st"
+    "title": "2nd floor 2bedrooms +2 Bathroom APT @  kensington Market May 1st",
+    "active": true
   },
   "46374719860a8238ff6b7359a39df9e6": {
     "first_seen": "2026-04-05T04:45:42.466318",
-    "title": "BRAND NEW MOTTO BOUTIQUE CONDO 2 BEDS 2 BATHS ON SUBWAY LINE"
+    "title": "BRAND NEW MOTTO BOUTIQUE CONDO 2 BEDS 2 BATHS ON SUBWAY LINE",
+    "active": true
   },
   "1bdc5d6d0cb9804533e6c290fbbbe6ec": {
     "first_seen": "2026-04-05T04:45:42.466320",
-    "title": "2 Bedroom, 2 Bathroom - The Waverley"
+    "title": "2 Bedroom, 2 Bathroom - The Waverley",
+    "expired": true,
+    "active": false
   },
   "dcfac8593301360af5196372f15f4ef2": {
     "first_seen": "2026-04-05T04:45:42.466321",
-    "title": "2 Bedroom, 2 Bathroom - Spadina Towers"
+    "title": "2 Bedroom, 2 Bathroom - Spadina Towers",
+    "expired": true,
+    "active": false
   },
   "5a28bac72b0378cf8a21086297c1cab9": {
     "first_seen": "2026-04-05T04:45:42.466322",
-    "title": "2 Bedroom, 2 Bathroom - Spadina Towers"
+    "title": "2 Bedroom, 2 Bathroom - Spadina Towers",
+    "expired": true,
+    "active": false
   },
   "6afa4029dae11184856cf2bea9d94f89": {
     "first_seen": "2026-04-05T04:45:42.466323",
-    "title": "2 Bedroom, 2 Bathroom - Spadina Towers"
+    "title": "2 Bedroom, 2 Bathroom - Spadina Towers",
+    "expired": true,
+    "active": false
   },
   "d2f4d18b48f94a6a28fa1cc62f23d1ee": {
     "first_seen": "2026-04-05T04:45:42.466324",
-    "title": "X-Large 1 Bedroom Plus Den OR 2 Bedroom Condo for Rent!"
+    "title": "X-Large 1 Bedroom Plus Den OR 2 Bedroom Condo for Rent!",
+    "active": true
   },
   "d352f2f78ced85c3bd47acdb7cb73411": {
     "first_seen": "2026-04-05T04:45:42.466325",
-    "title": "Beautiful 2-BR plus den suite for rent at Yonge & College"
+    "title": "Beautiful 2-BR plus den suite for rent at Yonge & College",
+    "active": true
   },
   "f8b3be048c9c7f21f960304eb4dae0c4": {
     "first_seen": "2026-04-05T04:45:42.466326",
-    "title": "Beautiful 2+1  available for rent at Yonge & College"
+    "title": "Beautiful 2+1  available for rent at Yonge & College",
+    "active": true
   },
   "d5fd91323f04feb1cfa3f3c50557ed82": {
     "first_seen": "2026-04-05T04:45:42.466327",
-    "title": "2 Bedroom, 2 Bathroom - Waterworks Residences"
+    "title": "2 Bedroom, 2 Bathroom - Waterworks Residences",
+    "active": true
   },
   "fa12c34e041ec16f0c8b8bfa8efb2e89": {
     "first_seen": "2026-04-05T04:45:42.466328",
-    "title": "Spacious 1+1 Condo (can be used as 2 br) at College & Bathurst"
+    "title": "Spacious 1+1 Condo (can be used as 2 br) at College & Bathurst",
+    "active": true
   },
   "071f2256e54a2e8547827a762c14f7ad": {
     "first_seen": "2026-04-05T04:45:42.466329",
-    "title": "Fabulous 2 Bed / 2 Bath Beautifully Nestled In Trendy Queen West"
+    "title": "Fabulous 2 Bed / 2 Bath Beautifully Nestled In Trendy Queen West",
+    "active": true
   },
   "f991295c993562bc2a1e1700700f475a": {
     "first_seen": "2026-04-05T04:45:42.466330",
-    "title": "2 Bed, 2 Bath Condo with Parking | Queen West / Dufferin"
+    "title": "2 Bed, 2 Bath Condo with Parking | Queen West / Dufferin",
+    "active": true
   },
   "13006bdcc9a315fbd3e6e21c5030b424": {
     "first_seen": "2026-04-05T04:45:42.466331",
-    "title": "2 Bedroom, 2 Bathroom - Spadina Towers"
+    "title": "2 Bedroom, 2 Bathroom - Spadina Towers",
+    "expired": true,
+    "active": false
   },
   "f26fbaf68f442ed2d49658669c8427b4": {
     "first_seen": "2026-04-05T04:45:42.466332",
-    "title": "2 Bedroom, 2 Bathroom - Spadina Towers"
+    "title": "2 Bedroom, 2 Bathroom - Spadina Towers",
+    "expired": true,
+    "active": false
   },
   "37b06d1ea9e0b5a77889270c09bdd4c6": {
     "first_seen": "2026-04-05T04:45:42.466334",
-    "title": "Paris, London, and New York Architecturally inspired Building"
+    "title": "Paris, London, and New York Architecturally inspired Building",
+    "active": true
   },
   "6fad2bacc95693204c877b9689cb24f2": {
     "first_seen": "2026-04-05T04:45:42.466335",
-    "title": "2 Bedroom, 2 Bathroom - Bond Condos"
+    "title": "2 Bedroom, 2 Bathroom - Bond Condos",
+    "expired": true,
+    "active": false
   },
   "4bf13a550c81d795e7dbcaa466a52c4e": {
     "first_seen": "2026-04-05T04:45:42.466337",
-    "title": "Furnished 2 Bedroom, 2 Bathroom - St. Regis Residences"
+    "title": "Furnished 2 Bedroom, 2 Bathroom - St. Regis Residences",
+    "active": true
   },
   "ea3465e69c5fa9835feb14a9808495a6": {
     "first_seen": "2026-04-05T04:45:42.466338",
-    "title": "2 Bedroom, 2 Bathroom - Sussex Square"
+    "title": "2 Bedroom, 2 Bathroom - Sussex Square",
+    "expired": true,
+    "active": false
   },
   "41aab30c0036b3ac375c70fe8e16fc6b": {
     "first_seen": "2026-04-05T04:45:42.466339",
-    "title": "2 Bedroom, 2 Bathroom - Sussex Square"
+    "title": "2 Bedroom, 2 Bathroom - Sussex Square",
+    "expired": true,
+    "active": false
   },
   "dbe749fa6ae9864169d1b8ba23f6ba53": {
     "first_seen": "2026-04-05T04:45:42.466340",
-    "title": "2 Bedroom, 2 Bathroom - Sussex Square"
+    "title": "2 Bedroom, 2 Bathroom - Sussex Square",
+    "expired": true,
+    "active": false
   },
   "05a214ea5794f1bdd7a5ea8752cb8da9": {
     "first_seen": "2026-04-05T04:45:42.466341",
-    "title": "2 Bedroom, 2 Bathroom - Sussex Square"
+    "title": "2 Bedroom, 2 Bathroom - Sussex Square",
+    "expired": true,
+    "active": false
   },
   "527bf78bece3d31cb5bb76e0afd8eb33": {
     "first_seen": "2026-04-05T04:45:42.466342",
-    "title": "3 Bedroom, 3 Bathroom - Time & Space Condos"
+    "title": "3 Bedroom, 3 Bathroom - Time & Space Condos",
+    "active": true
   },
   "d0c64d50cf95ba1f361d8a2e987dcd59": {
     "first_seen": "2026-04-05T04:45:42.466343",
-    "title": "429 BROCK AVE. BSMT - 2BED/2BATH, LAUNDRY, SHARED YARD"
+    "title": "429 BROCK AVE. BSMT - 2BED/2BATH, LAUNDRY, SHARED YARD",
+    "active": true
   },
   "0c962a946f31f0ee3c38000109e7e286": {
     "first_seen": "2026-04-05T04:45:42.466345",
-    "title": "2 Bedroom, 2 Bathroom - Boutique II Condos"
+    "title": "2 Bedroom, 2 Bathroom - Boutique II Condos",
+    "expired": true,
+    "active": false
   },
   "d613866d243ebbadfdfced83a7f8c2f5": {
     "first_seen": "2026-04-05T04:45:42.466346",
-    "title": "Two Bedrooms Available for May 1st one parking included"
+    "title": "Two Bedrooms Available for May 1st one parking included",
+    "active": true
   },
   "4d91be4f48df179d3a3cc86b0e1baf3b": {
     "first_seen": "2026-04-05T04:45:42.466349",
-    "title": "Furnished 2 Bedroom, 2 Bathroom - Theatre Park Residences"
+    "title": "Furnished 2 Bedroom, 2 Bathroom - Theatre Park Residences",
+    "active": true
   },
   "bba58dc34fe1626ead6fc2a9e7fd6aac": {
     "first_seen": "2026-04-05T04:45:42.466350",
-    "title": "2 Bedroom, 2 Bathroom - Theatre Park Residences"
+    "title": "2 Bedroom, 2 Bathroom - Theatre Park Residences",
+    "active": true
   },
   "f918fbd8b504a17280536e3c56d8d848": {
     "first_seen": "2026-04-05T04:45:42.466352",
-    "title": "2+1 Bed & 2 Bath -  15 Mercer"
+    "title": "2+1 Bed & 2 Bath -  15 Mercer",
+    "active": true
   },
   "f6fa37ee893a019ea681a6a78aa4bc0d": {
     "first_seen": "2026-04-05T04:45:42.466353",
-    "title": "185 ROEHAMPTON AVE. 1801 - 2BED/ 2BATH, LAUNDRY, BALCONY, LOCKER"
+    "title": "185 ROEHAMPTON AVE. 1801 - 2BED/ 2BATH, LAUNDRY, BALCONY, LOCKER",
+    "active": true
   },
   "eacf36889950aeed327b115bae8b7717": {
     "first_seen": "2026-04-05T04:45:42.466354",
-    "title": "NEWLY RENOVATED HIGH CEILINGS 2 BEDS 2 BATHS"
+    "title": "NEWLY RENOVATED HIGH CEILINGS 2 BEDS 2 BATHS",
+    "active": true
   },
   "82dceb016b8639d45d698295b00ddc17": {
     "first_seen": "2026-04-05T04:45:42.466355",
-    "title": "SPECTACULAR PROPERTY! Detached Legal Multiplex. UTILITIES INCLUDED!"
+    "title": "SPECTACULAR PROPERTY! Detached Legal Multiplex. UTILITIES INCLUDED!",
+    "active": true
   },
   "221868d21d38a5eaf29d0e3bd53e0ca6": {
     "first_seen": "2026-04-05T04:45:42.466356",
-    "title": "2 Bedroom, 2 Bathroom - The Residences Of 488 University Avenue"
+    "title": "2 Bedroom, 2 Bathroom - The Residences Of 488 University Avenue",
+    "expired": true,
+    "active": false
   },
   "5e2aade0e44d2ced5edb089e30c72be9": {
     "first_seen": "2026-04-05T04:45:42.466357",
-    "title": "Furnished 2 Bedroom, 2 Bathroom - The Ritz Carlton Private Residences"
+    "title": "Furnished 2 Bedroom, 2 Bathroom - The Ritz Carlton Private Residences",
+    "active": true
   },
   "2ec4ee017e8a63adf3b1f27748cb11f0": {
     "first_seen": "2026-04-05T04:45:42.466358",
-    "title": "Briar Hill-Belgravia Neighbourhood, Bright, Modern 2-bed, 2-bath T/H"
+    "title": "Briar Hill-Belgravia Neighbourhood, Bright, Modern 2-bed, 2-bath T/H",
+    "active": true
   },
   "9d334ba49b151864e096a3e1ffc9f412": {
     "first_seen": "2026-04-05T04:45:42.466359",
-    "title": "Special pricing 2900/ month Yonge and finch 2 bedroom 2 bathroom condo"
+    "title": "Special pricing 2900/ month Yonge and finch 2 bedroom 2 bathroom condo",
+    "active": true
   },
   "550dc2816e4d0a20a68a2e93ae61da6d": {
     "first_seen": "2026-04-05T04:45:42.466360",
-    "title": "2+1 Bed & 2 Bath - 311 Richmond St E"
+    "title": "2+1 Bed & 2 Bath - 311 Richmond St E",
+    "active": true
   },
   "182d66c30fb5929d52f517d60d972769": {
     "first_seen": "2026-04-05T04:45:42.466362",
-    "title": "2+1 bed & 2 Bath - 115 Blue Jays Way - King Blue. Condos"
+    "title": "2+1 bed & 2 Bath - 115 Blue Jays Way - King Blue. Condos",
+    "active": true
   },
   "92e208bb814248fd194dc482062a6dd6": {
     "first_seen": "2026-04-05T04:45:42.466363",
-    "title": "One of a kind lift experience"
+    "title": "One of a kind lift experience",
+    "active": true
   },
   "33e04625c74b12d2251991507455f0ae": {
     "first_seen": "2026-04-05T04:45:42.466364",
-    "title": "2 Storey 2 Bedroom, 2 Bathroom - Harbour Terrace"
+    "title": "2 Storey 2 Bedroom, 2 Bathroom - Harbour Terrace",
+    "active": true
   },
   "23114f66fc370daf41968753e9f44a87": {
     "first_seen": "2026-04-05T04:45:42.466365",
-    "title": "$2,590"
+    "title": "$2,590",
+    "active": true
   },
   "a19d443642cb5a37cab9be6eb23a2671": {
     "first_seen": "2026-04-05T04:45:42.466366",
-    "title": "2+1 Bedroom, 2 Bathroom - Harbour View Estates"
+    "title": "2+1 Bedroom, 2 Bathroom - Harbour View Estates",
+    "active": true
   },
   "edce0de0d6dc6588379d8ddc0583b4d7": {
     "first_seen": "2026-04-05T04:45:42.466367",
-    "title": "2 Bedroom, 2 Bathroom - 357 King Condos"
+    "title": "2 Bedroom, 2 Bathroom - 357 King Condos",
+    "active": true
   },
   "828aa6163b982aaabf5b9eed75f94899": {
     "first_seen": "2026-04-05T07:42:17.048981",
-    "title": "2 bedroom 2 bathroom Downtown Condo"
+    "title": "2 bedroom 2 bathroom Downtown Condo",
+    "active": true
   },
   "e6deedcb830784899e39641caba6a4af": {
     "first_seen": "2026-04-05T07:42:17.048990",
-    "title": "Modern and well-maintained unit @ 30 Dreamers Way! Functional layout"
+    "title": "Modern and well-maintained unit @ 30 Dreamers Way! Functional layout",
+    "active": true
   },
   "3ec5fece814faec89a8f76fddc97581d": {
     "first_seen": "2026-04-05T07:42:17.048992",
-    "title": "2 Beds, 2 Baths with Parking in Distillery"
+    "title": "2 Beds, 2 Baths with Parking in Distillery",
+    "active": true
   },
   "83f2b1884e6659afdf3666c97d0bf368": {
     "first_seen": "2026-04-05T07:42:17.048994",
-    "title": "2 Bedroom, 2 Bathroom - Daniels on Parliament Condos"
+    "title": "2 Bedroom, 2 Bathroom - Daniels on Parliament Condos",
+    "expired": true,
+    "active": false
   },
   "61a6c7e02d6230bda08ec067d9e9c4c6": {
     "first_seen": "2026-04-05T07:42:17.048995",
-    "title": "2 Bedroom, 2 Bathroom - Whitfield Residences"
+    "title": "2 Bedroom, 2 Bathroom - Whitfield Residences",
+    "active": true
   },
   "e550acd0db3fa820fdc0c42e1ba3270f": {
     "first_seen": "2026-04-05T07:42:17.048996",
-    "title": "Corner Unit with Balcony & Stunning Lake/ City Views"
+    "title": "Corner Unit with Balcony & Stunning Lake/ City Views",
+    "active": true
   },
   "501a65a73832b4660304a17dcdecf0a5": {
     "first_seen": "2026-04-05T07:42:17.048998",
-    "title": "2+1 Bedroom, 2 Bathroom - The Esplanade"
+    "title": "2+1 Bedroom, 2 Bathroom - The Esplanade",
+    "active": true
   },
   "241c3c45239d308e5d34b48b786e5982": {
     "first_seen": "2026-04-05T07:42:17.048999",
-    "title": "1+1 Bed | 2 Baths | Live in Midtown! Yonge and Eglinton"
+    "title": "1+1 Bed | 2 Baths | Live in Midtown! Yonge and Eglinton",
+    "active": true
   },
   "dfed708d189b74a22e58835921f85434": {
     "first_seen": "2026-04-05T07:42:17.049000",
-    "title": "88 HARBOUR STREET - HARBOUR PLAZA CONDOS - 2 BEDROOM+DEN W/LAKE VIEWS"
+    "title": "88 HARBOUR STREET - HARBOUR PLAZA CONDOS - 2 BEDROOM+DEN W/LAKE VIEWS",
+    "expired": true,
+    "active": false
   },
   "87e70f4693ff5171d829ff37cddfb414": {
     "first_seen": "2026-04-05T07:42:17.049001",
-    "title": "16 YONGE ST.# 605 - 2BED+DEN/2BATH, BALCONY, **UTLS INCL**"
+    "title": "16 YONGE ST.# 605 - 2BED+DEN/2BATH, BALCONY, **UTLS INCL**",
+    "expired": true,
+    "active": false
   },
   "a510be62e24bf4e6d5120acff30a9a14": {
     "first_seen": "2026-04-05T07:42:17.049003",
-    "title": "2 Bedroom, 2 Bathroom - Harbour Plaza"
+    "title": "2 Bedroom, 2 Bathroom - Harbour Plaza",
+    "expired": true,
+    "active": false
   },
   "e715b639d61190b6fa3c37a4fd4cf12d": {
     "first_seen": "2026-04-05T07:42:17.049004",
-    "title": "2 Bedroom, 2 Bathroom - Toy Factory Lofts"
+    "title": "2 Bedroom, 2 Bathroom - Toy Factory Lofts",
+    "expired": true,
+    "active": false
   },
   "c204155917abb6f65a6418faac02e95f": {
     "first_seen": "2026-04-05T07:42:17.049005",
-    "title": "2 Bedroom, 2 Bathroom - Admiralty Point Condos"
+    "title": "2 Bedroom, 2 Bathroom - Admiralty Point Condos",
+    "expired": true,
+    "active": false
   },
   "d0b7ea23f2de92f602df03c623ea8d62": {
     "first_seen": "2026-04-05T10:02:49.175860",
-    "title": "2102 - 35 BALMUTO STREET Toronto (Bay Street Corridor), Ontario"
+    "title": "2102 - 35 BALMUTO STREET Toronto (Bay Street Corridor), Ontario",
+    "active": true
   },
   "80ea896cffdbaf0127e3fe6cb6980196": {
     "first_seen": "2026-04-06T06:21:24.760548",
-    "title": "316 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontario"
+    "title": "316 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontario",
+    "active": true
   },
   "0bb4fd7b3113cfd4a6492e19d12822a3": {
     "first_seen": "2026-04-06T06:21:24.760568",
-    "title": "2 Bedroom, 2 Bathroom - The Waterclub"
+    "title": "2 Bedroom, 2 Bathroom - The Waterclub",
+    "expired": true,
+    "active": false
   },
   "e52f523dd2fca4e9efaa0ebe4b41c1b7": {
     "first_seen": "2026-04-06T06:21:24.760570",
-    "title": "2+1 Bedroom, 2 Bathroom - Pinnacle Center"
+    "title": "2+1 Bedroom, 2 Bathroom - Pinnacle Center",
+    "expired": true,
+    "active": false
   },
   "ce38c2c508d60ba54f81624600e0a037": {
     "first_seen": "2026-04-06T11:16:32.509594",
-    "title": "1608 - 181 BEDFORD AVENUE N Toronto (Annex), Ontario"
+    "title": "1608 - 181 BEDFORD AVENUE N Toronto (Annex), Ontario",
+    "active": true
   },
   "342e33eb00aeeb3e8faf8ff354214fdc": {
     "first_seen": "2026-04-06T11:16:32.509603",
-    "title": "908 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario"
+    "title": "908 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
+    "active": true
   },
   "62622f8ca246212ce32ea0d4a7691429": {
     "first_seen": "2026-04-06T18:39:14.737246",
-    "title": "$2,590 / 2br - 750ft2 - $2590 Bright 2 bed 2 Bathroom apartment locate"
+    "title": "$2,590 / 2br - 750ft2 - $2590 Bright 2 bed 2 Bathroom apartment locate",
+    "active": true
+  },
+  "9e4e1ecece64fb9601ef80b81ea32647": {
+    "first_seen": "2026-04-07T01:50:20.094907",
+    "title": "3202 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
+    "active": true
+  },
+  "966dd9e05a5c4d52c504ffc748f9fa22": {
+    "first_seen": "2026-04-07T01:50:20.094916",
+    "title": "1811 - 501 ST CLAIR AVENUE W Toronto (Casa Loma), Ontario",
+    "active": true
+  },
+  "4ca7a4f997d8b23734bb1ecd3e136da2": {
+    "first_seen": "2026-04-07T01:50:20.094927",
+    "title": "2 Bed & 2 Bath",
+    "active": true
+  },
+  "0ea1c61dc62d041710f23aa3a362d896": {
+    "first_seen": "2026-04-07T01:50:20.094933",
+    "title": "2 Bed and 2 Bath - Garden District Condos",
+    "active": true
+  },
+  "be4206acb708f9c38da4a0d11fff4e12": {
+    "first_seen": "2026-04-07T01:50:20.094936",
+    "title": "2 Bed & 2 Bath - Bauhaus Condos",
+    "active": true
+  },
+  "02eca567631d7995d83b0bfc37a2d56c": {
+    "first_seen": "2026-04-07T01:50:20.094938",
+    "title": "2 Bed & 2 Bath -  Merchandise Lofts!",
+    "active": true
+  },
+  "8e61562850298c2e798f652852ebd9a6": {
+    "first_seen": "2026-04-07T01:50:20.094943",
+    "title": "2 Bed & 2 Bath - lower penthouse - Musée Condos",
+    "active": true
+  },
+  "f14c522c7ae84a7a1f6ac607030cd0c8": {
+    "first_seen": "2026-04-07T01:50:20.094945",
+    "title": "2+1 Bed & 2 Bath - SHORT TERM Market Wharf CONDOS",
+    "active": true
   }
 }
