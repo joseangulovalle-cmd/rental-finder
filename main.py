@@ -56,26 +56,48 @@ def main():
     # 2. Cargar anuncios ya vistos
     seen = load_seen()
 
+    # IDs activos en este scrape
+    current_ids = {listing["id"] for listing in all_listings}
+
     # 3. Detectar cuales son nuevos
+    #    Solo son "nuevos" si no estaban en seen O si habian expirado antes
     new_listings = []
     for listing in all_listings:
-        if listing["id"] not in seen:
+        entry = seen.get(listing["id"])
+        if entry is None or entry.get("expired"):
+            # Es nuevo (o reaparecio despues de expirar)
             new_listings.append(listing)
             seen[listing["id"]] = {
-                "first_seen": datetime.utcnow().isoformat(),
+                "first_seen": entry["first_seen"] if entry else datetime.utcnow().isoformat(),
                 "title": listing["title"],
+                "active": True,
             }
+        else:
+            # Ya conocido y sigue activo
+            seen[listing["id"]]["active"] = True
+            seen[listing["id"]].pop("expired", None)
 
     print(f" Nuevos anuncios: {len(new_listings)}")
 
-    # 4. Enviar notificacion si hay nuevos
+    # 4. Detectar cuales expiraron (estaban activos, ya no aparecen)
+    expired_count = 0
+    for uid, entry in seen.items():
+        if uid not in current_ids and not entry.get("expired"):
+            entry["expired"] = True
+            entry["active"] = False
+            expired_count += 1
+
+    if expired_count:
+        print(f" Anuncios expirados (ya no disponibles): {expired_count}")
+
+    # 5. Enviar notificacion si hay nuevos
     if new_listings:
         send_notification(new_listings)
 
-    # 5. Guardar los anuncios vistos (para no repetir notificaciones)
+    # 6. Guardar los anuncios vistos (para no repetir notificaciones)
     save_seen(seen)
 
-    # 6. Generar la pagina web con TODOS los anuncios
+    # 7. Generar la pagina web con TODOS los anuncios del scrape actual
     generate(all_listings)
 
     print(f"\n Listo! {len(all_listings)} propiedades en la pagina web.\n")
