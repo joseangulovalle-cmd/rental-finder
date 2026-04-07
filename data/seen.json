@@ -143,7 +143,8 @@
   "c38b0a6671d9d04f35d3eec5ca6bd6d8": {
     "first_seen": "2026-04-05T04:45:42.466262",
     "title": "1203 - 8 CUMBERLAND STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "2aa24dd8aa6f561414756516b7681bda": {
     "first_seen": "2026-04-05T04:45:42.466264",
@@ -213,7 +214,8 @@
   "5f2fdf2c65f9f5f5ffdb16661fbe361a": {
     "first_seen": "2026-04-05T04:45:42.466278",
     "title": "1401 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b807695daaa98772bf0bd7fb4433fa59": {
     "first_seen": "2026-04-05T04:45:42.466280",
@@ -243,14 +245,12 @@
   "e928aff4cb39fc499c794ab8fb0bc715": {
     "first_seen": "2026-04-05T04:45:42.466286",
     "title": "4010 - 1080 BAY STREET Toronto (Bay Street Corridor), Ontario",
-    "expired": true,
-    "active": false
+    "active": true
   },
   "e6ad7770aeb7779bbf114e65db30353a": {
     "first_seen": "2026-04-05T04:45:42.466287",
     "title": "2606 - 11 YORKVILLE AVENUE Toronto (Annex), Ontario",
-    "expired": true,
-    "active": false
+    "active": true
   },
   "c5ba9010fa87dd326f5e0de18c94fdc4": {
     "first_seen": "2026-04-05T04:45:42.466288",
@@ -310,7 +310,8 @@
   "db0ef1d69bfc96f3e588fb896ec15965": {
     "first_seen": "2026-04-05T04:45:42.466302",
     "title": "Spacious 2+1 Suite for rent  at Yonge & College",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "8e5c5c123e572e62bda59feb20bb23bb": {
     "first_seen": "2026-04-05T04:45:42.466303",
@@ -394,12 +395,14 @@
   "d352f2f78ced85c3bd47acdb7cb73411": {
     "first_seen": "2026-04-05T04:45:42.466325",
     "title": "Beautiful 2-BR plus den suite for rent at Yonge & College",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f8b3be048c9c7f21f960304eb4dae0c4": {
     "first_seen": "2026-04-05T04:45:42.466326",
     "title": "Beautiful 2+1  available for rent at Yonge & College",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "d5fd91323f04feb1cfa3f3c50557ed82": {
     "first_seen": "2026-04-05T04:45:42.466327",
@@ -738,6 +741,21 @@
   "6a454b22efd153e8dea79eb5c74b70eb": {
     "first_seen": "2026-04-07T06:07:27.041573",
     "title": "THE JUNCTION BRAND NEW MAIN LEVEL 2 BEDS 2 BATHS",
+    "active": true
+  },
+  "01bddac326d6d508d40d2d67fa9b3020": {
+    "first_seen": "2026-04-07T16:18:51.362877",
+    "title": "Spacious 2+1 Suite for rent  at Yonge & College",
+    "active": true
+  },
+  "637d6da43d80e05cf2e1912c8d8ffd18": {
+    "first_seen": "2026-04-07T16:18:51.362888",
+    "title": "Beautiful 2-BR plus den suite for rent at Yonge & College",
+    "active": true
+  },
+  "16482478f4629271889955b25ed06a2a": {
+    "first_seen": "2026-04-07T16:18:51.362890",
+    "title": "Beautiful 2+1  available for rent at Yonge & College",
     "active": true
   }
 }
