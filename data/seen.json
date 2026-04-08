@@ -174,7 +174,8 @@
   "e184d7f71d3d11c3f18a1d79251721cd": {
     "first_seen": "2026-04-05T04:45:42.466269",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ee282a6cda18057ce191986bd86bc917": {
     "first_seen": "2026-04-05T04:45:42.466270",
@@ -235,7 +236,8 @@
   "8aa4a489f3e6e5c97179bb3818c900dd": {
     "first_seen": "2026-04-05T04:45:42.466284",
     "title": "2008 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "cfa0fcac49c247b1cbc4a233131bc252": {
     "first_seen": "2026-04-05T04:45:42.466285",
@@ -320,7 +322,8 @@
   "8e5c5c123e572e62bda59feb20bb23bb": {
     "first_seen": "2026-04-05T04:45:42.466303",
     "title": "🏡 2BR 2 Bath FURNISHED Downtown Toronto Condo near Sick Kids Hospital",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e7943ec148d79bfed6e7bebec7e9ae64": {
     "first_seen": "2026-04-05T04:45:42.466304",
@@ -733,8 +736,7 @@
   "f14c522c7ae84a7a1f6ac607030cd0c8": {
     "first_seen": "2026-04-07T01:50:20.094945",
     "title": "2+1 Bed & 2 Bath - SHORT TERM Market Wharf CONDOS",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "1f87ec996300c3946d28cf89e5d2e492": {
     "first_seen": "2026-04-07T06:07:27.041555",
@@ -774,6 +776,16 @@
   "3f90b23e3689f96ef338a687dce16173": {
     "first_seen": "2026-04-08T06:09:28.607513",
     "title": "4302 - 8 CUMBERLAND STREET Toronto (Annex), Ontario",
+    "active": true
+  },
+  "076fd8c0cedab4c5e261560ceb1c171a": {
+    "first_seen": "2026-04-08T11:35:43.418592",
+    "title": "3001 - 200 CUMBERLAND STREET Toronto (Annex), Ontario",
+    "active": true
+  },
+  "cdb0f97dfd7f852eb036b678deafc1fe": {
+    "first_seen": "2026-04-08T11:35:43.418601",
+    "title": "214 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
     "active": true
   }
 }
