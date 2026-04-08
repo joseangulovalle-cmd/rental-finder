@@ -231,7 +231,8 @@
   "22022230edc33b9cc8e1532a04fc15b7": {
     "first_seen": "2026-04-05T04:45:42.466283",
     "title": "227 - 783 BATHURST STREET Toronto (University), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "8aa4a489f3e6e5c97179bb3818c900dd": {
     "first_seen": "2026-04-05T04:45:42.466284",
@@ -736,7 +737,8 @@
   "f14c522c7ae84a7a1f6ac607030cd0c8": {
     "first_seen": "2026-04-07T01:50:20.094945",
     "title": "2+1 Bed & 2 Bath - SHORT TERM Market Wharf CONDOS",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "1f87ec996300c3946d28cf89e5d2e492": {
     "first_seen": "2026-04-07T06:07:27.041555",
@@ -786,6 +788,16 @@
   "cdb0f97dfd7f852eb036b678deafc1fe": {
     "first_seen": "2026-04-08T11:35:43.418601",
     "title": "214 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
+    "active": true
+  },
+  "b033dcafa4f13dae69d26b83c0afb4bb": {
+    "first_seen": "2026-04-08T16:22:22.787211",
+    "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
+    "active": true
+  },
+  "b2b87016af8bd0cccad805db37159771": {
+    "first_seen": "2026-04-08T16:22:22.787234",
+    "title": "2 Bed | 2 Bath | Beautiful Loft",
     "active": true
   }
 }
