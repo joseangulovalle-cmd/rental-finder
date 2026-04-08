@@ -793,11 +793,17 @@
   "b033dcafa4f13dae69d26b83c0afb4bb": {
     "first_seen": "2026-04-08T16:22:22.787211",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b2b87016af8bd0cccad805db37159771": {
     "first_seen": "2026-04-08T16:22:22.787234",
     "title": "2 Bed | 2 Bath | Beautiful Loft",
+    "active": true
+  },
+  "e7de1145673e743b0e3b893b72b20f18": {
+    "first_seen": "2026-04-08T22:10:53.023881",
+    "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
     "active": true
   }
 }
