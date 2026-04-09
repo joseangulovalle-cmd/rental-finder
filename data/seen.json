@@ -226,7 +226,8 @@
   "e5ed82cc053eea153de6ff3a1433eaf3": {
     "first_seen": "2026-04-05T04:45:42.466281",
     "title": "2902 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "22022230edc33b9cc8e1532a04fc15b7": {
     "first_seen": "2026-04-05T04:45:42.466283",
@@ -804,6 +805,16 @@
   "e7de1145673e743b0e3b893b72b20f18": {
     "first_seen": "2026-04-08T22:10:53.023881",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
+    "active": true
+  },
+  "f7a9337a65990fa34937285459be39c7": {
+    "first_seen": "2026-04-09T06:09:21.072643",
+    "title": "522 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
+    "active": true
+  },
+  "0a882cefe5b38273e6f414fc9192134a": {
+    "first_seen": "2026-04-09T06:09:21.072670",
+    "title": "403 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
     "active": true
   }
 }
