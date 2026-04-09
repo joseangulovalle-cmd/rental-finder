@@ -73,72 +73,86 @@
   "e5c57cc7645d8841dbd3db4cd49751d6": {
     "first_seen": "2026-04-05T04:45:42.466230",
     "title": "1702 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontari",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "0548d57208e83a5a2a6150a5e815ba9b": {
     "first_seen": "2026-04-05T04:45:42.466240",
     "title": "2201 - 8 PARK ROAD Toronto (Rosedale-Moore Park), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b8f804dd5a359f97bc15d5754dc32173": {
     "first_seen": "2026-04-05T04:45:42.466242",
     "title": "3204 - 18 YORKVILLE AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "96d3c74235fba11266837f256cd03a53": {
     "first_seen": "2026-04-05T04:45:42.466244",
     "title": "2ND FLOOR - 25 COULSON AVENUE Toronto (Forest Hill South), Ontar",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4e54de66ecf015cedf14cadbfb683c9b": {
     "first_seen": "2026-04-05T04:45:42.466246",
     "title": "Commonwealth Towers | 2 Bedroom | 40/60 Pleasant Blvd Toronto",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "960f335cf429af0ac5001a28cd8861df": {
     "first_seen": "2026-04-05T04:45:42.466247",
     "title": "1001 - 609 AVENUE ROAD Toronto (Yonge-St. Clair), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "3fc6083f938a34c0be653f42cb11d4e2": {
     "first_seen": "2026-04-05T04:45:42.466248",
     "title": "304 - 322 DUPONT STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-05T04:45:42.466252",
     "title": "1702 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "c894e588315202ae93303d79d22ae5e7": {
     "first_seen": "2026-04-05T04:45:42.466254",
     "title": "2806 - 200 BLOOR STREET W Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e028ccd70949086f65fa1bc0f0f99f58": {
     "first_seen": "2026-04-05T04:45:42.466256",
     "title": "PH02 - 11 YORKVILLE AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "69ac287f1cde32ab96c4f209cf6a210a": {
     "first_seen": "2026-04-05T04:45:42.466257",
     "title": "1602 - 8 CUMBERLAND STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-05T04:45:42.466259",
     "title": "Yonge Bloor! Two bedroom suite *Special Offer Available",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-05T04:45:42.466260",
     "title": "*Special Offer Available* Rental Close to U of T!",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-05T04:45:42.466261",
     "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "c38b0a6671d9d04f35d3eec5ca6bd6d8": {
     "first_seen": "2026-04-05T04:45:42.466262",
@@ -149,27 +163,32 @@
   "2aa24dd8aa6f561414756516b7681bda": {
     "first_seen": "2026-04-05T04:45:42.466264",
     "title": "2 Bedroom 2 Bathroom For Rent ~ Downtown Toronto",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b29c9ee003c3bd370bc45a26d8d56ef6": {
     "first_seen": "2026-04-05T04:45:42.466265",
     "title": "2510 - 666 SPADINA AVENUE Toronto (University), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e60133f23bcf07cd3871465c0d6f4954": {
     "first_seen": "2026-04-05T04:45:42.466266",
     "title": "305 - 2 FOREST HILL ROAD Toronto (Casa Loma), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6901525c071fa6f1738ceffbbfd39747": {
     "first_seen": "2026-04-05T04:45:42.466267",
     "title": "306 - 2 FOREST HILL RD. ROAD Toronto (Casa Loma), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "588d458addf5220d4966e98bfe1249ff": {
     "first_seen": "2026-04-05T04:45:42.466268",
     "title": "1708 - 771 YONGE STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e184d7f71d3d11c3f18a1d79251721cd": {
     "first_seen": "2026-04-05T04:45:42.466269",
@@ -180,37 +199,44 @@
   "ee282a6cda18057ce191986bd86bc917": {
     "first_seen": "2026-04-05T04:45:42.466270",
     "title": "2105 - 32 DAVENPORT ROAD Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "936725b03b95cbb1d4b8be123a8e14cb": {
     "first_seen": "2026-04-05T04:45:42.466271",
     "title": "317 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f616c1298a155a6c4998838ffdf5c607": {
     "first_seen": "2026-04-05T04:45:42.466272",
     "title": "5609 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "befe65fe8e7d6fc319be358ac84a0492": {
     "first_seen": "2026-04-05T04:45:42.466274",
     "title": "Bright 2 Bedroom Basement Apartment Quiet house Yonge St Clair",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "5b840997e1baaa45c84b14a42900475d": {
     "first_seen": "2026-04-05T04:45:42.466275",
     "title": "807 - 55 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "2e3ba59859bbd6e6a20e020d14304248": {
     "first_seen": "2026-04-05T04:45:42.466276",
     "title": "316 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "a16636629357f913d717f5690ba03031": {
     "first_seen": "2026-04-05T04:45:42.466277",
     "title": "306 - 609 AVENUE ROAD Toronto (Yonge-St. Clair), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "5f2fdf2c65f9f5f5ffdb16661fbe361a": {
     "first_seen": "2026-04-05T04:45:42.466278",
@@ -221,7 +247,8 @@
   "b807695daaa98772bf0bd7fb4433fa59": {
     "first_seen": "2026-04-05T04:45:42.466280",
     "title": "PH24 - 400 WALMER ROAD Toronto (Forest Hill South), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e5ed82cc053eea153de6ff3a1433eaf3": {
     "first_seen": "2026-04-05T04:45:42.466281",
@@ -666,12 +693,14 @@
   "d0b7ea23f2de92f602df03c623ea8d62": {
     "first_seen": "2026-04-05T10:02:49.175860",
     "title": "2102 - 35 BALMUTO STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "80ea896cffdbaf0127e3fe6cb6980196": {
     "first_seen": "2026-04-06T06:21:24.760548",
     "title": "316 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "0bb4fd7b3113cfd4a6492e19d12822a3": {
     "first_seen": "2026-04-06T06:21:24.760568",
@@ -688,12 +717,14 @@
   "ce38c2c508d60ba54f81624600e0a037": {
     "first_seen": "2026-04-06T11:16:32.509594",
     "title": "1608 - 181 BEDFORD AVENUE N Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "342e33eb00aeeb3e8faf8ff354214fdc": {
     "first_seen": "2026-04-06T11:16:32.509603",
     "title": "908 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "62622f8ca246212ce32ea0d4a7691429": {
     "first_seen": "2026-04-06T18:39:14.737246",
@@ -703,12 +734,14 @@
   "9e4e1ecece64fb9601ef80b81ea32647": {
     "first_seen": "2026-04-07T01:50:20.094907",
     "title": "3202 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "966dd9e05a5c4d52c504ffc748f9fa22": {
     "first_seen": "2026-04-07T01:50:20.094916",
     "title": "1811 - 501 ST CLAIR AVENUE W Toronto (Casa Loma), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4ca7a4f997d8b23734bb1ecd3e136da2": {
     "first_seen": "2026-04-07T01:50:20.094927",
@@ -769,27 +802,32 @@
   "217c5b96da97da737f9408ebc682e93a": {
     "first_seen": "2026-04-08T06:09:28.607503",
     "title": "2001 - 88 CUMBERLAND STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "c4a1eefb86eb82308a437af57e7aa28f": {
     "first_seen": "2026-04-08T06:09:28.607512",
     "title": "1105 - 2 AVENUE ROAD Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "3f90b23e3689f96ef338a687dce16173": {
     "first_seen": "2026-04-08T06:09:28.607513",
     "title": "4302 - 8 CUMBERLAND STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "076fd8c0cedab4c5e261560ceb1c171a": {
     "first_seen": "2026-04-08T11:35:43.418592",
     "title": "3001 - 200 CUMBERLAND STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "cdb0f97dfd7f852eb036b678deafc1fe": {
     "first_seen": "2026-04-08T11:35:43.418601",
     "title": "214 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b033dcafa4f13dae69d26b83c0afb4bb": {
     "first_seen": "2026-04-08T16:22:22.787211",
@@ -805,12 +843,14 @@
   "e7de1145673e743b0e3b893b72b20f18": {
     "first_seen": "2026-04-08T22:10:53.023881",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f7a9337a65990fa34937285459be39c7": {
     "first_seen": "2026-04-09T06:09:21.072643",
     "title": "522 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "0a882cefe5b38273e6f414fc9192134a": {
     "first_seen": "2026-04-09T06:09:21.072670",
