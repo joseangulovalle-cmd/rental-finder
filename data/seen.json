@@ -212,7 +212,8 @@
   "a16636629357f913d717f5690ba03031": {
     "first_seen": "2026-04-05T04:45:42.466277",
     "title": "306 - 609 AVENUE ROAD Toronto (Yonge-St. Clair), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "5f2fdf2c65f9f5f5ffdb16661fbe361a": {
     "first_seen": "2026-04-05T04:45:42.466278",
@@ -223,12 +224,14 @@
   "b807695daaa98772bf0bd7fb4433fa59": {
     "first_seen": "2026-04-05T04:45:42.466280",
     "title": "PH24 - 400 WALMER ROAD Toronto (Forest Hill South), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e5ed82cc053eea153de6ff3a1433eaf3": {
     "first_seen": "2026-04-05T04:45:42.466281",
     "title": "2902 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "22022230edc33b9cc8e1532a04fc15b7": {
     "first_seen": "2026-04-05T04:45:42.466283",
@@ -372,7 +375,8 @@
   "46374719860a8238ff6b7359a39df9e6": {
     "first_seen": "2026-04-05T04:45:42.466318",
     "title": "BRAND NEW MOTTO BOUTIQUE CONDO 2 BEDS 2 BATHS ON SUBWAY LINE",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "1bdc5d6d0cb9804533e6c290fbbbe6ec": {
     "first_seen": "2026-04-05T04:45:42.466320",
@@ -623,7 +627,8 @@
   "e550acd0db3fa820fdc0c42e1ba3270f": {
     "first_seen": "2026-04-05T07:42:17.048996",
     "title": "Corner Unit with Balcony & Stunning Lake/ City Views",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "501a65a73832b4660304a17dcdecf0a5": {
     "first_seen": "2026-04-05T07:42:17.048998",
@@ -638,14 +643,12 @@
   "dfed708d189b74a22e58835921f85434": {
     "first_seen": "2026-04-05T07:42:17.049000",
     "title": "88 HARBOUR STREET - HARBOUR PLAZA CONDOS - 2 BEDROOM+DEN W/LAKE VIEWS",
-    "expired": true,
-    "active": false
+    "active": true
   },
   "87e70f4693ff5171d829ff37cddfb414": {
     "first_seen": "2026-04-05T07:42:17.049001",
     "title": "16 YONGE ST.# 605 - 2BED+DEN/2BATH, BALCONY, **UTLS INCL**",
-    "expired": true,
-    "active": false
+    "active": true
   },
   "a510be62e24bf4e6d5120acff30a9a14": {
     "first_seen": "2026-04-05T07:42:17.049003",
@@ -806,7 +809,8 @@
   "e7de1145673e743b0e3b893b72b20f18": {
     "first_seen": "2026-04-08T22:10:53.023881",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f7a9337a65990fa34937285459be39c7": {
     "first_seen": "2026-04-09T06:09:21.072643",
@@ -827,6 +831,26 @@
   "92fd499b463e334c738cda4eb46a6c37": {
     "first_seen": "2026-04-10T06:23:02.185179",
     "title": "411 - 1430 YONGE STREET Toronto (Yonge-St. Clair), Ontario",
+    "active": true
+  },
+  "7891c0d2b9a0f667ceec039a180f250e": {
+    "first_seen": "2026-04-10T11:15:35.097888",
+    "title": "3901 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
+  },
+  "1ede37bbdf8828966fe6325b6568b23e": {
+    "first_seen": "2026-04-10T11:15:35.097900",
+    "title": "411 - 1 BEDFORD ROAD Toronto (Annex), Ontario",
+    "active": true
+  },
+  "8b15b1f48d9aeb7fe590ba049646c4db": {
+    "first_seen": "2026-04-10T11:15:35.097902",
+    "title": "LPH8 - 55 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontari",
+    "active": true
+  },
+  "8776573fed27e4780e0c27635a4f767e": {
+    "first_seen": "2026-04-10T11:15:35.097903",
+    "title": "5509 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario",
     "active": true
   }
 }
