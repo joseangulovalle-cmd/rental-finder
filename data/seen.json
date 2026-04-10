@@ -233,7 +233,8 @@
   "22022230edc33b9cc8e1532a04fc15b7": {
     "first_seen": "2026-04-05T04:45:42.466283",
     "title": "227 - 783 BATHURST STREET Toronto (University), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "8aa4a489f3e6e5c97179bb3818c900dd": {
     "first_seen": "2026-04-05T04:45:42.466284",
@@ -821,6 +822,11 @@
   "22e8a12713171d64383efd139141c03d": {
     "first_seen": "2026-04-09T16:51:22.864197",
     "title": "1201 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2",
+    "active": true
+  },
+  "92fd499b463e334c738cda4eb46a6c37": {
+    "first_seen": "2026-04-10T06:23:02.185179",
+    "title": "411 - 1430 YONGE STREET Toronto (Yonge-St. Clair), Ontario",
     "active": true
   }
 }
