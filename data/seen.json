@@ -643,7 +643,8 @@
   "dfed708d189b74a22e58835921f85434": {
     "first_seen": "2026-04-05T07:42:17.049000",
     "title": "88 HARBOUR STREET - HARBOUR PLAZA CONDOS - 2 BEDROOM+DEN W/LAKE VIEWS",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "87e70f4693ff5171d829ff37cddfb414": {
     "first_seen": "2026-04-05T07:42:17.049001",
@@ -653,8 +654,7 @@
   "a510be62e24bf4e6d5120acff30a9a14": {
     "first_seen": "2026-04-05T07:42:17.049003",
     "title": "2 Bedroom, 2 Bathroom - Harbour Plaza",
-    "expired": true,
-    "active": false
+    "active": true
   },
   "e715b639d61190b6fa3c37a4fd4cf12d": {
     "first_seen": "2026-04-05T07:42:17.049004",
@@ -698,7 +698,8 @@
   "342e33eb00aeeb3e8faf8ff354214fdc": {
     "first_seen": "2026-04-06T11:16:32.509603",
     "title": "908 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "62622f8ca246212ce32ea0d4a7691429": {
     "first_seen": "2026-04-06T18:39:14.737246",
@@ -851,6 +852,11 @@
   "8776573fed27e4780e0c27635a4f767e": {
     "first_seen": "2026-04-10T11:15:35.097903",
     "title": "5509 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
+  },
+  "041eaf41f6da67c7b5e1460b8ddf1956": {
+    "first_seen": "2026-04-10T15:09:55.549743",
+    "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
     "active": true
   }
 }
