@@ -207,7 +207,8 @@
   "2e3ba59859bbd6e6a20e020d14304248": {
     "first_seen": "2026-04-05T04:45:42.466276",
     "title": "316 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "a16636629357f913d717f5690ba03031": {
     "first_seen": "2026-04-05T04:45:42.466277",
@@ -857,6 +858,11 @@
   "041eaf41f6da67c7b5e1460b8ddf1956": {
     "first_seen": "2026-04-10T15:09:55.549743",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
+    "active": true
+  },
+  "9b3bd8e2fb2fbc2655a9bb82ad6058f8": {
+    "first_seen": "2026-04-10T18:12:31.461442",
+    "title": "Condo 2 bed 2 bath for rent",
     "active": true
   }
 }
