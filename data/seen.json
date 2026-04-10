@@ -607,7 +607,8 @@
   "e6deedcb830784899e39641caba6a4af": {
     "first_seen": "2026-04-05T07:42:17.048990",
     "title": "Modern and well-maintained unit @ 30 Dreamers Way! Functional layout",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "3ec5fece814faec89a8f76fddc97581d": {
     "first_seen": "2026-04-05T07:42:17.048992",
@@ -660,8 +661,7 @@
   "e715b639d61190b6fa3c37a4fd4cf12d": {
     "first_seen": "2026-04-05T07:42:17.049004",
     "title": "2 Bedroom, 2 Bathroom - Toy Factory Lofts",
-    "expired": true,
-    "active": false
+    "active": true
   },
   "c204155917abb6f65a6418faac02e95f": {
     "first_seen": "2026-04-05T07:42:17.049005",
@@ -858,11 +858,17 @@
   "041eaf41f6da67c7b5e1460b8ddf1956": {
     "first_seen": "2026-04-10T15:09:55.549743",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "9b3bd8e2fb2fbc2655a9bb82ad6058f8": {
     "first_seen": "2026-04-10T18:12:31.461442",
     "title": "Condo 2 bed 2 bath for rent",
+    "active": true
+  },
+  "5822d77ecc697d8f171cc9fbee95b9a0": {
+    "first_seen": "2026-04-10T21:59:38.540221",
+    "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
     "active": true
   }
 }
