@@ -202,7 +202,8 @@
   "5b840997e1baaa45c84b14a42900475d": {
     "first_seen": "2026-04-05T04:45:42.466275",
     "title": "807 - 55 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "2e3ba59859bbd6e6a20e020d14304248": {
     "first_seen": "2026-04-05T04:45:42.466276",
@@ -869,6 +870,11 @@
   "5822d77ecc697d8f171cc9fbee95b9a0": {
     "first_seen": "2026-04-10T21:59:38.540221",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
+    "active": true
+  },
+  "0c7445e8b3ed0ee4b2d4efd3f6b7a233": {
+    "first_seen": "2026-04-11T05:24:20.029719",
+    "title": "209 - 664 SPADINA AVENUE Toronto (University), Ontario",
     "active": true
   }
 }
