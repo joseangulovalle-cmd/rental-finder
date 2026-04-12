@@ -12,38 +12,32 @@
   "7baf0d9329d8914c90e1ef88a4fe98b7": {
     "first_seen": "2026-04-05T04:36:30.396823",
     "title": "1608 - 181 BEDFORD AVENUE N|Toronto (Annex), Ontario M5R0C2",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "2d5ba38cfd974e241c860b15bc1561ac": {
     "first_seen": "2026-04-05T04:36:30.396825",
     "title": "304 - 322 DUPONT STREET|Toronto (Annex), Ontario M9R1V9",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "09357b55f767b67cbb01760788a4b92c": {
     "first_seen": "2026-04-05T04:36:30.396827",
     "title": "715 - 500 DUPONT STREET|Toronto (Annex), Ontario N6G0B8",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "aab8c83f6b5285fd12f67d36bfcb163d": {
     "first_seen": "2026-04-05T04:36:30.396828",
     "title": "175 MADISON AVENUE|Toronto (Annex), Ontario M5R2S6",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "8868fb346afbfb22866b62a541f3e5c7": {
     "first_seen": "2026-04-05T04:36:30.396830",
     "title": "3 - 125 KENDAL AVE AVENUE|Toronto (Annex), Ontario M5R1L8",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "8a0d9e10b76a5dc0ccb1451aea1a6dec": {
     "first_seen": "2026-04-05T04:36:30.396833",
     "title": "808 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R1J8",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "8465de4516eb314cbf83662584fd03cb": {
     "first_seen": "2026-04-05T04:36:30.396835",
@@ -54,8 +48,7 @@
   "3625f8150d6fa8d422970259556c3059": {
     "first_seen": "2026-04-05T04:36:30.396837",
     "title": "513 - 500 DUPONT STREET|Toronto (Annex), Ontario M6G1Y7",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "7394dbf11188c28ee9adb2443a4f5488": {
     "first_seen": "2026-04-05T04:36:30.396838",
@@ -66,20 +59,17 @@
   "1ea8623f242350298245d327d3c4b069": {
     "first_seen": "2026-04-05T04:36:30.396840",
     "title": "LOWER - 607 HURON STREET|Toronto (Annex), Ontario M5R2R8",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "12dfd5f45df1a48632648457c8ae0668": {
     "first_seen": "2026-04-05T04:36:30.396841",
     "title": "403 - 159 RUSSELL HILL ROAD|Toronto (Casa Loma), Ontario M4V2S9",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "a635bb3297b0f6e05625753d55a738b5": {
     "first_seen": "2026-04-05T04:36:30.396842",
     "title": "5 - 125 KENDAL AVE AVENUE|Toronto (Annex), Ontario M5R1L8",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "e5c57cc7645d8841dbd3db4cd49751d6": {
     "first_seen": "2026-04-05T04:45:42.466230",
@@ -842,14 +832,12 @@
   "0a882cefe5b38273e6f414fc9192134a": {
     "first_seen": "2026-04-09T06:09:21.072670",
     "title": "403 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "22e8a12713171d64383efd139141c03d": {
     "first_seen": "2026-04-09T16:51:22.864197",
     "title": "1201 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "92fd499b463e334c738cda4eb46a6c37": {
     "first_seen": "2026-04-10T06:23:02.185179",
