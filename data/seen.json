@@ -42,7 +42,8 @@
   "8465de4516eb314cbf83662584fd03cb": {
     "first_seen": "2026-04-05T04:36:30.396835",
     "title": "1010 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "3625f8150d6fa8d422970259556c3059": {
     "first_seen": "2026-04-05T04:36:30.396837",
@@ -68,8 +69,7 @@
   "a635bb3297b0f6e05625753d55a738b5": {
     "first_seen": "2026-04-05T04:36:30.396842",
     "title": "5 - 125 KENDAL AVE AVENUE|Toronto (Annex), Ontario M5R1L8",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "e5c57cc7645d8841dbd3db4cd49751d6": {
     "first_seen": "2026-04-05T04:45:42.466230",
@@ -187,7 +187,8 @@
   "936725b03b95cbb1d4b8be123a8e14cb": {
     "first_seen": "2026-04-05T04:45:42.466271",
     "title": "317 - 310 TWEEDSMUIR AVENUE Toronto (Forest Hill South), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f616c1298a155a6c4998838ffdf5c607": {
     "first_seen": "2026-04-05T04:45:42.466272",
@@ -899,6 +900,11 @@
   "05dab63eb066a3ec6b801e42fb4d285d": {
     "first_seen": "2026-04-11T14:08:39.676913",
     "title": "1201 - 181 BEDFORD ROAD Toronto (Annex), Ontario",
+    "active": true
+  },
+  "dabd49631d377ac2a6cc2c1462430322": {
+    "first_seen": "2026-04-12T06:13:40.494322",
+    "title": "5409 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario",
     "active": true
   }
 }
