@@ -166,12 +166,14 @@
   "6901525c071fa6f1738ceffbbfd39747": {
     "first_seen": "2026-04-05T04:45:42.466267",
     "title": "306 - 2 FOREST HILL RD. ROAD Toronto (Casa Loma), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "588d458addf5220d4966e98bfe1249ff": {
     "first_seen": "2026-04-05T04:45:42.466268",
     "title": "1708 - 771 YONGE STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e184d7f71d3d11c3f18a1d79251721cd": {
     "first_seen": "2026-04-05T04:45:42.466269",
@@ -182,7 +184,8 @@
   "ee282a6cda18057ce191986bd86bc917": {
     "first_seen": "2026-04-05T04:45:42.466270",
     "title": "2105 - 32 DAVENPORT ROAD Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "936725b03b95cbb1d4b8be123a8e14cb": {
     "first_seen": "2026-04-05T04:45:42.466271",
@@ -905,6 +908,21 @@
   "dabd49631d377ac2a6cc2c1462430322": {
     "first_seen": "2026-04-12T06:13:40.494322",
     "title": "5409 - 1 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
+  },
+  "2db47269fa58e6b983e6d02720f965b2": {
+    "first_seen": "2026-04-12T10:11:13.123672",
+    "title": "3409 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
+    "active": true
+  },
+  "95080a8026c1238df7f4a6b195d1291e": {
+    "first_seen": "2026-04-12T10:11:13.123684",
+    "title": "5202 - 11 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
+  },
+  "a94a3cbf7161cd9c0a686b2c0e4bd1f9": {
+    "first_seen": "2026-04-12T10:11:13.123686",
+    "title": "1011 - 10 DELISLE AVENUE Toronto (Yonge-St. Clair), Ontario",
     "active": true
   }
 }
