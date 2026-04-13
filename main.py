@@ -21,10 +21,16 @@ from config import SEEN_FILE, MAX_PRICE, MIN_SQFT
 
 
 def _parse_price(price_str):
-    """Extrae numero de un string como '$2,500' o '$3,500/month'. Retorna None si no hay precio."""
+    """Extrae numero de un string como '$2,500', '2500' o '$3,500/month'. Retorna None si no hay precio."""
     if not price_str or price_str in ("Precio no indicado", "Ver en Realtor.ca"):
         return None
-    m = re.search(r"\$([\d,]+)", str(price_str))
+    s = str(price_str)
+    # Primero intentar con signo $
+    m = re.search(r"\$([\d,]+)", s)
+    if m:
+        return int(m.group(1).replace(",", ""))
+    # Si no hay $, buscar cualquier numero (ej: API de Realtor.ca devuelve "2200")
+    m = re.search(r"(\d[\d,]+)", s)
     if m:
         return int(m.group(1).replace(",", ""))
     return None
