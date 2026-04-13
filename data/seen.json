@@ -27,46 +27,70 @@
   "f9ecfea2e080ef108530d0a17afb7ee6": {
     "first_seen": "2026-04-13T01:54:59.200742",
     "title": "1604 - 75 ST NICHOLAS STREET|Toronto (Bay Street Corridor), Ontario M4Y0A5",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "8e7e8616d1717ae2de42f320df0964ab": {
     "first_seen": "2026-04-13T01:54:59.200751",
     "title": "808 - 11 WELLESLEY STREET W|Toronto (Bay Street Corridor), Ontario M4Y1E8",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ed1ccae3d112a758e102b2548dd636af": {
     "first_seen": "2026-04-13T01:54:59.200752",
     "title": "2209 - 35 BALMUTO STREET|Toronto (Bay Street Corridor), Ontario M4Y1W8",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "297755033d0ea23b85ff76077bd29ee9": {
     "first_seen": "2026-04-13T01:54:59.200754",
     "title": "909 - 634 CHURCH STREET|Toronto (Church-Yonge Corridor), Ontario M4Y2G3",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "8acf4e303d5b4be88c2f2829c720a1ba": {
     "first_seen": "2026-04-13T01:54:59.200755",
     "title": "2910 - 1 BLOOR STREET E|Toronto (Church-Yonge Corridor), Ontario M4W0A8",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "762b4924ba99c9e5080ceab45093d53a": {
     "first_seen": "2026-04-13T01:54:59.200756",
     "title": "1110 - 634 CHURCH STREET|Toronto (Church-Yonge Corridor), Ontario M4Y0G9",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "0dd5ab14494d775edfc668f4549664a2": {
     "first_seen": "2026-04-13T01:54:59.200758",
     "title": "2905 - 634 CHURCH STREET|Toronto (Church-Yonge Corridor), Ontario M4Y0G9",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "c2ed4dac4eec13625f2f4e037a04bdf5": {
     "first_seen": "2026-04-13T01:54:59.200759",
     "title": "2012 - 1001 BAY STREET|Toronto (Bay Street Corridor), Ontario M5S3A6",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "3a6fbd192b8a35b20ee9573f8541b163": {
     "first_seen": "2026-04-13T01:54:59.200760",
     "title": "LOWER UNIT - 115 LIVINGSTONE AVENUE|Toronto (Briar Hill-Belgravia), Ontario M6E2L7",
+    "active": false,
+    "expired": true
+  },
+  "0a882cefe5b38273e6f414fc9192134a": {
+    "first_seen": "2026-04-13T02:01:56.043954",
+    "title": "403 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
+    "active": true
+  },
+  "15b325e9c391d343663bff626352455a": {
+    "first_seen": "2026-04-13T02:01:56.043963",
+    "title": "1 - 26 ALCINA AVENUE|Toronto (Wychwood), Ontario M6G2E8",
+    "active": true
+  },
+  "7b513402a2cba595c694812f78d1be70": {
+    "first_seen": "2026-04-13T02:01:56.043964",
+    "title": "306 - 11 WALMER ROAD|Toronto (Annex), Ontario M5R2W9",
     "active": true
   }
 }
