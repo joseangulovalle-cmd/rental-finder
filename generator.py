@@ -32,6 +32,8 @@ def generate(listings):
         "walk_school":   lst.get("walk_minutes_school"),
         "distance_sub":  lst.get("distance_subway_km"),
         "walk_subway":   lst.get("walk_minutes_subway"),
+        "walk_spadina":  lst.get("walk_minutes_spadina"),
+        "walk_stclair":  lst.get("walk_minutes_stclair"),
         "lat":           lst.get("lat"),
         "lon":           lst.get("lon"),
     } for lst in listings], ensure_ascii=False)
@@ -464,7 +466,13 @@ function renderCards(listings) {{
             ? `<div class="dist">🏫 ${{lst.walk_school}} min al colegio (${{lst.distance_km}} km)</div>`
             : '';
         const distSubway = lst.walk_subway
-            ? `<div class="sub">🚇 ${{lst.walk_subway}} min a Dupont Station (${{lst.distance_sub}} km)</div>`
+            ? `<div class="sub">🚇 ${{lst.walk_subway}} min a Dupont</div>`
+            : '';
+        const distSpadina = lst.walk_spadina
+            ? `<div class="sub">🚇 ${{lst.walk_spadina}} min a Spadina</div>`
+            : '';
+        const distStclair = lst.walk_stclair
+            ? `<div class="sub">🚇 ${{lst.walk_stclair}} min a St. Clair West</div>`
             : '';
 
         return `
@@ -482,6 +490,8 @@ function renderCards(listings) {{
                 </div>
                 ${{distSchool}}
                 ${{distSubway}}
+                ${{distSpadina}}
+                ${{distStclair}}
                 <div class="loc">📍 ${{lst.location}}</div>
                 <a href="${{lst.listing_url}}" target="_blank" class="btn-card">Ver anuncio →</a>
             </div>
