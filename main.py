@@ -56,27 +56,27 @@ def in_valid_zone(listing):
 
     Si no hay coordenadas, se incluye igual.
     """
+    source       = listing.get("source")
     mins_school  = listing.get("walk_minutes_school")
     mins_dupont  = listing.get("walk_minutes_subway")
     mins_spadina = listing.get("walk_minutes_spadina")
     mins_stclair = listing.get("walk_minutes_stclair")
 
-    # Sin coordenadas → no podemos filtrar → incluir
     if mins_school is None:
-        return True
-
-    source = listing.get("source")
+        # Realtor.ca siempre tiene coordenadas de la API — si faltan, algo esta mal → excluir
+        # Kijiji/Craigslist no siempre tienen direccion exacta → incluir
+        return source != "Realtor.ca"
 
     if source == "Realtor.ca":
-        # Umbral mas generoso: <= 10 min a cualquier estacion o al colegio
+        # <= 7 min a cualquier estacion (~500m) o <= 12 min al colegio (~900m)
         return (
-            mins_school  <= 15 or
-            mins_dupont  <= 10 or
-            mins_spadina <= 10 or
-            mins_stclair <= 10
+            mins_school  <= 12 or
+            mins_dupont  <=  7 or
+            mins_spadina <=  7 or
+            mins_stclair <=  7
         )
 
-    # Kijiji y Craigslist: criterio estricto original
+    # Kijiji y Craigslist
     return (
         mins_school  <= 10 or
         mins_dupont  <=  5 or
