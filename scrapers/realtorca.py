@@ -8,12 +8,12 @@ import json
 from playwright.sync_api import sync_playwright
 
 # URL de busqueda en vista lista
-# Area: desde St. Clair (norte) hasta Dupont (sur), Bathurst (oeste) hasta Avenue Rd (este)
+# Area: cubre St. Clair West, Dupont y Spadina stations con margen de ~10 min caminando
 URL = (
-    "https://www.realtor.ca/map#ZoomLevel=14"
-    "&Center=43.680%2C-79.410"
-    "&LatitudeMax=43.695&LongitudeMax=-79.390"
-    "&LatitudeMin=43.665&LongitudeMin=-79.432"
+    "https://www.realtor.ca/map#ZoomLevel=15"
+    "&Center=43.676%2C-79.408"
+    "&LatitudeMax=43.690&LongitudeMax=-79.395"
+    "&LatitudeMin=43.663&LongitudeMin=-79.422"
     "&Sort=6-D&PropertyTypeGroupID=1&TransactionTypeId=3"
     "&PropertySearchTypeId=0&BedRange=2-2&BathRange=2-2&Currency=CAD"
 )

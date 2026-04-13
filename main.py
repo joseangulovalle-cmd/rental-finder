@@ -56,9 +56,6 @@ def in_valid_zone(listing):
 
     Si no hay coordenadas, se incluye igual.
     """
-    if listing.get("source") == "Realtor.ca":
-        return True
-
     mins_school  = listing.get("walk_minutes_school")
     mins_dupont  = listing.get("walk_minutes_subway")
     mins_spadina = listing.get("walk_minutes_spadina")
@@ -68,6 +65,18 @@ def in_valid_zone(listing):
     if mins_school is None:
         return True
 
+    source = listing.get("source")
+
+    if source == "Realtor.ca":
+        # Umbral mas generoso: <= 10 min a cualquier estacion o al colegio
+        return (
+            mins_school  <= 15 or
+            mins_dupont  <= 10 or
+            mins_spadina <= 10 or
+            mins_stclair <= 10
+        )
+
+    # Kijiji y Craigslist: criterio estricto original
     return (
         mins_school  <= 10 or
         mins_dupont  <=  5 or
