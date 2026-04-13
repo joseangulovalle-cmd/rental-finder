@@ -52,26 +52,44 @@ def scrape():
 
             # Si la API funcionó, usar esos datos
             if captured_data:
+                # Debug: mostrar campos del primer resultado para entender la estructura
+                if captured_data:
+                    p0 = captured_data[0]
+                    print(f"[Realtor.ca DEBUG] Property keys: {list(p0.get('Property', {}).keys())}")
+                    print(f"[Realtor.ca DEBUG] Price='{p0.get('Property', {}).get('Price')}' PriceUnformatted='{p0.get('Property', {}).get('PriceUnformatted')}' Lease='{p0.get('Property', {}).get('Lease')}'")
+                    print(f"[Realtor.ca DEBUG] Building keys: {list(p0.get('Building', {}).keys())}")
+                    print(f"[Realtor.ca DEBUG] SizeInterior='{p0.get('Building', {}).get('SizeInterior')}' SizeInteriorUOM='{p0.get('Building', {}).get('SizeInteriorUOM')}'")
+
                 for prop in captured_data:
                     try:
                         mls = prop.get("MlsNumber", "")
                         address = prop.get("Property", {}).get("Address", {})
                         full_address = address.get("AddressText", "Toronto, ON")
-                        price_raw = prop.get("Property", {}).get("Price", "Precio no indicado")
+                        price_raw = (
+                            prop.get("Property", {}).get("Price") or
+                            prop.get("Property", {}).get("PriceUnformatted") or
+                            prop.get("Property", {}).get("Lease") or
+                            "Precio no indicado"
+                        )
                         beds = prop.get("Building", {}).get("Bedrooms", "2")
                         baths = prop.get("Building", {}).get("BathroomTotal", "2")
                         photo = prop.get("Property", {}).get("Photo", [{}])
                         image_url = photo[0].get("HighResPath", "") if photo else ""
                         listing_url = f"https://www.realtor.ca{prop.get('RelativeDetailsURL', '')}"
 
-                        # Sqft (puede venir como "750 - 800 sqft" o "750 sqft")
+                        # Sqft: la API de Realtor.ca puede devolver en m² o sqft
                         size_raw = prop.get("Building", {}).get("SizeInterior", "") or ""
+                        size_uom = prop.get("Building", {}).get("SizeInteriorUOM", "") or ""
                         sqft = None
                         if size_raw:
                             import re as _re
                             m = _re.search(r"(\d[\d,]*)", str(size_raw))
                             if m:
-                                sqft = m.group(1).replace(",", "")
+                                size_num = int(m.group(1).replace(",", ""))
+                                # Si la unidad es metros cuadrados, convertir a sqft
+                                if "m" in size_uom.lower() or size_num < 200:
+                                    size_num = round(size_num * 10.764)
+                                sqft = str(size_num)
 
                         # Coordenadas GPS directamente de la API
                         prop_lat = prop.get("Property", {}).get("Address", {}).get("Latitude") or \
