@@ -61,8 +61,8 @@ def meets_filters(listing):
         return False
 
     if source == "Realtor.ca":
-        # Sqft opcional: si viene, aplicar filtro; si no, igual incluir
-        if sqft is not None and sqft < MIN_SQFT:
+        # Sqft con umbral mas flexible: excluir solo si es menor a 700
+        if sqft is not None and sqft < 700:
             return False
     else:
         # Kijiji y Craigslist: sqft obligatorio
