@@ -246,9 +246,9 @@
 </header>
 
 <div class="stats">
-    <span><strong id="count">0</strong> propiedades encontradas</span>
+    <span><strong id="count">5</strong> propiedades encontradas</span>
     <span>Fuentes: Kijiji · Craigslist · Realtor.ca</span>
-    <span>Actualizado: April 13, 2026 – 00:46 UTC</span>
+    <span>Actualizado: April 13, 2026 – 00:57 UTC</span>
 </div>
 
 <!-- FILTROS -->
@@ -319,7 +319,7 @@
 
 <script>
 // ---- DATOS ----
-const ALL_LISTINGS = [];
+const ALL_LISTINGS = [{"id": "5822d77ecc697d8f171cc9fbee95b9a0", "title": "Prince Arthur - 2 Bedroom Apartment for Rent", "price": "$2,999.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/0a/0a64de84-e704-4e42-bb31-597aa7c2d723?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/prince-arthur-2-bedroom-apartment-for-rent/1735775444", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "lat": null, "lon": null}, {"id": "46779ae8d7dac063a731c4a061783a8e", "title": "Yonge Bloor! Two bedroom suite *Special Offer Available", "price": "$3,029.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/00/00b378a1-7aa1-4298-88d0-c75227f4ea33?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/yonge-bloor-two-bedroom-suite-special-offer-available/1734735293", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "lat": null, "lon": null}, {"id": "37884d6e2abe4cffc8ceafdb4ad8fdad", "title": "*Special Offer Available* Rental Close to U of T!", "price": "$3,449.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/c0/c0419863-03c4-4113-9c61-a0c939d08b97?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/special-offer-available-rental-close-to-u-of-t/1734735261", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "lat": null, "lon": null}, {"id": "ec5ed42c2c2ee25df197015b0dbdf6a6", "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE", "price": "$3,200.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/76/7671a95f-3e94-4ff3-8ecc-5ff6832c417b?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/494-avenue-road-2-bedroom-penthouse/1734735198", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "lat": null, "lon": null}, {"id": "9102d99c3a0d92ff6d0a6a0db5a5ddd3", "title": "1702 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario", "price": "$3,800.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b0/b0bab779-ec27-481e-a6b0-8c6d2e59e69e?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/1702-65-st-mary-street-toronto-bay-street-corridor-ontario/1735454389", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "lat": null, "lon": null}];
 
 const SOURCE_COLORS = {"Kijiji": "#e05b29", "Craigslist": "#6c3483", "Realtor.ca": "#d4171e"};
 
