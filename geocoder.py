@@ -15,7 +15,15 @@ SCHOOL_NAME = "Waldorf Academy"
 
 DUPONT_STATION_LAT = 43.6747
 DUPONT_STATION_LON = -79.4064
-DUPONT_STATION_NAME = "Dupont Station (Subway)"
+DUPONT_STATION_NAME = "Dupont Station"
+
+SPADINA_STATION_LAT = 43.6678
+SPADINA_STATION_LON = -79.4034
+SPADINA_STATION_NAME = "Spadina Station"
+
+STCLAIR_STATION_LAT = 43.6834
+STCLAIR_STATION_LON = -79.4127
+STCLAIR_STATION_NAME = "St. Clair West Station"
 
 HEADERS = {
     "User-Agent": "rental-finder-family-app/1.0 (jose.angulo.valle@gmail.com)"
@@ -107,13 +115,23 @@ def enrich_listing(listing):
         mins_school = km_to_walk_minutes(dist_school)
 
         # Distancia a Dupont Station
-        dist_subway = haversine(lat, lon, DUPONT_STATION_LAT, DUPONT_STATION_LON)
-        mins_subway = km_to_walk_minutes(dist_subway)
+        dist_dupont = haversine(lat, lon, DUPONT_STATION_LAT, DUPONT_STATION_LON)
+        mins_dupont = km_to_walk_minutes(dist_dupont)
+
+        # Distancia a Spadina Station
+        dist_spadina = haversine(lat, lon, SPADINA_STATION_LAT, SPADINA_STATION_LON)
+        mins_spadina = km_to_walk_minutes(dist_spadina)
+
+        # Distancia a St. Clair West Station
+        dist_stclair = haversine(lat, lon, STCLAIR_STATION_LAT, STCLAIR_STATION_LON)
+        mins_stclair = km_to_walk_minutes(dist_stclair)
 
         listing["distance_km"] = dist_school
         listing["walk_minutes_school"] = mins_school
-        listing["distance_subway_km"] = dist_subway
-        listing["walk_minutes_subway"] = mins_subway
+        listing["distance_subway_km"] = dist_dupont
+        listing["walk_minutes_subway"] = mins_dupont
+        listing["walk_minutes_spadina"] = mins_spadina
+        listing["walk_minutes_stclair"] = mins_stclair
         listing["lat"] = lat
         listing["lon"] = lon
     else:
@@ -121,5 +139,7 @@ def enrich_listing(listing):
         listing["walk_minutes_school"] = None
         listing["distance_subway_km"] = None
         listing["walk_minutes_subway"] = None
+        listing["walk_minutes_spadina"] = None
+        listing["walk_minutes_stclair"] = None
 
     return listing

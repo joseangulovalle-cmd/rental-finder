@@ -44,6 +44,35 @@ def _parse_sqft(sqft_val):
     return int(m.group(1)) if m else None
 
 
+def in_valid_zone(listing):
+    """Retorna True si la propiedad esta en al menos una zona valida.
+
+    Criterios (basta cumplir uno):
+    - <= 10 min caminando al colegio
+    - <=  5 min caminando a Dupont Station
+    - <=  5 min caminando a Spadina Station
+    - <=  5 min caminando a St. Clair West Station
+
+    Si no hay coordenadas (no se pudo geocodificar), se incluye igual
+    para no descartar anuncios de Kijiji/Craigslist sin direccion exacta.
+    """
+    mins_school  = listing.get("walk_minutes_school")
+    mins_dupont  = listing.get("walk_minutes_subway")
+    mins_spadina = listing.get("walk_minutes_spadina")
+    mins_stclair = listing.get("walk_minutes_stclair")
+
+    # Sin coordenadas → no podemos filtrar → incluir
+    if mins_school is None:
+        return True
+
+    return (
+        mins_school  <= 10 or
+        mins_dupont  <=  5 or
+        mins_spadina <=  5 or
+        mins_stclair <=  5
+    )
+
+
 def meets_filters(listing):
     """Retorna True solo si el anuncio cumple los filtros de precio y sqft.
 
@@ -110,7 +139,11 @@ def main():
 
     # Aplicar filtros de precio y sqft
     all_listings = [l for l in all_listings if meets_filters(l)]
-    print(f" Despues de filtros (precio <= ${MAX_PRICE}, sqft >= {MIN_SQFT}): {len(all_listings)} anuncios")
+    print(f" Despues de filtros precio/sqft: {len(all_listings)} anuncios")
+
+    # Aplicar filtro de zona (al menos 1 criterio de ubicacion)
+    all_listings = [l for l in all_listings if in_valid_zone(l)]
+    print(f" Despues de filtro de zona: {len(all_listings)} anuncios")
 
     # 2. Cargar anuncios ya vistos
     seen = load_seen()

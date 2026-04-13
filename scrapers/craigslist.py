@@ -11,7 +11,7 @@ URL = (
     "?lat=43.6769&lon=-79.4064"
     "&min_bathrooms=2&max_bathrooms=2"
     "&min_bedrooms=2&max_bedrooms=2"
-    "&search_distance=0.8"
+    "&search_distance=1.5"
 )
 
 def scrape():
