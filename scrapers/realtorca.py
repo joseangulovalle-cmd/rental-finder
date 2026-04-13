@@ -50,10 +50,6 @@ def scrape():
             page.wait_for_timeout(6000)
 
             print(f"[Realtor.ca] Datos de API capturados: {len(captured_data)} propiedades")
-            for _p in captured_data:
-                _addr = _p.get("Property", {}).get("Address", {}).get("AddressText", "?")
-                _price = _p.get("Property", {}).get("LeaseRent") or _p.get("Property", {}).get("Price") or "?"
-                print(f"[Realtor.ca DEBUG] {_addr} | {_price}")
 
             # Si la API funcionó, usar esos datos
             if captured_data:
