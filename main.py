@@ -139,11 +139,17 @@ def main():
 
     # Aplicar filtros de precio y sqft
     all_listings = [l for l in all_listings if meets_filters(l)]
-    print(f" Despues de filtros precio/sqft: {len(all_listings)} anuncios")
+    by_source = {}
+    for l in all_listings:
+        by_source[l["source"]] = by_source.get(l["source"], 0) + 1
+    print(f" Despues de filtros precio/sqft: {len(all_listings)} anuncios {by_source}")
 
     # Aplicar filtro de zona (al menos 1 criterio de ubicacion)
     all_listings = [l for l in all_listings if in_valid_zone(l)]
-    print(f" Despues de filtro de zona: {len(all_listings)} anuncios")
+    by_source2 = {}
+    for l in all_listings:
+        by_source2[l["source"]] = by_source2.get(l["source"], 0) + 1
+    print(f" Despues de filtro de zona: {len(all_listings)} anuncios {by_source2}")
 
     # 2. Cargar anuncios ya vistos
     seen = load_seen()
