@@ -68,12 +68,13 @@ def in_valid_zone(listing):
         return source != "Realtor.ca"
 
     if source == "Realtor.ca":
-        # <= 7 min a cualquier estacion (~500m) o <= 12 min al colegio (~900m)
+        # <= 12 min a cualquier estacion o <= 18 min al colegio
+        # (nuestro calculo en linea recta sobreestima ~1.5x vs calles reales)
         return (
-            mins_school  <= 12 or
-            mins_dupont  <=  7 or
-            mins_spadina <=  7 or
-            mins_stclair <=  7
+            mins_school  <= 18 or
+            mins_dupont  <= 12 or
+            mins_spadina <= 12 or
+            mins_stclair <= 12
         )
 
     # Kijiji y Craigslist
