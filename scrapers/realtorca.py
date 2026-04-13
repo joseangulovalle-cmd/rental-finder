@@ -8,11 +8,12 @@ import json
 from playwright.sync_api import sync_playwright
 
 # URL de busqueda en vista lista
+# Area: desde St. Clair (norte) hasta Dupont (sur), Bathurst (oeste) hasta Avenue Rd (este)
 URL = (
-    "https://www.realtor.ca/map#ZoomLevel=16"
-    "&Center=43.677156%2C-79.407009"
-    "&LatitudeMax=43.67976&LongitudeMax=-79.39628"
-    "&LatitudeMin=43.67455&LongitudeMin=-79.41774"
+    "https://www.realtor.ca/map#ZoomLevel=14"
+    "&Center=43.680%2C-79.410"
+    "&LatitudeMax=43.695&LongitudeMax=-79.390"
+    "&LatitudeMin=43.665&LongitudeMin=-79.432"
     "&Sort=6-D&PropertyTypeGroupID=1&TransactionTypeId=3"
     "&PropertySearchTypeId=0&BedRange=2-2&BathRange=2-2&Currency=CAD"
 )
