@@ -52,23 +52,16 @@ def scrape():
 
             # Si la API funcionó, usar esos datos
             if captured_data:
-                # Debug: mostrar campos del primer resultado para entender la estructura
-                if captured_data:
-                    p0 = captured_data[0]
-                    print(f"[Realtor.ca DEBUG] Property keys: {list(p0.get('Property', {}).keys())}")
-                    print(f"[Realtor.ca DEBUG] Price='{p0.get('Property', {}).get('Price')}' PriceUnformatted='{p0.get('Property', {}).get('PriceUnformatted')}' Lease='{p0.get('Property', {}).get('Lease')}'")
-                    print(f"[Realtor.ca DEBUG] Building keys: {list(p0.get('Building', {}).keys())}")
-                    print(f"[Realtor.ca DEBUG] SizeInterior='{p0.get('Building', {}).get('SizeInterior')}' SizeInteriorUOM='{p0.get('Building', {}).get('SizeInteriorUOM')}'")
-
                 for prop in captured_data:
                     try:
                         mls = prop.get("MlsNumber", "")
                         address = prop.get("Property", {}).get("Address", {})
                         full_address = address.get("AddressText", "Toronto, ON")
+                        prop_data = prop.get("Property", {})
                         price_raw = (
-                            prop.get("Property", {}).get("Price") or
-                            prop.get("Property", {}).get("PriceUnformatted") or
-                            prop.get("Property", {}).get("Lease") or
+                            prop_data.get("LeaseRent") or
+                            prop_data.get("leaseRentUnformattedValue") or
+                            prop_data.get("Price") or
                             "Precio no indicado"
                         )
                         beds = prop.get("Building", {}).get("Bedrooms", "2")

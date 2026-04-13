@@ -108,11 +108,6 @@ def main():
 
     print(f"\n Total recolectados antes de filtrar: {len(all_listings)} anuncios")
 
-    # Debug: mostrar precio y sqft de los primeros 5 anuncios de Realtor.ca
-    realtorca_listings = [l for l in all_listings if l.get("source") == "Realtor.ca"]
-    for l in realtorca_listings[:5]:
-        print(f" [DEBUG Realtor.ca] precio='{l.get('price')}' sqft='{l.get('sqft')}'")
-
     # Aplicar filtros de precio y sqft
     all_listings = [l for l in all_listings if meets_filters(l)]
     print(f" Despues de filtros (precio <= ${MAX_PRICE}, sqft >= {MIN_SQFT}): {len(all_listings)} anuncios")
