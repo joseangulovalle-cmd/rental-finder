@@ -39,18 +39,32 @@ def _parse_sqft(sqft_val):
 
 
 def meets_filters(listing):
-    """Retorna True solo si el anuncio cumple precio <= MAX_PRICE y sqft >= MIN_SQFT."""
+    """Retorna True solo si el anuncio cumple los filtros de precio y sqft.
+
+    Realtor.ca: solo exige precio (sqft no siempre viene en la API de busqueda).
+    Kijiji / Craigslist: exige precio y sqft (aparece en la tarjeta del anuncio).
+    """
     price = _parse_price(listing.get("price"))
     sqft = _parse_sqft(listing.get("sqft"))
+    source = listing.get("source", "")
 
     if price is None:
-        return False   # Sin precio → descartar
-    if sqft is None:
-        return False   # Sin sqft → descartar
+        return False   # Sin precio → siempre descartar
+
     if price > MAX_PRICE:
         return False
-    if sqft < MIN_SQFT:
-        return False
+
+    if source == "Realtor.ca":
+        # Sqft opcional: si viene, aplicar filtro; si no, igual incluir
+        if sqft is not None and sqft < MIN_SQFT:
+            return False
+    else:
+        # Kijiji y Craigslist: sqft obligatorio
+        if sqft is None:
+            return False
+        if sqft < MIN_SQFT:
+            return False
+
     return True
 
 
