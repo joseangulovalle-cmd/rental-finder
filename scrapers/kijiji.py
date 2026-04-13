@@ -71,6 +71,14 @@ def scrape():
                             if (priceMatch) price = priceMatch[0];
                         }
 
+                        // Sqft
+                        let sqft = null;
+                        if (container) {
+                            const allText = container.innerText || '';
+                            const sqftMatch = allText.match(/(\\d[\\d,]+)\\s*(ft²|sq\\.?\\s*ft\\.?|sqft)/i);
+                            if (sqftMatch) sqft = sqftMatch[1].replace(',', '');
+                        }
+
                         // Imagen
                         let image_url = '';
                         if (container) {
@@ -78,7 +86,7 @@ def scrape():
                             if (img) image_url = img.src || img.dataset.src || '';
                         }
 
-                        listings.push({ href, title, price, image_url });
+                        listings.push({ href, title, price, sqft, image_url });
                     });
 
                     return listings;
@@ -100,6 +108,7 @@ def scrape():
                     "source": "Kijiji",
                     "bedrooms": "2",
                     "bathrooms": "2",
+                    "sqft": r.get("sqft"),
                 })
 
             browser.close()

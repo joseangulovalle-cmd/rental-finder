@@ -10,13 +10,48 @@ Este archivo es el "director de orquesta":
 
 import json
 import os
+import re
 from datetime import datetime
 
 from scrapers import kijiji, craigslist, realtorca
 from geocoder import enrich_listing
 from notifier import send_notification
 from generator import generate
-from config import SEEN_FILE
+from config import SEEN_FILE, MAX_PRICE, MIN_SQFT
+
+
+def _parse_price(price_str):
+    """Extrae numero de un string como '$2,500' o '$3,500/month'. Retorna None si no hay precio."""
+    if not price_str or price_str in ("Precio no indicado", "Ver en Realtor.ca"):
+        return None
+    m = re.search(r"\$([\d,]+)", str(price_str))
+    if m:
+        return int(m.group(1).replace(",", ""))
+    return None
+
+
+def _parse_sqft(sqft_val):
+    """Extrae numero de sqft. Retorna None si no hay dato."""
+    if not sqft_val:
+        return None
+    m = re.search(r"(\d+)", str(sqft_val))
+    return int(m.group(1)) if m else None
+
+
+def meets_filters(listing):
+    """Retorna True solo si el anuncio cumple precio <= MAX_PRICE y sqft >= MIN_SQFT."""
+    price = _parse_price(listing.get("price"))
+    sqft = _parse_sqft(listing.get("sqft"))
+
+    if price is None:
+        return False   # Sin precio → descartar
+    if sqft is None:
+        return False   # Sin sqft → descartar
+    if price > MAX_PRICE:
+        return False
+    if sqft < MIN_SQFT:
+        return False
+    return True
 
 
 def load_seen():
@@ -51,7 +86,11 @@ def main():
         all_listings[i] = enrich_listing(listing)
     print(f" Distancias calculadas para {len(all_listings)} propiedades")
 
-    print(f"\n Total recolectados: {len(all_listings)} anuncios")
+    print(f"\n Total recolectados antes de filtrar: {len(all_listings)} anuncios")
+
+    # Aplicar filtros de precio y sqft
+    all_listings = [l for l in all_listings if meets_filters(l)]
+    print(f" Despues de filtros (precio <= ${MAX_PRICE}, sqft >= {MIN_SQFT}): {len(all_listings)} anuncios")
 
     # 2. Cargar anuncios ya vistos
     seen = load_seen()

@@ -14,6 +14,8 @@ MAX_DISTANCE_KM = 1.2
 MIN_BEDROOMS = 2
 MIN_BATHROOMS = 2
 PROPERTY_TYPE = "rental"  # Solo arriendos
+MAX_PRICE = 4000           # Precio maximo mensual en CAD
+MIN_SQFT = 800             # Superficie minima en pies cuadrados
 
 # Emails para notificaciones (se leen de secrets, no estan escritos aqui)
 import os

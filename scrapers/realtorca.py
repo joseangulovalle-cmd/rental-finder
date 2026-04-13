@@ -64,6 +64,15 @@ def scrape():
                         image_url = photo[0].get("HighResPath", "") if photo else ""
                         listing_url = f"https://www.realtor.ca{prop.get('RelativeDetailsURL', '')}"
 
+                        # Sqft (puede venir como "750 - 800 sqft" o "750 sqft")
+                        size_raw = prop.get("Building", {}).get("SizeInterior", "") or ""
+                        sqft = None
+                        if size_raw:
+                            import re as _re
+                            m = _re.search(r"(\d[\d,]*)", str(size_raw))
+                            if m:
+                                sqft = m.group(1).replace(",", "")
+
                         # Coordenadas GPS directamente de la API
                         prop_lat = prop.get("Property", {}).get("Address", {}).get("Latitude") or \
                                    prop.get("Building", {}).get("StoriesTotal") and None or \
@@ -90,6 +99,7 @@ def scrape():
                             "bathrooms": str(baths),
                             "lat": prop_lat,
                             "lon": prop_lon,
+                            "sqft": sqft,
                         })
                     except Exception:
                         continue
