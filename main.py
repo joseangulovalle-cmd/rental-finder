@@ -47,15 +47,18 @@ def _parse_sqft(sqft_val):
 def in_valid_zone(listing):
     """Retorna True si la propiedad esta en al menos una zona valida.
 
-    Criterios (basta cumplir uno):
+    Realtor.ca: el rectangulo geografico de la URL ya garantiza la zona → siempre True.
+    Kijiji / Craigslist: se filtra por distancia (basta cumplir uno):
     - <= 10 min caminando al colegio
     - <=  5 min caminando a Dupont Station
     - <=  5 min caminando a Spadina Station
     - <=  5 min caminando a St. Clair West Station
 
-    Si no hay coordenadas (no se pudo geocodificar), se incluye igual
-    para no descartar anuncios de Kijiji/Craigslist sin direccion exacta.
+    Si no hay coordenadas, se incluye igual.
     """
+    if listing.get("source") == "Realtor.ca":
+        return True
+
     mins_school  = listing.get("walk_minutes_school")
     mins_dupont  = listing.get("walk_minutes_subway")
     mins_spadina = listing.get("walk_minutes_spadina")
