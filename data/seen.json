@@ -91,12 +91,14 @@
   "7b513402a2cba595c694812f78d1be70": {
     "first_seen": "2026-04-13T02:01:56.043964",
     "title": "306 - 11 WALMER ROAD|Toronto (Annex), Ontario M5R2W9",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b1e6a5f11e4ed88d305d6673af4db54c": {
     "first_seen": "2026-04-13T07:29:06.072184",
     "title": "1,100 SQ FT – 2 BED + DEN, 2 BATH QUEEN WEST APARTMENT (ALL-INCLUSI",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "a66dcd9cb235ef6d0c5b404500d56944": {
     "first_seen": "2026-04-13T22:32:28.551880",
@@ -106,6 +108,11 @@
   "b6dc8607c8c5c072360cd9c15abcd834": {
     "first_seen": "2026-04-13T22:32:28.551888",
     "title": "309 - 310 TWEEDSMUIR AVENUE|Toronto (Forest Hill South), Ontario M5P2Y2",
+    "active": true
+  },
+  "c4990a52fadb95967af37c6687e855f7": {
+    "first_seen": "2026-04-14T19:58:36.849923",
+    "title": "1202 - 1486 BATHURST STREET|Toronto (Humewood-Cedarvale), Ontario M5P3G9",
     "active": true
   }
 }
