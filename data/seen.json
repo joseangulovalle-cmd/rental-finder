@@ -2,7 +2,8 @@
   "5822d77ecc697d8f171cc9fbee95b9a0": {
     "first_seen": "2026-04-13T00:25:30.241387",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-13T00:25:30.241469",
