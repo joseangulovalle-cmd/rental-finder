@@ -102,15 +102,17 @@ def meets_filters(listing):
     if price > MAX_PRICE:
         return False
 
-    if source == "Realtor.ca":
-        # Sqft con umbral mas flexible: excluir solo si es menor a 700
-        if sqft is not None and sqft < 700:
-            return False
-    else:
-        # Kijiji y Craigslist: sqft obligatorio
+    if source == "Kijiji":
+        # Kijiji: sqft obligatorio (aparece en las tarjetas)
         if sqft is None:
             return False
         if sqft < MIN_SQFT:
+            return False
+    else:
+        # Realtor.ca y Craigslist: sqft opcional
+        # Si viene disponible se aplica el filtro, si no se incluye igual
+        min_sqft = 700 if source == "Realtor.ca" else MIN_SQFT
+        if sqft is not None and sqft < min_sqft:
             return False
 
     return True
