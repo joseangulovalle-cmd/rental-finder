@@ -11,7 +11,7 @@ URL = (
     "?lat=43.6769&lon=-79.4064"
     "&min_bathrooms=2"
     "&min_bedrooms=2&max_bedrooms=3"
-    "&search_distance=1.5"
+    "&search_distance=0.8"
 )
 
 def scrape():
@@ -82,7 +82,21 @@ def scrape():
                             if (img) image_url = img.src || '';
                         }
 
-                        listings.push({ href, title, price, sqft, image_url });
+                        // Ubicacion (barrio) — aparece entre parentesis en Craigslist
+                        let location = '';
+                        if (container) {
+                            const hood = container.querySelector('.result-hood, .housing-hood, [class*="hood"], [class*="location"]');
+                            if (hood) {
+                                location = hood.innerText.replace(/[()]/g, '').trim();
+                            } else {
+                                // Intentar extraer del texto completo: "(Barrio)"
+                                const allText = container.innerText || '';
+                                const hoodMatch = allText.match(/\\(([^)]{3,40})\\)/);
+                                if (hoodMatch) location = hoodMatch[1].trim();
+                            }
+                        }
+
+                        listings.push({ href, title, price, sqft, image_url, location });
                     });
 
                     return listings;
@@ -97,7 +111,7 @@ def scrape():
                     "id": uid,
                     "title": r["title"],
                     "price": r["price"],
-                    "location": "Toronto, ON",
+                    "location": r.get("location") or "Toronto, ON",
                     "distance_km": None,
                     "image_url": r["image_url"],
                     "listing_url": r["href"],
