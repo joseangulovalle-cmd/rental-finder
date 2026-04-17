@@ -102,11 +102,19 @@ def enrich_listing(listing):
 
         should_geocode = (
             source == "Realtor.ca" or
+            source == "Craigslist" or
             (address and address != "Toronto, ON" and looks_like_address(address))
         )
 
         if should_geocode:
-            lat, lon = geocode_address(address)
+            # Para Craigslist usar location (barrio) si no parece una direccion
+            if source == "Craigslist" and not looks_like_address(address):
+                # Intentar con "Barrio, Toronto" para geocodificar barrios
+                geocode_query = f"{address}, Toronto, Ontario" if address and address != "Toronto, ON" else None
+                if geocode_query:
+                    lat, lon = geocode_address(geocode_query)
+            else:
+                lat, lon = geocode_address(address)
             time.sleep(1)  # Respetar limite de OpenStreetMap (1 req/seg)
 
     if lat and lon:

@@ -63,9 +63,10 @@ def in_valid_zone(listing):
     mins_stclair = listing.get("walk_minutes_stclair")
 
     if mins_school is None:
-        # Realtor.ca siempre tiene coordenadas de la API — si faltan, algo esta mal → excluir
-        # Kijiji/Craigslist no siempre tienen direccion exacta → incluir
-        return source != "Realtor.ca"
+        # Realtor.ca: siempre tiene coordenadas → si faltan, excluir
+        # Craigslist: ahora intenta geocodificar → si no pudo, excluir
+        # Kijiji: no siempre tiene direccion exacta → incluir
+        return source == "Kijiji"
 
     if source == "Realtor.ca":
         # <= 12 min a cualquier estacion o <= 18 min al colegio
