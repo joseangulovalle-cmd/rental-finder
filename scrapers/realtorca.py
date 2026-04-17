@@ -15,7 +15,7 @@ URL = (
     "&LatitudeMax=43.690&LongitudeMax=-79.395"
     "&LatitudeMin=43.663&LongitudeMin=-79.422"
     "&Sort=6-D&PropertyTypeGroupID=1&TransactionTypeId=3"
-    "&PropertySearchTypeId=0&BedRange=2-2&BathRange=2-2&Currency=CAD"
+    "&PropertySearchTypeId=0&BedRange=2-3&BathRange=2-0&Currency=CAD"
 )
 
 def scrape():
