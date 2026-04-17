@@ -42,6 +42,52 @@
         }
         .stats strong { color: #2563eb; font-size: 1.1rem; }
 
+        /* FILTROS CORAZON */
+        .heart-filters {
+            background: #fff8f8;
+            border-bottom: 1px solid #fce4e4;
+            padding: 10px 20px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .hf-btn {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #555;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .hf-btn:hover { border-color: #e53e3e; }
+        .hf-btn.active {
+            background: #e53e3e;
+            border-color: #e53e3e;
+            color: white;
+        }
+        .hf-btn.active.hf-hidden {
+            background: #2d3748;
+            border-color: #2d3748;
+        }
+        .hf-btn.active.hf-unmarked {
+            background: #718096;
+            border-color: #718096;
+        }
+        .hf-btn.active.hf-all {
+            background: #2563eb;
+            border-color: #2563eb;
+        }
+        #jsonbin-status {
+            font-size: 0.75rem;
+            color: #a0aec0;
+            margin-left: 8px;
+        }
+
         /* FILTROS */
         .filters {
             background: white;
@@ -141,6 +187,9 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
+        .card.is-hidden-card {
+            opacity: 0.45;
+        }
         .card-image {
             position: relative;
             height: 190px;
@@ -168,6 +217,29 @@
             font-size: 11px;
             font-weight: 700;
         }
+
+        /* BOTON CORAZON */
+        .heart-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: transform 0.15s;
+            line-height: 1;
+        }
+        .heart-btn:hover { transform: scale(1.25); }
+
         .card-body {
             padding: 14px;
             flex: 1;
@@ -178,8 +250,8 @@
         .title { font-size: 0.88rem; color: #2d3748; margin-bottom: 8px; line-height: 1.4; flex: 1; }
         .meta  { display: flex; gap: 10px; font-size: 0.8rem; color: #718096; margin-bottom: 6px; }
         .dist  { font-size: 0.82rem; color: #2563eb; font-weight: 600; margin-bottom: 2px; }
-        .sub   { font-size: 0.82rem; color: #7c3aed; font-weight: 600; margin-bottom: 10px; }
-        .loc   { font-size: 0.8rem; color: #718096; margin-bottom: 10px; }
+        .sub   { font-size: 0.82rem; color: #7c3aed; font-weight: 600; margin-bottom: 2px; }
+        .loc   { font-size: 0.8rem; color: #718096; margin-bottom: 10px; margin-top: 4px; }
         .btn-card {
             display: block;
             text-align: center;
@@ -248,7 +320,16 @@
 <div class="stats">
     <span><strong id="count">13</strong> propiedades encontradas</span>
     <span>Fuentes: Kijiji · Craigslist · Realtor.ca</span>
-    <span>Actualizado: April 17, 2026 – 15:12 UTC</span>
+    <span>Actualizado: April 17, 2026 – 15:37 UTC</span>
+</div>
+
+<!-- FILTROS CORAZON -->
+<div class="heart-filters">
+    <button class="hf-btn hf-all active" id="hf-all" onclick="setHeartFilter('all')">Todas</button>
+    <button class="hf-btn hf-fav"       id="hf-favorite" onclick="setHeartFilter('favorite')">❤️ Favoritas</button>
+    <button class="hf-btn hf-hidden"    id="hf-hidden"   onclick="setHeartFilter('hidden')">🖤 No nos gustó</button>
+    <button class="hf-btn hf-unmarked"  id="hf-unmarked" onclick="setHeartFilter('unmarked')">🤍 Sin marcar</button>
+    <span id="jsonbin-status"></span>
 </div>
 
 <!-- FILTROS -->
@@ -320,13 +401,119 @@
 <script>
 // ---- DATOS ----
 const ALL_LISTINGS = [{"id": "46779ae8d7dac063a731c4a061783a8e", "title": "Yonge Bloor! Two bedroom suite *Special Offer Available", "price": "$3,029.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/9d/9df72f8d-e9f9-4897-a9fa-83231a268422?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/yonge-bloor-two-bedroom-suite-special-offer-available/1734735293", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "37884d6e2abe4cffc8ceafdb4ad8fdad", "title": "*Special Offer Available* Rental Close to U of T!", "price": "$3,449.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ad/ad9361d0-1f37-4f67-bc8a-7a182bfaf84b?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/special-offer-available-rental-close-to-u-of-t/1734735261", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "ec5ed42c2c2ee25df197015b0dbdf6a6", "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE", "price": "$3,200.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/76/7671a95f-3e94-4ff3-8ecc-5ff6832c417b?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/494-avenue-road-2-bedroom-penthouse/1734735198", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "f0720853ae64bd19830f868f4d152cda", "title": "Prince Arthur - 2 Bedroom Apartment for Rent", "price": "$3,300.00", "location": "Toronto, ON", "source": "Kijiji", "bedrooms": "2", "bathrooms": "2", "image_url": "https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/f4/f411c5c0-d0b6-407a-938b-fb2389dd4719?rule=kijijica-400-webp", "listing_url": "https://www.kijiji.ca/v-apartments-condos/city-of-toronto/prince-arthur-2-bedroom-apartment-for-rent/1736015616", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "f3b7c7bf52c6a748c1fc6b2429a3bc63", "title": "MUST SEE 3+1 PERFECT HOME OFFICE 2 BATHS UTILITIES INCLD", "price": "$3,850", "location": "Dovercourt-Wallace Emerson-Junction,", "source": "Craigslist", "bedrooms": "2", "bathrooms": "2", "image_url": "https://www.craigslist.org/images/d/7927005334/empty.png", "listing_url": "https://toronto.craigslist.org/tor/apa/d/downtown-toronto-must-see-31-perfect/7927005334.html", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "2378a37a0ed37814bb95d650fc1e8bd6", "title": "MUST SEE KENSIGHTON MARKET GEM 3 BEDS 4 BATHS", "price": "$3,950", "location": "KENSIGHTON MARKET", "source": "Craigslist", "bedrooms": "2", "bathrooms": "2", "image_url": "https://www.craigslist.org/images/d/7919526766/empty.png", "listing_url": "https://toronto.craigslist.org/tor/apa/d/downtown-toronto-must-see-kensighton/7919526766.html", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "6d0812cbc984c84471def9700bb45f43", "title": "BRAND NEW LUXURY 2+1 2 BATHS PARKING INCLD GALLERIA ON THE PARK", "price": "$2,995", "location": "dupont and dufferin", "source": "Craigslist", "bedrooms": "2", "bathrooms": "2", "image_url": "https://www.craigslist.org/images/d/7927008128/empty.png", "listing_url": "https://toronto.craigslist.org/tor/apa/d/west-toronto-brand-new-luxury-21-baths/7927008128.html", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "297d597baf888f09cbdcc3b3e7115a5a", "title": "JUNCTION TRIANLE 2 BEDS 2 BATHS CORNER UNIT BOUTIQUE PARKING INCLD", "price": "$2,600", "location": "dupont and dufferin", "source": "Craigslist", "bedrooms": "2", "bathrooms": "2", "image_url": "https://www.craigslist.org/images/d/7927007820/empty.png", "listing_url": "https://toronto.craigslist.org/tor/apa/d/west-toronto-junction-trianle-beds/7927007820.html", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "dbfef6b0018f23ef867a83d2ace4d3bd", "title": "2 Bed & 2 Bath -", "price": "$2,500", "location": "Little Portgual", "source": "Craigslist", "bedrooms": "2", "bathrooms": "2", "image_url": "https://www.craigslist.org/images/d/7927589156/empty.png", "listing_url": "https://toronto.craigslist.org/tor/apa/d/toronto-bed-bath/7927589156.html", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "d2f4d18b48f94a6a28fa1cc62f23d1ee", "title": "X-Large 1 Bedroom Plus Den OR 2 Bedroom Condo for Rent!", "price": "$2,999", "location": "Downtown Tornto", "source": "Craigslist", "bedrooms": "2", "bathrooms": "2", "image_url": "https://www.craigslist.org/images/d/7920729129/empty.png", "listing_url": "https://toronto.craigslist.org/tor/apa/d/toronto-large-bedroom-plus-den-or/7920729129.html", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "d613866d243ebbadfdfced83a7f8c2f5", "title": "Two Bedrooms Available for May 1st one parking included", "price": "$2,925", "location": "Yonge and Elglinton", "source": "Craigslist", "bedrooms": "2", "bathrooms": "2", "image_url": "https://www.craigslist.org/images/d/7923873790/empty.png", "listing_url": "https://toronto.craigslist.org/tor/apa/d/toronto-two-bedrooms-available-for-may/7923873790.html", "distance_km": null, "walk_school": null, "distance_sub": null, "walk_subway": null, "walk_spadina": null, "walk_stclair": null, "lat": null, "lon": null}, {"id": "940b2eb46f19d559eabe06902f621f40", "title": "1303 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0A5", "price": "$3,000/Monthly", "location": "1303 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0A5", "source": "Realtor.ca", "bedrooms": "2", "bathrooms": "2", "image_url": "https://cdn.realtor.ca/listings/TS639119612100700000/reb82/highres/0/c13009740_1.jpg", "listing_url": "https://www.realtor.ca/real-estate/29617486/1303-181-bedford-road-toronto-annex", "distance_km": 0.65, "walk_school": 9, "distance_sub": 0.54, "walk_subway": 7, "walk_spadina": 11, "walk_stclair": 19, "lat": 43.6748768, "lon": -79.3996322}, {"id": "f57f7240edc02590391121a02b1182c0", "title": "1008 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2", "price": "$3,300/Monthly", "location": "1008 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2", "source": "Realtor.ca", "bedrooms": "2", "bathrooms": "2", "image_url": "https://cdn.realtor.ca/listings/TS639119468435070000/reb82/highres/4/c13008084_1.jpg", "listing_url": "https://www.realtor.ca/real-estate/29615563/1008-181-bedford-road-toronto-annex", "distance_km": 0.65, "walk_school": 9, "distance_sub": 0.54, "walk_subway": 7, "walk_spadina": 11, "walk_stclair": 19, "lat": 43.6748768, "lon": -79.3996322}];
-
 const SOURCE_COLORS = {"Kijiji": "#e05b29", "Craigslist": "#6c3483", "Realtor.ca": "#d4171e"};
+
+// ---- JSONBIN CONFIG ----
+const JSONBIN_BIN_ID  = "69e251b0856a682189450c23";
+const JSONBIN_API_KEY = "$2a$10$qmqDe9Ou5wgPn8FtEm2lBObRJ4pR5u9DURFbYFe/SP82abcuEqTaq";
 
 // ---- ESTADO ----
 let currentView = 'list';
 let map = null;
 let markers = [];
+let heartState = {};   // { id: 'favorite' | 'hidden' }
+let heartFilter = 'all'; // 'all' | 'favorite' | 'hidden' | 'unmarked'
+let saveTimer = null;
+
+// ---- JSONBIN: CARGAR ----
+async function loadHearts() {
+    if (!JSONBIN_BIN_ID || !JSONBIN_API_KEY) return;
+    setStatus('⏳ Cargando...');
+    try {
+        const resp = await fetch(
+            `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`,
+            { headers: { 'X-Master-Key': JSONBIN_API_KEY } }
+        );
+        if (!resp.ok) throw new Error(resp.status);
+        const data = await resp.json();
+        const record = data.record || {};
+        heartState = {};
+        (record.favorites || []).forEach(id => heartState[id] = 'favorite');
+        (record.hidden   || []).forEach(id => heartState[id] = 'hidden');
+        setStatus('✓ Sincronizado');
+        applyFilters();
+    } catch(e) {
+        setStatus('⚠️ Sin conexión');
+        console.warn('Error cargando corazones:', e);
+    }
+}
+
+// ---- JSONBIN: GUARDAR ----
+async function saveHearts() {
+    if (!JSONBIN_BIN_ID || !JSONBIN_API_KEY) return;
+    setStatus('💾 Guardando...');
+    const favorites = Object.entries(heartState).filter(([,v]) => v === 'favorite').map(([k]) => k);
+    const hidden    = Object.entries(heartState).filter(([,v]) => v === 'hidden').map(([k]) => k);
+    try {
+        const resp = await fetch(
+            `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`,
+            {
+                method: 'PUT',
+                headers: {
+                    'X-Master-Key': JSONBIN_API_KEY,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ favorites, hidden })
+            }
+        );
+        if (!resp.ok) throw new Error(resp.status);
+        setStatus('✓ Guardado');
+    } catch(e) {
+        setStatus('⚠️ Error al guardar');
+        console.warn('Error guardando corazones:', e);
+    }
+}
+
+function setStatus(msg) {
+    const el = document.getElementById('jsonbin-status');
+    if (el) el.textContent = msg;
+}
+
+// ---- TOGGLE CORAZON ----
+function toggleHeart(event, id) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const current = heartState[id];
+    if (!current) {
+        heartState[id] = 'favorite';
+    } else if (current === 'favorite') {
+        heartState[id] = 'hidden';
+    } else {
+        delete heartState[id];
+    }
+
+    // Actualizar boton visualmente
+    const btn = document.querySelector(`[data-heart="${id}"]`);
+    if (btn) updateHeartBtn(btn, heartState[id]);
+
+    // Actualizar opacidad de la tarjeta
+    const card = btn ? btn.closest('.card') : null;
+    if (card) card.classList.toggle('is-hidden-card', heartState[id] === 'hidden');
+
+    // Re-filtrar si estamos en un filtro de corazon
+    if (heartFilter !== 'all') applyFilters();
+
+    // Guardar con debounce de 1.5 seg
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveHearts, 1500);
+}
+
+function updateHeartBtn(btn, state) {
+    if (state === 'favorite')    btn.textContent = '❤️';
+    else if (state === 'hidden') btn.textContent = '🖤';
+    else                         btn.textContent = '🤍';
+}
+
+// ---- FILTRO POR CORAZON ----
+function setHeartFilter(filter) {
+    heartFilter = filter;
+    ['all', 'favorite', 'hidden', 'unmarked'].forEach(f => {
+        const btn = document.getElementById(`hf-${f}`);
+        if (btn) btn.classList.toggle('active', f === filter);
+    });
+    applyFilters();
+}
 
 // ---- INICIALIZAR MAPA ----
 function initMap() {
@@ -377,6 +564,11 @@ function getFilteredListings() {
         // Distancia al subway
         if (distSubway && lst.walk_subway && lst.walk_subway > distSubway) return false;
 
+        // Filtro de corazon
+        if (heartFilter === 'favorite' && heartState[lst.id] !== 'favorite') return false;
+        if (heartFilter === 'hidden'   && heartState[lst.id] !== 'hidden')   return false;
+        if (heartFilter === 'unmarked' && heartState[lst.id])                return false;
+
         return true;
     });
 
@@ -416,10 +608,16 @@ function renderCards(listings) {
         const img = lst.image_url
             ? `<img src="${lst.image_url}" alt="foto" onerror="this.parentElement.innerHTML='<div class=no-image>📷</div>'">`
             : '<div class="no-image">📷</div>';
-        const distSchool = lst.walk_school
+
+        const heartEmoji = heartState[lst.id] === 'favorite' ? '❤️'
+                         : heartState[lst.id] === 'hidden'   ? '🖤'
+                         : '🤍';
+        const isHiddenClass = heartState[lst.id] === 'hidden' ? ' is-hidden-card' : '';
+
+        const distSchool  = lst.walk_school
             ? `<div class="dist">🏫 ${lst.walk_school} min al colegio (${lst.distance_km} km)</div>`
             : '';
-        const distSubway = lst.walk_subway
+        const distSubway  = lst.walk_subway
             ? `<div class="sub">🚇 ${lst.walk_subway} min a Dupont</div>`
             : '';
         const distSpadina = lst.walk_spadina
@@ -430,10 +628,11 @@ function renderCards(listings) {
             : '';
 
         return `
-        <div class="card">
+        <div class="card${isHiddenClass}">
             <div class="card-image">
                 ${img}
                 <span class="badge" style="background:${color}">${lst.source}</span>
+                <button class="heart-btn" data-heart="${lst.id}" onclick="toggleHeart(event,'${lst.id}')">${heartEmoji}</button>
             </div>
             <div class="card-body">
                 <div class="price">${lst.price}</div>
@@ -532,6 +731,7 @@ function resetFilters() {
 
 // ---- INICIAR ----
 applyFilters();
+loadHearts();
 </script>
 
 </body>
