@@ -7,8 +7,8 @@ import hashlib
 from playwright.sync_api import sync_playwright
 
 URL = (
-    "https://www.kijiji.ca/b-apartments-condos/city-of-toronto/"
-    "2+bathrooms-2+bedrooms/c37l1700273a120a27949001"
+    "https://www.kijiji.ca/b-real-estate/city-of-toronto/"
+    "2+bathrooms-2+bedrooms/c34l1700273a120a27949001"
     "?address=Toronto%2C%20ON%20M4V%202W6"
     "&ll=43.67720569999999%2C-79.40699769999999"
     "&radius=2.0&view=list"

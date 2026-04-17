@@ -7,7 +7,7 @@ import hashlib
 from playwright.sync_api import sync_playwright
 
 URL = (
-    "https://toronto.craigslist.org/search/toronto-on/apa"
+    "https://toronto.craigslist.org/search/toronto-on/hhh"
     "?lat=43.6769&lon=-79.4064"
     "&min_bathrooms=2"
     "&min_bedrooms=2&max_bedrooms=3"
@@ -50,7 +50,7 @@ def scrape():
                     allLinks.forEach(link => {
                         const href = link.href || '';
                         if (!href.includes('craigslist.org') ) return;
-                        if (!href.includes('/apa/d/') && !href.match(/\\.html$/)) return;
+                        if (!href.includes('/apa/d/') && !href.includes('/hhh/d/') && !href.match(/\\.html$/)) return;
                         if (seen.has(href)) return;
                         seen.add(href);
 
