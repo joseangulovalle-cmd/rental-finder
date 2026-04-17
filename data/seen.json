@@ -23,7 +23,8 @@
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-13T00:25:30.241480",
     "title": "1702 - 65 ST MARY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f9ecfea2e080ef108530d0a17afb7ee6": {
     "first_seen": "2026-04-13T01:54:59.200742",
@@ -105,12 +106,14 @@
   "a66dcd9cb235ef6d0c5b404500d56944": {
     "first_seen": "2026-04-13T22:32:28.551880",
     "title": "316 - 310 TWEEDSMUIR AVENUE|Toronto (Forest Hill South), Ontario M5P2Y2",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b6dc8607c8c5c072360cd9c15abcd834": {
     "first_seen": "2026-04-13T22:32:28.551888",
     "title": "309 - 310 TWEEDSMUIR AVENUE|Toronto (Forest Hill South), Ontario M5P2Y2",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "c4990a52fadb95967af37c6687e855f7": {
     "first_seen": "2026-04-14T19:58:36.849923",
@@ -125,6 +128,11 @@
   "f57f7240edc02590391121a02b1182c0": {
     "first_seen": "2026-04-16T22:11:08.726892",
     "title": "1008 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2",
+    "active": true
+  },
+  "940b2eb46f19d559eabe06902f621f40": {
+    "first_seen": "2026-04-17T06:25:36.659272",
+    "title": "1303 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0A5",
     "active": true
   }
 }
