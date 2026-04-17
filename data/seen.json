@@ -8,20 +8,17 @@
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-13T00:25:30.241469",
     "title": "Yonge Bloor! Two bedroom suite *Special Offer Available",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-13T00:25:30.241475",
     "title": "*Special Offer Available* Rental Close to U of T!",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-13T00:25:30.241477",
     "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-13T00:25:30.241480",
@@ -128,8 +125,7 @@
   "f0720853ae64bd19830f868f4d152cda": {
     "first_seen": "2026-04-15T19:57:02.680001",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "f57f7240edc02590391121a02b1182c0": {
     "first_seen": "2026-04-16T22:11:08.726892",
@@ -139,6 +135,206 @@
   "940b2eb46f19d559eabe06902f621f40": {
     "first_seen": "2026-04-17T06:25:36.659272",
     "title": "1303 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0A5",
+    "active": true
+  },
+  "7b32e9b02d5091e8f951a2099951b162": {
+    "first_seen": "2026-04-17T13:51:18.769364",
+    "title": "Spacious 2 Bedroom Stacked Townhouse On The Top Floor, 2 Parking Spots",
+    "active": true
+  },
+  "20e30d5f020463e4a9e0f6633b5f0460": {
+    "first_seen": "2026-04-17T13:51:18.769373",
+    "title": "Furnished 2 Bedroom, 2 Bathroom - 99 Avenue Road Private Residences",
+    "active": true
+  },
+  "06a895fda6ec49b2b207c82756d0eb4a": {
+    "first_seen": "2026-04-17T13:51:18.769375",
+    "title": "2 BEDROOM -  IN THE ANNEX",
+    "active": true
+  },
+  "b14baeda475218bdeb02235f96b7aa0d": {
+    "first_seen": "2026-04-17T13:51:18.769376",
+    "title": "Locations! Location! Must See! Fully Renovated Very Larger 3 Bedroom",
+    "active": true
+  },
+  "f3b7c7bf52c6a748c1fc6b2429a3bc63": {
+    "first_seen": "2026-04-17T13:51:18.769377",
+    "title": "MUST SEE 3+1 PERFECT HOME OFFICE 2 BATHS UTILITIES INCLD",
+    "active": true
+  },
+  "4ca7a4f997d8b23734bb1ecd3e136da2": {
+    "first_seen": "2026-04-17T13:51:18.769379",
+    "title": "2 Bed & 2 Bath",
+    "active": true
+  },
+  "1f87ec996300c3946d28cf89e5d2e492": {
+    "first_seen": "2026-04-17T13:51:18.769380",
+    "title": "Central Downtown 2 Beds 2 Baths Unit",
+    "active": true
+  },
+  "36f5be6123cb3cac3c87f662de62ed65": {
+    "first_seen": "2026-04-17T13:51:18.769381",
+    "title": "2 Bedroom for rent available in Forest Hill",
+    "active": true
+  },
+  "569734f38cc6d669184b1c3693edbc59": {
+    "first_seen": "2026-04-17T13:51:18.769383",
+    "title": "Gay Male to Share 2 Bed/2 Bath Condo Next to Wellesley Subway",
+    "active": true
+  },
+  "0764d9b4e2cad3dd004a5e1e2eb02254": {
+    "first_seen": "2026-04-17T13:51:18.769384",
+    "title": "Spacious 2+1 Suite for rent  at Yonge & College",
+    "active": true
+  },
+  "f1ee15c6948f39f49185aeec7f0422f6": {
+    "first_seen": "2026-04-17T13:51:18.769385",
+    "title": "2 Bed+2 Bath Downtown TO– PERFECT FOR MED STUDENTS/RESIDENTS /NURSES",
+    "active": true
+  },
+  "0155b338f7d03b9a047a6f36cd20259e": {
+    "first_seen": "2026-04-17T13:51:18.769386",
+    "title": "2nd floor 2bedrooms +2 Bathroom APT @  kensington Market May 1st",
+    "active": true
+  },
+  "00811837f07da6454338c23a7de0c9c5": {
+    "first_seen": "2026-04-17T13:51:18.769387",
+    "title": "Central Downtown 3 Beds 3 Baths Unit",
+    "active": true
+  },
+  "2378a37a0ed37814bb95d650fc1e8bd6": {
+    "first_seen": "2026-04-17T13:51:18.769390",
+    "title": "MUST SEE KENSIGHTON MARKET GEM 3 BEDS 4 BATHS",
+    "active": true
+  },
+  "984a0ea9569e711a6f68153afaf93028": {
+    "first_seen": "2026-04-17T13:51:18.769391",
+    "title": "Central Downtown Ensuite Bedroom",
+    "active": true
+  },
+  "f3e406405d184358b1e77d23cd9d4ed1": {
+    "first_seen": "2026-04-17T13:51:18.769392",
+    "title": "Live in the Highly Sought After Kensington 2+1 Bed, 3 Baths, 1Parking",
+    "active": true
+  },
+  "e2cada7fd4c45b1fc4c5bf5769b0adfe": {
+    "first_seen": "2026-04-17T13:51:18.769393",
+    "title": "Great for students - May 01 Bay & Gerrard - Large 2 +1 Unit & 2 Baths",
+    "active": true
+  },
+  "3ffe5d97b947bc81803d0b7d8ae99c4b": {
+    "first_seen": "2026-04-17T13:51:18.769394",
+    "title": "Spacious, Cozy and Beautiful 3 Bedroom Apartment for Rent",
+    "active": true
+  },
+  "c4ad0b427d27b7b3284ba121be89b66e": {
+    "first_seen": "2026-04-17T13:51:18.769396",
+    "title": "Student Apartment, Three Bedrooms/Two floors",
+    "active": true
+  },
+  "6d0812cbc984c84471def9700bb45f43": {
+    "first_seen": "2026-04-17T13:51:18.769398",
+    "title": "BRAND NEW LUXURY 2+1 2 BATHS PARKING INCLD GALLERIA ON THE PARK",
+    "active": true
+  },
+  "297d597baf888f09cbdcc3b3e7115a5a": {
+    "first_seen": "2026-04-17T13:51:18.769399",
+    "title": "JUNCTION TRIANLE 2 BEDS 2 BATHS CORNER UNIT BOUTIQUE PARKING INCLD",
+    "active": true
+  },
+  "6eec7477e38231c087df502285fcd130": {
+    "first_seen": "2026-04-17T13:51:18.769400",
+    "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
+    "active": true
+  },
+  "dbfef6b0018f23ef867a83d2ace4d3bd": {
+    "first_seen": "2026-04-17T13:51:18.769402",
+    "title": "2 Bed & 2 Bath -",
+    "active": true
+  },
+  "d2f4d18b48f94a6a28fa1cc62f23d1ee": {
+    "first_seen": "2026-04-17T13:51:18.769403",
+    "title": "X-Large 1 Bedroom Plus Den OR 2 Bedroom Condo for Rent!",
+    "active": true
+  },
+  "cc26d471a8b11a82780b78d2fd47fdab": {
+    "first_seen": "2026-04-17T13:51:18.769404",
+    "title": "Beautiful 2-BR plus den suite for rent at Yonge & College",
+    "active": true
+  },
+  "b2b87016af8bd0cccad805db37159771": {
+    "first_seen": "2026-04-17T13:51:18.769405",
+    "title": "2 Bed | 2 Bath | Beautiful Loft",
+    "active": true
+  },
+  "0ea1c61dc62d041710f23aa3a362d896": {
+    "first_seen": "2026-04-17T13:51:18.769406",
+    "title": "2 Bed and 2 Bath - Garden District Condos",
+    "active": true
+  },
+  "f991295c993562bc2a1e1700700f475a": {
+    "first_seen": "2026-04-17T13:51:18.769408",
+    "title": "2 Bed, 2 Bath Condo with Parking | Queen West / Dufferin",
+    "active": true
+  },
+  "fa12c34e041ec16f0c8b8bfa8efb2e89": {
+    "first_seen": "2026-04-17T13:51:18.769409",
+    "title": "Spacious 1+1 Condo (can be used as 2 br) at College & Bathurst",
+    "active": true
+  },
+  "37b06d1ea9e0b5a77889270c09bdd4c6": {
+    "first_seen": "2026-04-17T13:51:18.769410",
+    "title": "Paris, London, and New York Architecturally inspired Building",
+    "active": true
+  },
+  "38b9d5a21a071252ebfbd1d7d11be60a": {
+    "first_seen": "2026-04-17T13:51:18.769411",
+    "title": "65 TURNTABLE CRES. #91 - 3BED/2BATH, PARKING, LAUNDRY, TERRACE",
+    "active": true
+  },
+  "527bf78bece3d31cb5bb76e0afd8eb33": {
+    "first_seen": "2026-04-17T13:51:18.769412",
+    "title": "3 Bedroom, 3 Bathroom - Time & Space Condos",
+    "active": true
+  },
+  "d0c64d50cf95ba1f361d8a2e987dcd59": {
+    "first_seen": "2026-04-17T13:51:18.769413",
+    "title": "429 BROCK AVE. BSMT - 2BED/2BATH, LAUNDRY, SHARED YARD",
+    "active": true
+  },
+  "d613866d243ebbadfdfced83a7f8c2f5": {
+    "first_seen": "2026-04-17T13:51:18.769414",
+    "title": "Two Bedrooms Available for May 1st one parking included",
+    "active": true
+  },
+  "be4206acb708f9c38da4a0d11fff4e12": {
+    "first_seen": "2026-04-17T13:51:18.769415",
+    "title": "2 Bed & 2 Bath - Bauhaus Condos",
+    "active": true
+  },
+  "1368a8ff5a9a46e5df9e568e7819e542": {
+    "first_seen": "2026-04-17T13:51:18.769417",
+    "title": "ROOM AVAILABLE NOW DOWNTOWN TORONTO",
+    "active": true
+  },
+  "f918fbd8b504a17280536e3c56d8d848": {
+    "first_seen": "2026-04-17T13:51:18.769418",
+    "title": "2+1 Bed & 2 Bath -  15 Mercer",
+    "active": true
+  },
+  "f6fa37ee893a019ea681a6a78aa4bc0d": {
+    "first_seen": "2026-04-17T13:51:18.769419",
+    "title": "185 ROEHAMPTON AVE. 1801 - 2BED/ 2BATH, LAUNDRY, BALCONY, LOCKER",
+    "active": true
+  },
+  "02eca567631d7995d83b0bfc37a2d56c": {
+    "first_seen": "2026-04-17T13:51:18.769420",
+    "title": "2 Bed & 2 Bath -  Merchandise Lofts!",
+    "active": true
+  },
+  "82dceb016b8639d45d698295b00ddc17": {
+    "first_seen": "2026-04-17T13:51:18.769421",
+    "title": "SPECTACULAR PROPERTY! Detached Legal Multiplex. UTILITIES INCLUDED!",
     "active": true
   }
 }
