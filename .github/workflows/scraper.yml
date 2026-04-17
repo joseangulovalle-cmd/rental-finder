@@ -43,6 +43,8 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           NOTIFY_EMAILS: ${{ secrets.NOTIFY_EMAILS }}
+          JSONBIN_BIN_ID: ${{ secrets.JSONBIN_BIN_ID }}
+          JSONBIN_API_KEY: ${{ secrets.JSONBIN_API_KEY }}
         run: python main.py
 
       - name: Guardar resultados en GitHub

@@ -30,3 +30,10 @@ SEEN_FILE = "data/seen.json"
 
 # Archivo HTML generado (la pagina web)
 OUTPUT_HTML = "index.html"
+
+# JSONbin.io — para guardar favoritos/descartados compartidos entre usuarios
+# 1. Crear cuenta gratis en jsonbin.io
+# 2. Crear un bin con: {"favorites": [], "hidden": []}
+# 3. Pegar el Bin ID y Master Key abajo
+JSONBIN_BIN_ID  = os.environ.get("JSONBIN_BIN_ID", "")
+JSONBIN_API_KEY = os.environ.get("JSONBIN_API_KEY", "")

@@ -4,7 +4,7 @@ Crea index.html con mapa interactivo, filtros y todas las propiedades
 """
 
 from datetime import datetime
-from config import SCHOOL_NAME, OUTPUT_HTML
+from config import SCHOOL_NAME, OUTPUT_HTML, JSONBIN_BIN_ID, JSONBIN_API_KEY
 
 SCHOOL_LAT  = 43.6772
 SCHOOL_LON  = -79.4071
@@ -87,6 +87,52 @@ def generate(listings):
             flex-wrap: wrap;
         }}
         .stats strong {{ color: #2563eb; font-size: 1.1rem; }}
+
+        /* FILTROS CORAZON */
+        .heart-filters {{
+            background: #fff8f8;
+            border-bottom: 1px solid #fce4e4;
+            padding: 10px 20px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }}
+        .hf-btn {{
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #555;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }}
+        .hf-btn:hover {{ border-color: #e53e3e; }}
+        .hf-btn.active {{
+            background: #e53e3e;
+            border-color: #e53e3e;
+            color: white;
+        }}
+        .hf-btn.active.hf-hidden {{
+            background: #2d3748;
+            border-color: #2d3748;
+        }}
+        .hf-btn.active.hf-unmarked {{
+            background: #718096;
+            border-color: #718096;
+        }}
+        .hf-btn.active.hf-all {{
+            background: #2563eb;
+            border-color: #2563eb;
+        }}
+        #jsonbin-status {{
+            font-size: 0.75rem;
+            color: #a0aec0;
+            margin-left: 8px;
+        }}
 
         /* FILTROS */
         .filters {{
@@ -187,6 +233,9 @@ def generate(listings):
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }}
+        .card.is-hidden-card {{
+            opacity: 0.45;
+        }}
         .card-image {{
             position: relative;
             height: 190px;
@@ -214,6 +263,29 @@ def generate(listings):
             font-size: 11px;
             font-weight: 700;
         }}
+
+        /* BOTON CORAZON */
+        .heart-btn {{
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: transform 0.15s;
+            line-height: 1;
+        }}
+        .heart-btn:hover {{ transform: scale(1.25); }}
+
         .card-body {{
             padding: 14px;
             flex: 1;
@@ -224,8 +296,8 @@ def generate(listings):
         .title {{ font-size: 0.88rem; color: #2d3748; margin-bottom: 8px; line-height: 1.4; flex: 1; }}
         .meta  {{ display: flex; gap: 10px; font-size: 0.8rem; color: #718096; margin-bottom: 6px; }}
         .dist  {{ font-size: 0.82rem; color: #2563eb; font-weight: 600; margin-bottom: 2px; }}
-        .sub   {{ font-size: 0.82rem; color: #7c3aed; font-weight: 600; margin-bottom: 10px; }}
-        .loc   {{ font-size: 0.8rem; color: #718096; margin-bottom: 10px; }}
+        .sub   {{ font-size: 0.82rem; color: #7c3aed; font-weight: 600; margin-bottom: 2px; }}
+        .loc   {{ font-size: 0.8rem; color: #718096; margin-bottom: 10px; margin-top: 4px; }}
         .btn-card {{
             display: block;
             text-align: center;
@@ -297,6 +369,15 @@ def generate(listings):
     <span>Actualizado: {updated_at}</span>
 </div>
 
+<!-- FILTROS CORAZON -->
+<div class="heart-filters">
+    <button class="hf-btn hf-all active" id="hf-all" onclick="setHeartFilter('all')">Todas</button>
+    <button class="hf-btn hf-fav"       id="hf-favorite" onclick="setHeartFilter('favorite')">❤️ Favoritas</button>
+    <button class="hf-btn hf-hidden"    id="hf-hidden"   onclick="setHeartFilter('hidden')">🖤 No nos gustó</button>
+    <button class="hf-btn hf-unmarked"  id="hf-unmarked" onclick="setHeartFilter('unmarked')">🤍 Sin marcar</button>
+    <span id="jsonbin-status"></span>
+</div>
+
 <!-- FILTROS -->
 <div class="filters">
     <div class="filter-group">
@@ -366,13 +447,119 @@ def generate(listings):
 <script>
 // ---- DATOS ----
 const ALL_LISTINGS = {listings_json};
-
 const SOURCE_COLORS = {json.dumps(source_colors)};
+
+// ---- JSONBIN CONFIG ----
+const JSONBIN_BIN_ID  = "{JSONBIN_BIN_ID}";
+const JSONBIN_API_KEY = "{JSONBIN_API_KEY}";
 
 // ---- ESTADO ----
 let currentView = 'list';
 let map = null;
 let markers = [];
+let heartState = {{}};   // {{ id: 'favorite' | 'hidden' }}
+let heartFilter = 'all'; // 'all' | 'favorite' | 'hidden' | 'unmarked'
+let saveTimer = null;
+
+// ---- JSONBIN: CARGAR ----
+async function loadHearts() {{
+    if (!JSONBIN_BIN_ID || !JSONBIN_API_KEY) return;
+    setStatus('⏳ Cargando...');
+    try {{
+        const resp = await fetch(
+            `https://api.jsonbin.io/v3/b/${{JSONBIN_BIN_ID}}/latest`,
+            {{ headers: {{ 'X-Master-Key': JSONBIN_API_KEY }} }}
+        );
+        if (!resp.ok) throw new Error(resp.status);
+        const data = await resp.json();
+        const record = data.record || {{}};
+        heartState = {{}};
+        (record.favorites || []).forEach(id => heartState[id] = 'favorite');
+        (record.hidden   || []).forEach(id => heartState[id] = 'hidden');
+        setStatus('✓ Sincronizado');
+        applyFilters();
+    }} catch(e) {{
+        setStatus('⚠️ Sin conexión');
+        console.warn('Error cargando corazones:', e);
+    }}
+}}
+
+// ---- JSONBIN: GUARDAR ----
+async function saveHearts() {{
+    if (!JSONBIN_BIN_ID || !JSONBIN_API_KEY) return;
+    setStatus('💾 Guardando...');
+    const favorites = Object.entries(heartState).filter(([,v]) => v === 'favorite').map(([k]) => k);
+    const hidden    = Object.entries(heartState).filter(([,v]) => v === 'hidden').map(([k]) => k);
+    try {{
+        const resp = await fetch(
+            `https://api.jsonbin.io/v3/b/${{JSONBIN_BIN_ID}}`,
+            {{
+                method: 'PUT',
+                headers: {{
+                    'X-Master-Key': JSONBIN_API_KEY,
+                    'Content-Type': 'application/json'
+                }},
+                body: JSON.stringify({{ favorites, hidden }})
+            }}
+        );
+        if (!resp.ok) throw new Error(resp.status);
+        setStatus('✓ Guardado');
+    }} catch(e) {{
+        setStatus('⚠️ Error al guardar');
+        console.warn('Error guardando corazones:', e);
+    }}
+}}
+
+function setStatus(msg) {{
+    const el = document.getElementById('jsonbin-status');
+    if (el) el.textContent = msg;
+}}
+
+// ---- TOGGLE CORAZON ----
+function toggleHeart(event, id) {{
+    event.preventDefault();
+    event.stopPropagation();
+
+    const current = heartState[id];
+    if (!current) {{
+        heartState[id] = 'favorite';
+    }} else if (current === 'favorite') {{
+        heartState[id] = 'hidden';
+    }} else {{
+        delete heartState[id];
+    }}
+
+    // Actualizar boton visualmente
+    const btn = document.querySelector(`[data-heart="${{id}}"]`);
+    if (btn) updateHeartBtn(btn, heartState[id]);
+
+    // Actualizar opacidad de la tarjeta
+    const card = btn ? btn.closest('.card') : null;
+    if (card) card.classList.toggle('is-hidden-card', heartState[id] === 'hidden');
+
+    // Re-filtrar si estamos en un filtro de corazon
+    if (heartFilter !== 'all') applyFilters();
+
+    // Guardar con debounce de 1.5 seg
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveHearts, 1500);
+}}
+
+function updateHeartBtn(btn, state) {{
+    if (state === 'favorite')    btn.textContent = '❤️';
+    else if (state === 'hidden') btn.textContent = '🖤';
+    else                         btn.textContent = '🤍';
+}}
+
+// ---- FILTRO POR CORAZON ----
+function setHeartFilter(filter) {{
+    heartFilter = filter;
+    ['all', 'favorite', 'hidden', 'unmarked'].forEach(f => {{
+        const btn = document.getElementById(`hf-${{f}}`);
+        if (btn) btn.classList.toggle('active', f === filter);
+    }});
+    applyFilters();
+}}
 
 // ---- INICIALIZAR MAPA ----
 function initMap() {{
@@ -423,6 +610,11 @@ function getFilteredListings() {{
         // Distancia al subway
         if (distSubway && lst.walk_subway && lst.walk_subway > distSubway) return false;
 
+        // Filtro de corazon
+        if (heartFilter === 'favorite' && heartState[lst.id] !== 'favorite') return false;
+        if (heartFilter === 'hidden'   && heartState[lst.id] !== 'hidden')   return false;
+        if (heartFilter === 'unmarked' && heartState[lst.id])                return false;
+
         return true;
     }});
 
@@ -462,10 +654,16 @@ function renderCards(listings) {{
         const img = lst.image_url
             ? `<img src="${{lst.image_url}}" alt="foto" onerror="this.parentElement.innerHTML='<div class=no-image>📷</div>'">`
             : '<div class="no-image">📷</div>';
-        const distSchool = lst.walk_school
+
+        const heartEmoji = heartState[lst.id] === 'favorite' ? '❤️'
+                         : heartState[lst.id] === 'hidden'   ? '🖤'
+                         : '🤍';
+        const isHiddenClass = heartState[lst.id] === 'hidden' ? ' is-hidden-card' : '';
+
+        const distSchool  = lst.walk_school
             ? `<div class="dist">🏫 ${{lst.walk_school}} min al colegio (${{lst.distance_km}} km)</div>`
             : '';
-        const distSubway = lst.walk_subway
+        const distSubway  = lst.walk_subway
             ? `<div class="sub">🚇 ${{lst.walk_subway}} min a Dupont</div>`
             : '';
         const distSpadina = lst.walk_spadina
@@ -476,10 +674,11 @@ function renderCards(listings) {{
             : '';
 
         return `
-        <div class="card">
+        <div class="card${{isHiddenClass}}">
             <div class="card-image">
                 ${{img}}
                 <span class="badge" style="background:${{color}}">${{lst.source}}</span>
+                <button class="heart-btn" data-heart="${{lst.id}}" onclick="toggleHeart(event,'${{lst.id}}')">${{heartEmoji}}</button>
             </div>
             <div class="card-body">
                 <div class="price">${{lst.price}}</div>
@@ -578,6 +777,7 @@ function resetFilters() {{
 
 // ---- INICIAR ----
 applyFilters();
+loadHearts();
 </script>
 
 </body>
