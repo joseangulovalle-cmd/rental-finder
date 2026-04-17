@@ -64,9 +64,9 @@ def in_valid_zone(listing):
 
     if mins_school is None:
         # Realtor.ca: siempre tiene coordenadas → si faltan, excluir
-        # Craigslist: ahora intenta geocodificar → si no pudo, excluir
+        # Craigslist: si no pudo geocodificar el barrio → incluir igual (mejor esfuerzo)
         # Kijiji: no siempre tiene direccion exacta → incluir
-        return source == "Kijiji"
+        return source in ("Kijiji", "Craigslist")
 
     if source == "Realtor.ca":
         # <= 12 min a cualquier estacion o <= 18 min al colegio
