@@ -130,7 +130,8 @@
   "f57f7240edc02590391121a02b1182c0": {
     "first_seen": "2026-04-16T22:11:08.726892",
     "title": "1008 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0C2",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "940b2eb46f19d559eabe06902f621f40": {
     "first_seen": "2026-04-17T06:25:36.659272",
@@ -373,6 +374,11 @@
   "6ca93a162e1f0fc341e27e8bd669e64a": {
     "first_seen": "2026-04-17T22:09:30.295523",
     "title": "402 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
+    "active": true
+  },
+  "a8440bcb25a1716a7b7ec56c6331485e": {
+    "first_seen": "2026-04-18T05:55:54.026942",
+    "title": "1308 - 32 DAVENPORT ROAD Toronto (Annex), Ontario",
     "active": true
   }
 }
