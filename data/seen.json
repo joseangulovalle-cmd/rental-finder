@@ -136,7 +136,8 @@
   "940b2eb46f19d559eabe06902f621f40": {
     "first_seen": "2026-04-17T06:25:36.659272",
     "title": "1303 - 181 BEDFORD ROAD|Toronto (Annex), Ontario M5R0A5",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "7b32e9b02d5091e8f951a2099951b162": {
     "first_seen": "2026-04-17T13:51:18.769364",
@@ -394,6 +395,21 @@
   "c87834207311ab1f70a82bb0627bba6c": {
     "first_seen": "2026-04-20T16:23:12.296304",
     "title": "Bright & Spacious 2 Bed 2 Bath Main Floor Unit in Deer Park",
+    "active": true
+  },
+  "8d2332691f8a59307f551598f4845bef": {
+    "first_seen": "2026-04-20T22:32:28.855440",
+    "title": "Annex 3bdrm 3bath/ Yard on Bedford Road all inclusive June 1st",
+    "active": true
+  },
+  "11eb35af098a5cf629fc62b5fc14ed90": {
+    "first_seen": "2026-04-20T22:32:28.855452",
+    "title": "514 - 377 MADISON AVENUE|Toronto (Casa Loma), Ontario M4V3E1",
+    "active": true
+  },
+  "046170f8343d738708b66498c5da4e92": {
+    "first_seen": "2026-04-20T22:32:28.855454",
+    "title": "UPPER - 253 BEDFORD ROAD|Toronto (Annex), Ontario M5R2L3",
     "active": true
   }
 }
