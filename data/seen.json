@@ -376,7 +376,8 @@
   "6ca93a162e1f0fc341e27e8bd669e64a": {
     "first_seen": "2026-04-17T22:09:30.295523",
     "title": "402 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "a8440bcb25a1716a7b7ec56c6331485e": {
     "first_seen": "2026-04-18T05:55:54.026942",
