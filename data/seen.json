@@ -219,7 +219,8 @@
   "2378a37a0ed37814bb95d650fc1e8bd6": {
     "first_seen": "2026-04-17T13:51:18.769390",
     "title": "MUST SEE KENSIGHTON MARKET GEM 3 BEDS 4 BATHS",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "984a0ea9569e711a6f68153afaf93028": {
     "first_seen": "2026-04-17T13:51:18.769391",
@@ -430,6 +431,11 @@
   "3021a3ac311601a8b3741d3b5a9f84fe": {
     "first_seen": "2026-04-21T06:27:05.032113",
     "title": "BRAND NEW LUXURY 2 BEDS 2 BATHS WITH SKYLINE VIEWS",
+    "active": true
+  },
+  "343661718d0c2d8bba6e16a15ab5aa30": {
+    "first_seen": "2026-04-21T11:47:27.396989",
+    "title": "900 SQ FT CORNER UNIT 2 BEDS 2 BATHS PARKING INCLD",
     "active": true
   }
 }
