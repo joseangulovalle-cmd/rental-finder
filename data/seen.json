@@ -335,7 +335,8 @@
   "d613866d243ebbadfdfced83a7f8c2f5": {
     "first_seen": "2026-04-17T13:51:18.769414",
     "title": "Two Bedrooms Available for May 1st one parking included",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "be4206acb708f9c38da4a0d11fff4e12": {
     "first_seen": "2026-04-17T13:51:18.769415",
@@ -462,6 +463,7 @@
   "e1ef0c6d0da2365bfc298d99a3fd7931": {
     "first_seen": "2026-04-21T22:27:53.707528",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
