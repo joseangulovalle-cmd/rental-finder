@@ -384,7 +384,8 @@
   "a8440bcb25a1716a7b7ec56c6331485e": {
     "first_seen": "2026-04-18T05:55:54.026942",
     "title": "1308 - 32 DAVENPORT ROAD Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "275d5d7652ac63a1bfb1b789a1f24251": {
     "first_seen": "2026-04-18T17:57:52.608578",
@@ -470,6 +471,11 @@
   "b096583c2cdd0ca924ea2b69fda93653": {
     "first_seen": "2026-04-23T17:07:39.050296",
     "title": "5 - 217 ST GEORGE STREET|Toronto (Annex), Ontario M5R3S7",
+    "active": true
+  },
+  "2850bce4e28f98327223053ab5cc0abd": {
+    "first_seen": "2026-04-23T22:13:34.346865",
+    "title": "CHARLES ON CHURCH: Brand New 2 Bedroom/2 Bath Corner Condo For Rent",
     "active": true
   }
 }
