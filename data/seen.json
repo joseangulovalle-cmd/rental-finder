@@ -409,14 +409,12 @@
   "11eb35af098a5cf629fc62b5fc14ed90": {
     "first_seen": "2026-04-20T22:32:28.855452",
     "title": "514 - 377 MADISON AVENUE|Toronto (Casa Loma), Ontario M4V3E1",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "046170f8343d738708b66498c5da4e92": {
     "first_seen": "2026-04-20T22:32:28.855454",
     "title": "UPPER - 253 BEDFORD ROAD|Toronto (Annex), Ontario M5R2L3",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "c47daae9dabfc287d150111f65dd400b": {
     "first_seen": "2026-04-21T06:27:05.032098",
@@ -468,5 +466,10 @@
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
     "active": false,
     "expired": true
+  },
+  "b096583c2cdd0ca924ea2b69fda93653": {
+    "first_seen": "2026-04-23T17:07:39.050296",
+    "title": "5 - 217 ST GEORGE STREET|Toronto (Annex), Ontario M5R3S7",
+    "active": true
   }
 }
