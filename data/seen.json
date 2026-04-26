@@ -8,17 +8,20 @@
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-13T00:25:30.241469",
     "title": "Yonge Bloor! Two bedroom suite *Special Offer Available",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-13T00:25:30.241475",
     "title": "*Special Offer Available* Rental Close to U of T!",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-13T00:25:30.241477",
     "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-13T00:25:30.241480",
@@ -125,7 +128,8 @@
   "f0720853ae64bd19830f868f4d152cda": {
     "first_seen": "2026-04-15T19:57:02.680001",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f57f7240edc02590391121a02b1182c0": {
     "first_seen": "2026-04-16T22:11:08.726892",
@@ -390,17 +394,20 @@
   "275d5d7652ac63a1bfb1b789a1f24251": {
     "first_seen": "2026-04-18T17:57:52.608578",
     "title": "2 bed 2 bath apartment for summer sublet in downtown Toronto",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4871afaaf00e5bc73a319afa859db115": {
     "first_seen": "2026-04-19T06:21:15.899928",
     "title": "506 - 736 SPADINA AVENUE Toronto (University), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "c87834207311ab1f70a82bb0627bba6c": {
     "first_seen": "2026-04-20T16:23:12.296304",
     "title": "Bright & Spacious 2 Bed 2 Bath Main Floor Unit in Deer Park",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "8d2332691f8a59307f551598f4845bef": {
     "first_seen": "2026-04-20T22:32:28.855440",
@@ -467,8 +474,7 @@
   "e1ef0c6d0da2365bfc298d99a3fd7931": {
     "first_seen": "2026-04-21T22:27:53.707528",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "b096583c2cdd0ca924ea2b69fda93653": {
     "first_seen": "2026-04-23T17:07:39.050296",
@@ -484,6 +490,7 @@
   "d9ee47578f57458df9bf38f386abbc96": {
     "first_seen": "2026-04-24T11:47:45.475499",
     "title": "YORKVILLE: Furnished 2 Bedroom Condo For Rent Toronto w/PRKG",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
