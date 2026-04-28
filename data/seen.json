@@ -444,7 +444,8 @@
   "343661718d0c2d8bba6e16a15ab5aa30": {
     "first_seen": "2026-04-21T11:47:27.396989",
     "title": "900 SQ FT CORNER UNIT 2 BEDS 2 BATHS PARKING INCLD",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "cfb5b42d5a3b173c80744c7c4de5920d": {
     "first_seen": "2026-04-21T22:27:53.707510",
@@ -490,6 +491,16 @@
   "d6ef574092025c51f761cee1395c9aa0": {
     "first_seen": "2026-04-28T16:21:23.870966",
     "title": "SUMMER SUBLET 3 Bdrm family home with parking",
+    "active": true
+  },
+  "1a006931434d6d2c376275d4c5cb1e50": {
+    "first_seen": "2026-04-28T23:16:28.107907",
+    "title": "BRAND NEW LUXURY 2 BEDS 2 BATHS SOUTH EXPOUSORE SKYLINE VIEWS",
+    "active": true
+  },
+  "b559f00ebe03e0ad0149afdc17486dbb": {
+    "first_seen": "2026-04-28T23:16:28.107917",
+    "title": "907 - 20 PRINCE ARTHUR AVENUE|Toronto (Annex), Ontario M5R1B1",
     "active": true
   }
 }
