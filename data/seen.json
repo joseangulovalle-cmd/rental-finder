@@ -423,7 +423,8 @@
   "c47daae9dabfc287d150111f65dd400b": {
     "first_seen": "2026-04-21T06:27:05.032098",
     "title": "3 Bdrm semi-detached with parking",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ea2a0a19e880ca48fbf0f501077968de": {
     "first_seen": "2026-04-21T06:27:05.032110",
@@ -484,6 +485,11 @@
   "d9ee47578f57458df9bf38f386abbc96": {
     "first_seen": "2026-04-24T11:47:45.475499",
     "title": "YORKVILLE: Furnished 2 Bedroom Condo For Rent Toronto w/PRKG",
+    "active": true
+  },
+  "d6ef574092025c51f761cee1395c9aa0": {
+    "first_seen": "2026-04-28T16:21:23.870966",
+    "title": "SUMMER SUBLET 3 Bdrm family home with parking",
     "active": true
   }
 }
