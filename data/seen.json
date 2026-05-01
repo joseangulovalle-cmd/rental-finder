@@ -472,8 +472,7 @@
   "e1ef0c6d0da2365bfc298d99a3fd7931": {
     "first_seen": "2026-04-21T22:27:53.707528",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "b096583c2cdd0ca924ea2b69fda93653": {
     "first_seen": "2026-04-23T17:07:39.050296",
@@ -526,6 +525,12 @@
   "a4ea5d494b33b2dd9781b3869a22678d": {
     "first_seen": "2026-04-30T20:20:01.311670",
     "title": "406 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
+    "active": false,
+    "expired": true
+  },
+  "6fda05efbb949c08c7b8f6d1bb3c2ee2": {
+    "first_seen": "2026-05-01T07:56:11.053408",
+    "title": "BRAND NEW NEVER LIVED IN 2 BEDS 2 BATHS",
     "active": true
   }
 }
