@@ -533,7 +533,8 @@
   "a4ea5d494b33b2dd9781b3869a22678d": {
     "first_seen": "2026-04-30T20:20:01.311670",
     "title": "406 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6fda05efbb949c08c7b8f6d1bb3c2ee2": {
     "first_seen": "2026-05-01T07:56:11.053408",
@@ -548,11 +549,13 @@
   "5737c7e4990b87f59ebaa72606d30c89": {
     "first_seen": "2026-05-01T15:40:06.965679",
     "title": "2002 - 200 BLOOR STREET W|Toronto (Annex), Ontario M5S1T8",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "d8fd7d9661ec2d83b0c1562583339596": {
     "first_seen": "2026-05-01T15:40:06.965681",
     "title": "512 - 322 DUPONT STREET|Toronto (Annex), Ontario M5R0E3",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
