@@ -490,7 +490,8 @@
   "d9ee47578f57458df9bf38f386abbc96": {
     "first_seen": "2026-04-24T11:47:45.475499",
     "title": "YORKVILLE: Furnished 2 Bedroom Condo For Rent Toronto w/PRKG",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "d6ef574092025c51f761cee1395c9aa0": {
     "first_seen": "2026-04-28T16:21:23.870966",
