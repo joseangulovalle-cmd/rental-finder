@@ -13,7 +13,8 @@
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-13T00:25:30.241475",
     "title": "*Special Offer Available* Rental Close to U of T!",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-13T00:25:30.241477",
