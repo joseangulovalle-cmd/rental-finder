@@ -18,7 +18,8 @@
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-13T00:25:30.241477",
     "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-13T00:25:30.241480",
@@ -597,6 +598,11 @@
   "52d40285454e9b15531d5cf80bb36049": {
     "first_seen": "2026-05-06T17:51:18.556028",
     "title": "539 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
+    "active": true
+  },
+  "f6f8b217de2e1a27d951275da08ffd4f": {
+    "first_seen": "2026-05-07T03:55:49.070979",
+    "title": "Luxury view in Toronto Downtown 3 Bedroom 2.5 Bathroom 1 Parking",
     "active": true
   }
 }
