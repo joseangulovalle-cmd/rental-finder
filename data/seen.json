@@ -8,7 +8,8 @@
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-13T00:25:30.241469",
     "title": "Yonge Bloor! Two bedroom suite *Special Offer Available",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-13T00:25:30.241475",
@@ -594,12 +595,14 @@
   "7a0ee084110d1a88523f3c21819f3e23": {
     "first_seen": "2026-05-06T17:51:18.556019",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "52d40285454e9b15531d5cf80bb36049": {
     "first_seen": "2026-05-06T17:51:18.556028",
     "title": "539 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f6f8b217de2e1a27d951275da08ffd4f": {
     "first_seen": "2026-05-07T03:55:49.070979",
@@ -609,7 +612,6 @@
   "821c8d0c5e9fdbedd0faa41ff609a82d": {
     "first_seen": "2026-05-07T14:41:38.360672",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   }
 }
