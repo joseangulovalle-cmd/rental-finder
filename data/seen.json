@@ -595,14 +595,12 @@
   "7a0ee084110d1a88523f3c21819f3e23": {
     "first_seen": "2026-05-06T17:51:18.556019",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "52d40285454e9b15531d5cf80bb36049": {
     "first_seen": "2026-05-06T17:51:18.556028",
     "title": "539 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "f6f8b217de2e1a27d951275da08ffd4f": {
     "first_seen": "2026-05-07T03:55:49.070979",
@@ -612,6 +610,7 @@
   "821c8d0c5e9fdbedd0faa41ff609a82d": {
     "first_seen": "2026-05-07T14:41:38.360672",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
