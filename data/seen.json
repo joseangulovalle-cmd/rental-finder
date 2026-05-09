@@ -607,8 +607,7 @@
   "821c8d0c5e9fdbedd0faa41ff609a82d": {
     "first_seen": "2026-05-07T14:41:38.360672",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
@@ -623,6 +622,11 @@
   "aed64afb8904f46670f968f16594e476": {
     "first_seen": "2026-05-08T14:10:29.871939",
     "title": "307 - 80 CUMBERLAND STREET Toronto (Annex), Ontario",
+    "active": true
+  },
+  "0456de5117f0e011e5e58598426def76": {
+    "first_seen": "2026-05-09T17:06:11.991748",
+    "title": "Bay St/Mary St Luxury U Condo 2 Bed/2 Bath Near UofT",
     "active": true
   }
 }
