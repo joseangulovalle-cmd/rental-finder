@@ -459,7 +459,8 @@
   "d2115b07a041369c1aabb57a336305e1": {
     "first_seen": "2026-04-21T22:27:53.707521",
     "title": "YORKVILLE:  Luxury Furnished 2 Bedroom Condo For Rent Toronto w/PRKG",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "9122b27f452753d28dd166c7f9a28031": {
     "first_seen": "2026-04-21T22:27:53.707523",
@@ -486,7 +487,8 @@
   "2850bce4e28f98327223053ab5cc0abd": {
     "first_seen": "2026-04-23T22:13:34.346865",
     "title": "CHARLES ON CHURCH: Brand New 2 Bedroom/2 Bath Corner Condo For Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "d9ee47578f57458df9bf38f386abbc96": {
     "first_seen": "2026-04-24T11:47:45.475499",
@@ -607,8 +609,7 @@
   "821c8d0c5e9fdbedd0faa41ff609a82d": {
     "first_seen": "2026-05-07T14:41:38.360672",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
