@@ -454,7 +454,8 @@
   "cfb5b42d5a3b173c80744c7c4de5920d": {
     "first_seen": "2026-04-21T22:27:53.707510",
     "title": "FOREST HILL: Charming 2 Bedroom / 2 Bathroom Condo For Rent MIDTOWN",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "d2115b07a041369c1aabb57a336305e1": {
     "first_seen": "2026-04-21T22:27:53.707521",
