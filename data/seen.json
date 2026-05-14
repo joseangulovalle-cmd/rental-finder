@@ -609,7 +609,8 @@
   "821c8d0c5e9fdbedd0faa41ff609a82d": {
     "first_seen": "2026-05-07T14:41:38.360672",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
@@ -634,6 +635,21 @@
   "70a720b3b8ec0dceab633f40b1a486fc": {
     "first_seen": "2026-05-12T21:27:26.979295",
     "title": "10 GRAPHOPHONE GR. #1412 - 2BED/2BATH, PARKING, LAUNDRY,",
+    "active": true
+  },
+  "e28726dce72b46861b2b30e466e63621": {
+    "first_seen": "2026-05-14T04:07:16.189167",
+    "title": "Stunning 2-Bedroom Condo at Dupont & Ossington",
+    "active": true
+  },
+  "e98b9387f906cac8aad8b736e7634597": {
+    "first_seen": "2026-05-14T04:07:16.189182",
+    "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
+    "active": true
+  },
+  "6ce8b1067ece301324f0d39c635a333b": {
+    "first_seen": "2026-05-14T04:07:16.189184",
+    "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
     "active": true
   }
 }
