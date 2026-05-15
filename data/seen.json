@@ -600,7 +600,8 @@
   "52d40285454e9b15531d5cf80bb36049": {
     "first_seen": "2026-05-06T17:51:18.556028",
     "title": "539 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f6f8b217de2e1a27d951275da08ffd4f": {
     "first_seen": "2026-05-07T03:55:49.070979",
@@ -610,8 +611,7 @@
   "821c8d0c5e9fdbedd0faa41ff609a82d": {
     "first_seen": "2026-05-07T14:41:38.360672",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
@@ -654,5 +654,10 @@
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
     "active": false,
     "expired": true
+  },
+  "fd0572c669e709c4923218d2634002f6": {
+    "first_seen": "2026-05-15T17:51:15.750592",
+    "title": "Annex 3bdrm 2 bath lower level Jun 1st",
+    "active": true
   }
 }
