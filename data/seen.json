@@ -600,7 +600,8 @@
   "52d40285454e9b15531d5cf80bb36049": {
     "first_seen": "2026-05-06T17:51:18.556028",
     "title": "539 - 858 DUPONT STREET Toronto (Dovercourt-Wallace Emerson-Junc",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f6f8b217de2e1a27d951275da08ffd4f": {
     "first_seen": "2026-05-07T03:55:49.070979",
