@@ -471,7 +471,8 @@
   "85d318c15053cf5f7459c7fbab40febe": {
     "first_seen": "2026-04-21T22:27:53.707524",
     "title": "COLLEGE PARK 1: Bright 2 Bedroom Condo For Rent Toronto w/ PARKING",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e1ef0c6d0da2365bfc298d99a3fd7931": {
     "first_seen": "2026-04-21T22:27:53.707528",
@@ -611,7 +612,8 @@
   "821c8d0c5e9fdbedd0faa41ff609a82d": {
     "first_seen": "2026-05-07T14:41:38.360672",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
@@ -658,6 +660,21 @@
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
     "title": "Annex 3bdrm 2 bath lower level Jun 1st",
+    "active": true
+  },
+  "1d9cd50328978170c01c7a98e9f91018": {
+    "first_seen": "2026-05-15T21:17:29.734669",
+    "title": "CHARLES ON CHURCH: Brand New 2 Bedroom/2 Bath Corner Condo For Rent",
+    "active": true
+  },
+  "3f3fbc2b6e6c2b381d700253f00822aa": {
+    "first_seen": "2026-05-15T21:17:29.734678",
+    "title": "CHARLES ON CHURCH: Brand New 2 Bedroom/2 Bath Corner Condo For Rent",
+    "active": true
+  },
+  "6428a722a2384ca2cc92a14a2421e392": {
+    "first_seen": "2026-05-15T21:17:29.734683",
+    "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
     "active": true
   }
 }
