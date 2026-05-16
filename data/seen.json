@@ -290,7 +290,8 @@
   "b2b87016af8bd0cccad805db37159771": {
     "first_seen": "2026-04-17T13:51:18.769405",
     "title": "2 Bed | 2 Bath | Beautiful Loft",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "0ea1c61dc62d041710f23aa3a362d896": {
     "first_seen": "2026-04-17T13:51:18.769406",
@@ -674,7 +675,6 @@
   "6428a722a2384ca2cc92a14a2421e392": {
     "first_seen": "2026-05-15T21:17:29.734683",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   }
 }
