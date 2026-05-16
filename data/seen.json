@@ -290,8 +290,7 @@
   "b2b87016af8bd0cccad805db37159771": {
     "first_seen": "2026-04-17T13:51:18.769405",
     "title": "2 Bed | 2 Bath | Beautiful Loft",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "0ea1c61dc62d041710f23aa3a362d896": {
     "first_seen": "2026-04-17T13:51:18.769406",
@@ -648,12 +647,14 @@
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
     "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6ce8b1067ece301324f0d39c635a333b": {
     "first_seen": "2026-05-14T04:07:16.189184",
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
@@ -673,6 +674,7 @@
   "6428a722a2384ca2cc92a14a2421e392": {
     "first_seen": "2026-05-15T21:17:29.734683",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
