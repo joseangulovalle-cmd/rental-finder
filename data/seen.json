@@ -8,17 +8,20 @@
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-13T00:25:30.241469",
     "title": "Yonge Bloor! Two bedroom suite *Special Offer Available",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-13T00:25:30.241475",
     "title": "*Special Offer Available* Rental Close to U of T!",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-13T00:25:30.241477",
     "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-13T00:25:30.241480",
@@ -501,7 +504,8 @@
   "d6ef574092025c51f761cee1395c9aa0": {
     "first_seen": "2026-04-28T16:21:23.870966",
     "title": "SUMMER SUBLET 3 Bdrm family home with parking",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "1a006931434d6d2c376275d4c5cb1e50": {
     "first_seen": "2026-04-28T23:16:28.107907",
@@ -596,7 +600,8 @@
   "7a0ee084110d1a88523f3c21819f3e23": {
     "first_seen": "2026-05-06T17:51:18.556019",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "52d40285454e9b15531d5cf80bb36049": {
     "first_seen": "2026-05-06T17:51:18.556028",
@@ -618,22 +623,26 @@
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
     "title": "TH4 - 175 PEARS AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "5a8587d068937527d29459002c8ef919": {
     "first_seen": "2026-05-08T14:10:29.871927",
     "title": "Avenue Park Apartments - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "aed64afb8904f46670f968f16594e476": {
     "first_seen": "2026-05-08T14:10:29.871939",
     "title": "307 - 80 CUMBERLAND STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "0456de5117f0e011e5e58598426def76": {
     "first_seen": "2026-05-09T17:06:11.991748",
     "title": "Bay St/Mary St Luxury U Condo 2 Bed/2 Bath Near UofT",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "70a720b3b8ec0dceab633f40b1a486fc": {
     "first_seen": "2026-05-12T21:27:26.979295",
@@ -643,7 +652,8 @@
   "e28726dce72b46861b2b30e466e63621": {
     "first_seen": "2026-05-14T04:07:16.189167",
     "title": "Stunning 2-Bedroom Condo at Dupont & Ossington",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
