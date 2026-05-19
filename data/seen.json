@@ -619,7 +619,8 @@
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
     "title": "TH4 - 175 PEARS AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "5a8587d068937527d29459002c8ef919": {
     "first_seen": "2026-05-08T14:10:29.871927",
@@ -676,6 +677,7 @@
   "6428a722a2384ca2cc92a14a2421e392": {
     "first_seen": "2026-05-15T21:17:29.734683",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
