@@ -640,7 +640,8 @@
   "70a720b3b8ec0dceab633f40b1a486fc": {
     "first_seen": "2026-05-12T21:27:26.979295",
     "title": "10 GRAPHOPHONE GR. #1412 - 2BED/2BATH, PARKING, LAUNDRY,",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e28726dce72b46861b2b30e466e63621": {
     "first_seen": "2026-05-14T04:07:16.189167",
