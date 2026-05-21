@@ -471,8 +471,7 @@
   "85d318c15053cf5f7459c7fbab40febe": {
     "first_seen": "2026-04-21T22:27:53.707524",
     "title": "COLLEGE PARK 1: Bright 2 Bedroom Condo For Rent Toronto w/ PARKING",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "e1ef0c6d0da2365bfc298d99a3fd7931": {
     "first_seen": "2026-04-21T22:27:53.707528",
@@ -630,7 +629,8 @@
   "aed64afb8904f46670f968f16594e476": {
     "first_seen": "2026-05-08T14:10:29.871939",
     "title": "307 - 80 CUMBERLAND STREET Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "0456de5117f0e011e5e58598426def76": {
     "first_seen": "2026-05-09T17:06:11.991748",
@@ -678,8 +678,7 @@
   "6428a722a2384ca2cc92a14a2421e392": {
     "first_seen": "2026-05-15T21:17:29.734683",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "4b455f0e0ae3c1c40d97d6c5a38a4f77": {
     "first_seen": "2026-05-19T18:13:17.492481",
