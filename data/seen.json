@@ -619,7 +619,8 @@
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
     "title": "TH4 - 175 PEARS AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "5a8587d068937527d29459002c8ef919": {
     "first_seen": "2026-05-08T14:10:29.871927",
