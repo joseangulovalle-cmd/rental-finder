@@ -635,7 +635,8 @@
   "0456de5117f0e011e5e58598426def76": {
     "first_seen": "2026-05-09T17:06:11.991748",
     "title": "Bay St/Mary St Luxury U Condo 2 Bed/2 Bath Near UofT",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "70a720b3b8ec0dceab633f40b1a486fc": {
     "first_seen": "2026-05-12T21:27:26.979295",
@@ -678,7 +679,8 @@
   "6428a722a2384ca2cc92a14a2421e392": {
     "first_seen": "2026-05-15T21:17:29.734683",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4b455f0e0ae3c1c40d97d6c5a38a4f77": {
     "first_seen": "2026-05-19T18:13:17.492481",
