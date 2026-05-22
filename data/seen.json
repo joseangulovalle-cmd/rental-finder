@@ -679,11 +679,17 @@
   "6428a722a2384ca2cc92a14a2421e392": {
     "first_seen": "2026-05-15T21:17:29.734683",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4b455f0e0ae3c1c40d97d6c5a38a4f77": {
     "first_seen": "2026-05-19T18:13:17.492481",
     "title": "Annex Bright 3 bdrm 3 bathrooms on Bedford Road for June or July 1st",
+    "active": true
+  },
+  "a6dfa1c0982a1802ed157bfe7147c2e9": {
+    "first_seen": "2026-05-22T21:20:16.292942",
+    "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
     "active": true
   }
 }
