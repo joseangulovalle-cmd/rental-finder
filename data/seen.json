@@ -689,7 +689,8 @@
   "a6dfa1c0982a1802ed157bfe7147c2e9": {
     "first_seen": "2026-05-22T21:20:16.292942",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b6749461cb91a8227a16bdb49f3a5aa0": {
     "first_seen": "2026-05-23T17:14:43.386502",
