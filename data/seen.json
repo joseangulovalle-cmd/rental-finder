@@ -167,7 +167,8 @@
   "f3b7c7bf52c6a748c1fc6b2429a3bc63": {
     "first_seen": "2026-04-17T13:51:18.769377",
     "title": "MUST SEE 3+1 PERFECT HOME OFFICE 2 BATHS UTILITIES INCLD",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "4ca7a4f997d8b23734bb1ecd3e136da2": {
     "first_seen": "2026-04-17T13:51:18.769379",
@@ -256,12 +257,14 @@
   "6d0812cbc984c84471def9700bb45f43": {
     "first_seen": "2026-04-17T13:51:18.769398",
     "title": "BRAND NEW LUXURY 2+1 2 BATHS PARKING INCLD GALLERIA ON THE PARK",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "297d597baf888f09cbdcc3b3e7115a5a": {
     "first_seen": "2026-04-17T13:51:18.769399",
     "title": "JUNCTION TRIANLE 2 BEDS 2 BATHS CORNER UNIT BOUTIQUE PARKING INCLD",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6eec7477e38231c087df502285fcd130": {
     "first_seen": "2026-04-17T13:51:18.769400",
@@ -651,12 +654,14 @@
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
     "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6ce8b1067ece301324f0d39c635a333b": {
     "first_seen": "2026-05-14T04:07:16.189184",
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
@@ -687,8 +692,7 @@
   "a6dfa1c0982a1802ed157bfe7147c2e9": {
     "first_seen": "2026-05-22T21:20:16.292942",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "b6749461cb91a8227a16bdb49f3a5aa0": {
     "first_seen": "2026-05-23T17:14:43.386502",
