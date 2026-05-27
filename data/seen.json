@@ -413,7 +413,8 @@
   "8d2332691f8a59307f551598f4845bef": {
     "first_seen": "2026-04-20T22:32:28.855440",
     "title": "Annex 3bdrm 3bath/ Yard on Bedford Road all inclusive June 1st",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "11eb35af098a5cf629fc62b5fc14ed90": {
     "first_seen": "2026-04-20T22:32:28.855452",
