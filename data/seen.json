@@ -668,7 +668,8 @@
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
     "title": "Annex 3bdrm 2 bath lower level Jun 1st",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "1d9cd50328978170c01c7a98e9f91018": {
     "first_seen": "2026-05-15T21:17:29.734669",
@@ -689,12 +690,14 @@
   "4b455f0e0ae3c1c40d97d6c5a38a4f77": {
     "first_seen": "2026-05-19T18:13:17.492481",
     "title": "Annex Bright 3 bdrm 3 bathrooms on Bedford Road for June or July 1st",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "a6dfa1c0982a1802ed157bfe7147c2e9": {
     "first_seen": "2026-05-22T21:20:16.292942",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b6749461cb91a8227a16bdb49f3a5aa0": {
     "first_seen": "2026-05-23T17:14:43.386502",
@@ -709,6 +712,16 @@
   "3f538986d66b334c27c7a5b16253a43a": {
     "first_seen": "2026-05-28T16:21:32.368697",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
+    "active": true
+  },
+  "fcf0df1f1c54eee4962da8dd06b258d2": {
+    "first_seen": "2026-05-28T22:03:51.009695",
+    "title": "COLLEGE PARK II: FURNISHED 2 Bedroom + Den Condo For Rent w/ Parking",
+    "active": true
+  },
+  "f2f3097bf310058380aebefce0e0656d": {
+    "first_seen": "2026-05-28T22:03:51.009708",
+    "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
     "active": true
   }
 }
