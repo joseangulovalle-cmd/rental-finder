@@ -656,14 +656,12 @@
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
     "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "6ce8b1067ece301324f0d39c635a333b": {
     "first_seen": "2026-05-14T04:07:16.189184",
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
@@ -727,6 +725,7 @@
   "527b72abd1cf29b24f1a7b120815e4c8": {
     "first_seen": "2026-05-31T21:12:16.174523",
     "title": "Spacious 2 Bedroom 2 Bathroom Condo Aug 1st",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
