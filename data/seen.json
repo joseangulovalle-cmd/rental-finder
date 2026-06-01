@@ -722,12 +722,18 @@
   "f2f3097bf310058380aebefce0e0656d": {
     "first_seen": "2026-05-28T22:03:51.009708",
     "title": "121 St. PATRICK STREET,3BEDS,2BATHS,BALCONY,PARKING,DOWNTOWN TORONTO",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "527b72abd1cf29b24f1a7b120815e4c8": {
     "first_seen": "2026-05-31T21:12:16.174523",
     "title": "Spacious 2 Bedroom 2 Bathroom Condo Aug 1st",
     "active": false,
     "expired": true
+  },
+  "2731a471b88fb8747fe0d3a31b625590": {
+    "first_seen": "2026-06-01T20:24:52.029132",
+    "title": "Gorgeous 2 Bed 1 1/2 Bath Upstairs Apartment - 13 Castle View",
+    "active": true
   }
 }
