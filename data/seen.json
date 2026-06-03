@@ -705,8 +705,7 @@
   "9efbc5d29a55853a61e6b944edeeec1c": {
     "first_seen": "2026-05-26T21:55:52.125122",
     "title": "510 - 1080 BAY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "3f538986d66b334c27c7a5b16253a43a": {
     "first_seen": "2026-05-28T16:21:32.368697",
@@ -733,7 +732,8 @@
   "2731a471b88fb8747fe0d3a31b625590": {
     "first_seen": "2026-06-01T20:24:52.029132",
     "title": "Gorgeous 2 Bed 1 1/2 Bath Upstairs Apartment - 13 Castle View",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "f452bef1e7c57210911ac902709b229f": {
     "first_seen": "2026-06-02T04:54:18.729920",
