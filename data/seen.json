@@ -530,8 +530,7 @@
   "5e9796d4d425010c5b2fb20f72f2d870": {
     "first_seen": "2026-04-29T13:13:41.495430",
     "title": "31 ORIOLE PARKWAY Toronto (Yonge-St. Clair), Ontario",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "7254b38316717430607f15262500ff67": {
     "first_seen": "2026-04-30T13:12:17.441725",
