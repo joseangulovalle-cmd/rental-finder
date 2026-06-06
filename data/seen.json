@@ -473,12 +473,14 @@
   "9122b27f452753d28dd166c7f9a28031": {
     "first_seen": "2026-04-21T22:27:53.707523",
     "title": "DOWNTOWN TORONTO: Brand New 2 Bedroom/2 Bath Condo For Rent w/PRKG",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "85d318c15053cf5f7459c7fbab40febe": {
     "first_seen": "2026-04-21T22:27:53.707524",
     "title": "COLLEGE PARK 1: Bright 2 Bedroom Condo For Rent Toronto w/ PARKING",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e1ef0c6d0da2365bfc298d99a3fd7931": {
     "first_seen": "2026-04-21T22:27:53.707528",
@@ -530,7 +532,8 @@
   "5e9796d4d425010c5b2fb20f72f2d870": {
     "first_seen": "2026-04-29T13:13:41.495430",
     "title": "31 ORIOLE PARKWAY Toronto (Yonge-St. Clair), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "7254b38316717430607f15262500ff67": {
     "first_seen": "2026-04-30T13:12:17.441725",
