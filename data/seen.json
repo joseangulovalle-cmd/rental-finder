@@ -661,12 +661,14 @@
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
     "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6ce8b1067ece301324f0d39c635a333b": {
     "first_seen": "2026-05-14T04:07:16.189184",
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
@@ -754,6 +756,11 @@
   "46bd45b6ef74d73397992bee42962254": {
     "first_seen": "2026-06-06T17:24:19.643811",
     "title": "Annex 3bdrm 2 bath lower level Jun 1st",
+    "active": true
+  },
+  "af2379ee255724abe9838d42048b10cf": {
+    "first_seen": "2026-06-07T10:35:58.506969",
+    "title": "31 ORIOLE PARKWAY Toronto (Yonge-St. Clair), Ontario",
     "active": true
   }
 }
