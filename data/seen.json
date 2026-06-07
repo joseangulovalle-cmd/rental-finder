@@ -532,7 +532,8 @@
   "5e9796d4d425010c5b2fb20f72f2d870": {
     "first_seen": "2026-04-29T13:13:41.495430",
     "title": "31 ORIOLE PARKWAY Toronto (Yonge-St. Clair), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "7254b38316717430607f15262500ff67": {
     "first_seen": "2026-04-30T13:12:17.441725",
@@ -627,8 +628,7 @@
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
     "title": "TH4 - 175 PEARS AVENUE Toronto (Annex), Ontario",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "5a8587d068937527d29459002c8ef919": {
     "first_seen": "2026-05-08T14:10:29.871927",
@@ -661,14 +661,12 @@
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
     "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "6ce8b1067ece301324f0d39c635a333b": {
     "first_seen": "2026-05-14T04:07:16.189184",
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
