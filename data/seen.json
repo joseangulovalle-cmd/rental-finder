@@ -756,7 +756,8 @@
   "46bd45b6ef74d73397992bee42962254": {
     "first_seen": "2026-06-06T17:24:19.643811",
     "title": "Annex 3bdrm 2 bath lower level Jun 1st",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "af2379ee255724abe9838d42048b10cf": {
     "first_seen": "2026-06-07T10:35:58.506969",
