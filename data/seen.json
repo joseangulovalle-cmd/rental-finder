@@ -585,7 +585,8 @@
   "7454472e388a5e3b4014097dcc3b21a9": {
     "first_seen": "2026-05-04T23:16:26.624226",
     "title": "Bright 3 bdrm 3 Baths all inclusive on Bedford Rd June 1st 2026",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "8ae7b4fd53d63e8d55968ab009624a03": {
     "first_seen": "2026-05-06T06:40:50.068959",
@@ -695,7 +696,8 @@
   "4b455f0e0ae3c1c40d97d6c5a38a4f77": {
     "first_seen": "2026-05-19T18:13:17.492481",
     "title": "Annex Bright 3 bdrm 3 bathrooms on Bedford Road for June or July 1st",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "a6dfa1c0982a1802ed157bfe7147c2e9": {
     "first_seen": "2026-05-22T21:20:16.292942",
