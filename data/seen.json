@@ -515,7 +515,8 @@
   "1a006931434d6d2c376275d4c5cb1e50": {
     "first_seen": "2026-04-28T23:16:28.107907",
     "title": "BRAND NEW LUXURY 2 BEDS 2 BATHS SOUTH EXPOUSORE SKYLINE VIEWS",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b559f00ebe03e0ad0149afdc17486dbb": {
     "first_seen": "2026-04-28T23:16:28.107917",
@@ -662,12 +663,14 @@
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
     "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6ce8b1067ece301324f0d39c635a333b": {
     "first_seen": "2026-05-14T04:07:16.189184",
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
@@ -788,6 +791,11 @@
   "3408c743aa2346bd28b61cf51fed5562": {
     "first_seen": "2026-06-11T22:10:24.330962",
     "title": "COLLEGE PARK II: Large 2 Bedroom + Den Condo For Rent w/ Parking",
+    "active": true
+  },
+  "347048486b0dd7c639e5bc81ee7a442c": {
+    "first_seen": "2026-06-13T10:37:28.199471",
+    "title": "2405 - 18 YORKVILLE AVENUE Toronto (Annex), Ontario",
     "active": true
   }
 }
