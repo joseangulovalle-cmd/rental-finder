@@ -630,7 +630,8 @@
   "4ba84aba7dc9150cae67f3a8ad3ce713": {
     "first_seen": "2026-05-08T09:48:57.996423",
     "title": "TH4 - 175 PEARS AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "5a8587d068937527d29459002c8ef919": {
     "first_seen": "2026-05-08T14:10:29.871927",
@@ -796,6 +797,11 @@
   "347048486b0dd7c639e5bc81ee7a442c": {
     "first_seen": "2026-06-13T10:37:28.199471",
     "title": "2405 - 18 YORKVILLE AVENUE Toronto (Annex), Ontario",
+    "active": true
+  },
+  "e287c38b982573ab364ae8ca4c32b750": {
+    "first_seen": "2026-06-15T05:21:21.295607",
+    "title": "BRAND NEW NEVER LIVED IN 2 BEDS 2 BATHS INTERNET INCLD",
     "active": true
   }
 }
