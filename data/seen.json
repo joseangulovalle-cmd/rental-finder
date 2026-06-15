@@ -551,7 +551,8 @@
   "6fda05efbb949c08c7b8f6d1bb3c2ee2": {
     "first_seen": "2026-05-01T07:56:11.053408",
     "title": "BRAND NEW NEVER LIVED IN 2 BEDS 2 BATHS",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "482c9c6dab13356f77f4a26ffcc5383e": {
     "first_seen": "2026-05-01T15:40:06.965668",
@@ -722,7 +723,8 @@
   "3f538986d66b334c27c7a5b16253a43a": {
     "first_seen": "2026-05-28T16:21:32.368697",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "fcf0df1f1c54eee4962da8dd06b258d2": {
     "first_seen": "2026-05-28T22:03:51.009695",
@@ -802,6 +804,11 @@
   "e287c38b982573ab364ae8ca4c32b750": {
     "first_seen": "2026-06-15T05:21:21.295607",
     "title": "BRAND NEW NEVER LIVED IN 2 BEDS 2 BATHS INTERNET INCLD",
+    "active": true
+  },
+  "8b5e8e2d02b27d8b639a952ffde0dd6d": {
+    "first_seen": "2026-06-15T14:33:00.022479",
+    "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
     "active": true
   }
 }
