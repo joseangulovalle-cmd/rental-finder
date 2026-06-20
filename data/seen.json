@@ -593,17 +593,20 @@
   "8ae7b4fd53d63e8d55968ab009624a03": {
     "first_seen": "2026-05-06T06:40:50.068959",
     "title": "CORNER UNIT 2+1 2 BATHS PARKING \"& LOCKER INCLD 990 SQ FT",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "40b70909cf15b5e2a82f9831d23a1d1a": {
     "first_seen": "2026-05-06T06:40:50.068966",
     "title": "BRAND NEW NEVER LIVED IN 2 BEDS 2 BATHS PARKING AND LOCKER INCLD",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6c97a687d6619cb0e408d814000e1906": {
     "first_seen": "2026-05-06T06:40:50.068967",
     "title": "BRAND NEW NEVER LIVED IN 2 BEDS 2 BATHS PARKING AND INTERNET INCLD",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "7a0ee084110d1a88523f3c21819f3e23": {
     "first_seen": "2026-05-06T17:51:18.556019",
@@ -665,12 +668,14 @@
   "e98b9387f906cac8aad8b736e7634597": {
     "first_seen": "2026-05-14T04:07:16.189182",
     "title": "Brand New 2 Bed+Den, 2 Bath unit- Annex-Toronto- Den is Separate Room.",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6ce8b1067ece301324f0d39c635a333b": {
     "first_seen": "2026-05-14T04:07:16.189184",
     "title": "Bedroom available, New furnished 3+Den, 2 bath- All In- Annex",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "fd0572c669e709c4923218d2634002f6": {
     "first_seen": "2026-05-15T17:51:15.750592",
@@ -833,6 +838,11 @@
   "23bc7123da9d2fb97118abfe2445f9a9": {
     "first_seen": "2026-06-19T18:06:24.332569",
     "title": "Furn room  for student/traveller   York",
+    "active": true
+  },
+  "44cb8b8598b18c3e2ed9c5036727e707": {
+    "first_seen": "2026-06-20T10:40:03.582845",
+    "title": "8 WIDMER ST. SUITE 3309 - MODERN 3BED/2BATH, PARKING, LOCKER, LAUNDRY",
     "active": true
   }
 }
