@@ -844,7 +844,6 @@
   "44cb8b8598b18c3e2ed9c5036727e707": {
     "first_seen": "2026-06-20T10:40:03.582845",
     "title": "8 WIDMER ST. SUITE 3309 - MODERN 3BED/2BATH, PARKING, LOCKER, LAUNDRY",
-    "active": false,
-    "expired": true
+    "active": true
   }
 }
