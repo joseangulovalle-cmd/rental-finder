@@ -692,7 +692,8 @@
   "3f3fbc2b6e6c2b381d700253f00822aa": {
     "first_seen": "2026-05-15T21:17:29.734678",
     "title": "CHARLES ON CHURCH: Brand New 2 Bedroom/2 Bath Corner Condo For Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "6428a722a2384ca2cc92a14a2421e392": {
     "first_seen": "2026-05-15T21:17:29.734683",
