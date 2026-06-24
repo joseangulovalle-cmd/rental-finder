@@ -836,7 +836,8 @@
   "75292983d6a32972377f362f6f815386": {
     "first_seen": "2026-06-17T12:24:59.011791",
     "title": "328 - 280 HOWLAND AVENUE Toronto (Annex), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "45ff6e0efa294883144762cdbf3aee7c": {
     "first_seen": "2026-06-17T12:24:59.011814",
@@ -869,6 +870,7 @@
   "789306e072b8f548976e7030234f207a": {
     "first_seen": "2026-06-22T22:12:49.419058",
     "title": "Annex 2 Bedroom 2 Bathroom Condo with Utilities/Parking Sep 1",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
