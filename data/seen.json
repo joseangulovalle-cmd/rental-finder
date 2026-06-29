@@ -886,6 +886,7 @@
   "99bb6aa2536bac31b79a1e696c8a0f11": {
     "first_seen": "2026-06-28T21:12:31.042020",
     "title": "2 Bedroom 2 Bathroom Condo with Parking/Utilities Sep 1st Annex",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
