@@ -831,7 +831,8 @@
   "b1ea923c65a16bf91bcad0b840674d12": {
     "first_seen": "2026-06-15T19:54:48.613088",
     "title": "Luxury One Bloor Condo | 2 Bed 2 Bath + Parking | Yorkville",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "75292983d6a32972377f362f6f815386": {
     "first_seen": "2026-06-17T12:24:59.011791",
