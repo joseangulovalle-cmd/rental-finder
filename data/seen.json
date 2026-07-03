@@ -849,7 +849,8 @@
   "aa700c65aac4cb3b79775da843c8daf8": {
     "first_seen": "2026-06-18T11:57:50.546881",
     "title": "603 - 55 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "23bc7123da9d2fb97118abfe2445f9a9": {
     "first_seen": "2026-06-19T18:06:24.332569",
