@@ -724,7 +724,8 @@
   "9efbc5d29a55853a61e6b944edeeec1c": {
     "first_seen": "2026-05-26T21:55:52.125122",
     "title": "510 - 1080 BAY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "3f538986d66b334c27c7a5b16253a43a": {
     "first_seen": "2026-05-28T16:21:32.368697",
@@ -867,8 +868,7 @@
   "8cc6913611be2676cdf9f2ecb33fe783": {
     "first_seen": "2026-06-22T22:12:49.419046",
     "title": "2 Bedroom Basement Apartment for Rent – Available July 1st",
-    "active": false,
-    "expired": true
+    "active": true
   },
   "789306e072b8f548976e7030234f207a": {
     "first_seen": "2026-06-22T22:12:49.419058",
