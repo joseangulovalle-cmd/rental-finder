@@ -868,7 +868,8 @@
   "8cc6913611be2676cdf9f2ecb33fe783": {
     "first_seen": "2026-06-22T22:12:49.419046",
     "title": "2 Bedroom Basement Apartment for Rent – Available July 1st",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "789306e072b8f548976e7030234f207a": {
     "first_seen": "2026-06-22T22:12:49.419058",
