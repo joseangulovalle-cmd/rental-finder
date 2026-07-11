@@ -904,7 +904,8 @@
   "3b0ed17fed55e8e97e441c632254e48e": {
     "first_seen": "2026-07-06T12:12:53.874018",
     "title": "510 - 1080 BAY STREET Toronto (Bay Street Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "e111f8d499a3e5ecc55b6e8999d9b27e": {
     "first_seen": "2026-07-09T15:29:22.065913",
