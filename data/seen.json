@@ -929,5 +929,10 @@
     "title": "Annex Loft on Lowther Avenue",
     "active": false,
     "expired": true
+  },
+  "6c08b1feaf2cd1236e4c9e07cf4a30d4": {
+    "first_seen": "2026-07-17T10:07:51.226921",
+    "title": "507 - 75 ST NICHOLAS STREET Toronto (Bay Street Corridor), Ontar",
+    "active": true
   }
 }
