@@ -641,7 +641,8 @@
   "5a8587d068937527d29459002c8ef919": {
     "first_seen": "2026-05-08T14:10:29.871927",
     "title": "Avenue Park Apartments - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "aed64afb8904f46670f968f16594e476": {
     "first_seen": "2026-05-08T14:10:29.871939",
@@ -932,6 +933,11 @@
   "6c08b1feaf2cd1236e4c9e07cf4a30d4": {
     "first_seen": "2026-07-17T10:07:51.226921",
     "title": "507 - 75 ST NICHOLAS STREET Toronto (Bay Street Corridor), Ontar",
+    "active": true
+  },
+  "655f90d86eee80cb34b6f0c21e6b0206": {
+    "first_seen": "2026-07-18T13:40:14.313567",
+    "title": "Avenue Park Apartments - 2 Bedroom Apartment for Rent",
     "active": true
   }
 }
