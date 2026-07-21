@@ -933,7 +933,8 @@
   "6c08b1feaf2cd1236e4c9e07cf4a30d4": {
     "first_seen": "2026-07-17T10:07:51.226921",
     "title": "507 - 75 ST NICHOLAS STREET Toronto (Bay Street Corridor), Ontar",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "655f90d86eee80cb34b6f0c21e6b0206": {
     "first_seen": "2026-07-18T13:40:14.313567",
