@@ -851,7 +851,8 @@
   "aa700c65aac4cb3b79775da843c8daf8": {
     "first_seen": "2026-06-18T11:57:50.546881",
     "title": "603 - 55 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "23bc7123da9d2fb97118abfe2445f9a9": {
     "first_seen": "2026-06-19T18:06:24.332569",
@@ -957,5 +958,10 @@
     "title": "2 BDR 2 BTH CONDO IN THE ANNEX WITH PARKING/UTILITIES SEP 1ST",
     "active": false,
     "expired": true
+  },
+  "170a6ed78ceb972cedfa740c03102374": {
+    "first_seen": "2026-08-01T13:46:25.380738",
+    "title": "2 BED 2 BATH CONDO Corner Unit TORONTO 800 sqft Available ASAP",
+    "active": true
   }
 }
