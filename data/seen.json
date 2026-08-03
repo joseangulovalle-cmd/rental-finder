@@ -962,6 +962,12 @@
   "170a6ed78ceb972cedfa740c03102374": {
     "first_seen": "2026-08-01T13:46:25.380738",
     "title": "2 BED 2 BATH CONDO Corner Unit TORONTO 800 sqft Available ASAP",
+    "active": false,
+    "expired": true
+  },
+  "db4b22e7dc4ee316606fae8ee31fa903": {
+    "first_seen": "2026-08-03T03:42:37.648822",
+    "title": "Oversized 2 Bedroom Apartment in Forest Hill Village",
     "active": true
   }
 }
