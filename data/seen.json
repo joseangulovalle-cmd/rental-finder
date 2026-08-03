@@ -945,7 +945,8 @@
   "b7d9b68adb5727d5c0de46df522d3204": {
     "first_seen": "2026-07-23T14:24:36.855197",
     "title": "TH102 - 6 PARKWOOD AVENUE Toronto (Casa Loma), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "51d8a4fc79cb7dbc721e84f02fd6c37f": {
     "first_seen": "2026-07-23T21:15:03.221151",
@@ -968,6 +969,16 @@
   "db4b22e7dc4ee316606fae8ee31fa903": {
     "first_seen": "2026-08-03T03:42:37.648822",
     "title": "Oversized 2 Bedroom Apartment in Forest Hill Village",
+    "active": true
+  },
+  "89a279ed9380e6e93cd366e38747c94b": {
+    "first_seen": "2026-08-03T11:36:48.876666",
+    "title": "505 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
+    "active": true
+  },
+  "87b3f7f4cd04a41cdc83e09ce3c2babd": {
+    "first_seen": "2026-08-03T11:36:48.876675",
+    "title": "903 - 102 BLOOR STREET Toronto (Annex), Ontario",
     "active": true
   }
 }
