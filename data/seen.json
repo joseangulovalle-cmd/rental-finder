@@ -974,7 +974,8 @@
   "89a279ed9380e6e93cd366e38747c94b": {
     "first_seen": "2026-08-03T11:36:48.876666",
     "title": "505 - 1 BLOOR STREET E Toronto (Church-Yonge Corridor), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "87b3f7f4cd04a41cdc83e09ce3c2babd": {
     "first_seen": "2026-08-03T11:36:48.876675",
