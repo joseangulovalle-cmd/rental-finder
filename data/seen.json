@@ -923,7 +923,8 @@
   "555d380f406d268a1452a974382ae41e": {
     "first_seen": "2026-07-11T13:45:03.792720",
     "title": "Prince Arthur - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "503e32e772de7977a4f0b9376ba594d6": {
     "first_seen": "2026-07-14T17:23:25.062635",
@@ -940,7 +941,8 @@
   "655f90d86eee80cb34b6f0c21e6b0206": {
     "first_seen": "2026-07-18T13:40:14.313567",
     "title": "Avenue Park Apartments - 2 Bedroom Apartment for Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "b7d9b68adb5727d5c0de46df522d3204": {
     "first_seen": "2026-07-23T14:24:36.855197",
