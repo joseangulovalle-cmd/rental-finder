@@ -1012,7 +1012,8 @@
   "77d4907cbbcdf2877e6045fcb43b8fdc": {
     "first_seen": "2026-08-17T04:52:47.866640",
     "title": "Yorkville,Bloor Yonge Toronto, 2b+2b Condo For Rent",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "642e4d7d79336578b555637095cff094": {
     "first_seen": "2026-08-19T01:45:41.041902",
