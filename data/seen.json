@@ -1018,6 +1018,7 @@
   "642e4d7d79336578b555637095cff094": {
     "first_seen": "2026-08-19T01:45:41.041902",
     "title": "314 - 783 BATHURST STREET Toronto (University), Ontario",
-    "active": true
+    "active": false,
+    "expired": true
   }
 }
