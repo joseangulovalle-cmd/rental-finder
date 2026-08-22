@@ -8,17 +8,20 @@
   "46779ae8d7dac063a731c4a061783a8e": {
     "first_seen": "2026-04-13T00:25:30.241469",
     "title": "Yonge Bloor! Two bedroom suite *Special Offer Available",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "37884d6e2abe4cffc8ceafdb4ad8fdad": {
     "first_seen": "2026-04-13T00:25:30.241475",
     "title": "*Special Offer Available* Rental Close to U of T!",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "ec5ed42c2c2ee25df197015b0dbdf6a6": {
     "first_seen": "2026-04-13T00:25:30.241477",
     "title": "494 AVENUE ROAD - 2 BEDROOM PENTHOUSE",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "9102d99c3a0d92ff6d0a6a0db5a5ddd3": {
     "first_seen": "2026-04-13T00:25:30.241480",
@@ -1007,7 +1010,8 @@
   "8db4669e7623178cf44f3fcb30a0b49d": {
     "first_seen": "2026-08-16T20:31:35.062033",
     "title": "Spacious 2 bedroom + 2 bathroom - SPECTACULAR Panoramic views!",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "77d4907cbbcdf2877e6045fcb43b8fdc": {
     "first_seen": "2026-08-17T04:52:47.866640",
