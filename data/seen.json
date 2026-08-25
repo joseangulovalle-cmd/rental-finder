@@ -1007,7 +1007,8 @@
   "8db4669e7623178cf44f3fcb30a0b49d": {
     "first_seen": "2026-08-16T20:31:35.062033",
     "title": "Spacious 2 bedroom + 2 bathroom - SPECTACULAR Panoramic views!",
-    "active": true
+    "active": false,
+    "expired": true
   },
   "77d4907cbbcdf2877e6045fcb43b8fdc": {
     "first_seen": "2026-08-17T04:52:47.866640",
